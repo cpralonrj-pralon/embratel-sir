@@ -34,10 +34,10 @@ function App() {
   );
 
   return (
-    <div className="flex flex-col h-screen min-w-[1024px] bg-white">
-      <nav className="bg-gray-800 text-white p-4 flex gap-4">
-        <Link to="/" className="hover:text-gray-300 font-bold">Lista</Link>
-        <Link to="/dashboard" className="hover:text-gray-300 font-bold">Dashboard</Link>
+    <div className="flex flex-col h-screen bg-white">
+      <nav className="bg-gray-800 text-white px-3 py-3 sm:p-4 flex gap-4">
+        <Link to="/" className="hover:text-gray-300 font-bold text-sm sm:text-base">Lista</Link>
+        <Link to="/dashboard" className="hover:text-gray-300 font-bold text-sm sm:text-base">Dashboard</Link>
       </nav>
       <div className="flex-1 overflow-hidden">
         <Routes>

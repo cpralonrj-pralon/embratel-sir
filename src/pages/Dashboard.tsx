@@ -126,10 +126,10 @@ const DetailsModal = ({
     if (!items) return null;
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 animate-fadeIn" onClick={onClose}>
-            <div className="bg-gray-800 rounded-xl border border-gray-600 shadow-2xl w-full max-w-5xl max-h-[90vh] flex flex-col overflow-hidden" onClick={e => e.stopPropagation()}>
-                <div className="flex justify-between items-center p-4 border-b border-gray-700 bg-gray-900">
-                    <h2 className="text-xl font-bold text-white uppercase tracking-wider">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-2 sm:p-4 animate-fadeIn" onClick={onClose}>
+            <div className="bg-gray-800 rounded-xl border border-gray-600 shadow-2xl w-full max-w-5xl max-h-[95vh] sm:max-h-[90vh] flex flex-col overflow-hidden" onClick={e => e.stopPropagation()}>
+                <div className="flex justify-between items-center p-3 sm:p-4 border-b border-gray-700 bg-gray-900">
+                    <h2 className="text-sm sm:text-xl font-bold text-white uppercase tracking-wider">
                         Detalhes: <span className="text-yellow-500">{clusterName}</span> ({items.length})
                     </h2>
                     <button onClick={onClose} className="text-gray-400 hover:text-white p-2" aria-label="Fechar Detalhes">
@@ -137,7 +137,7 @@ const DetailsModal = ({
                     </button>
                 </div>
 
-                <div className="overflow-auto p-4 custom-scrollbar">
+                <div className="overflow-auto p-2 sm:p-4 custom-scrollbar">
                     <table className="w-full text-left border-collapse">
                         <thead>
                             <tr className="text-gray-400 text-xs uppercase bg-gray-700/50 sticky top-0">
@@ -322,12 +322,12 @@ const Dashboard: React.FC = () => {
                         <div
                             key={key}
                             onClick={() => handleCardClick(key, sourceItems)}
-                            className={`${getCardColor(clusters[key])} ${isCritical ? 'alert-glow scale-105 z-10' : ''} p-3 rounded-lg shadow-lg border-b-4 border-black/20 transform transition-all hover:brightness-110 hover:-translate-y-1 active:border-b-0 active:translate-y-0 cursor-pointer flex flex-col items-center justify-center min-h-[90px] group`}
+                            className={`${getCardColor(clusters[key])} ${isCritical ? 'alert-glow scale-105 z-10' : ''} p-2 sm:p-3 rounded-lg shadow-lg border-b-4 border-black/20 transform transition-all hover:brightness-110 hover:-translate-y-1 active:border-b-0 active:translate-y-0 cursor-pointer flex flex-col items-center justify-center min-h-[70px] sm:min-h-[90px] group`}
                         >
                             <span className="text-[10px] font-bold text-gray-100 uppercase text-center mb-1 tracking-wider group-hover:text-white">
                                 {isCritical && "🚨 "}{key}
                             </span>
-                            <span className="text-3xl font-black text-white drop-shadow-md">{clusters[key]}</span>
+                            <span className="text-2xl sm:text-3xl font-black text-white drop-shadow-md">{clusters[key]}</span>
                         </div>
                     );
                 })}
@@ -336,7 +336,7 @@ const Dashboard: React.FC = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gray-900 p-4 font-sans">
+        <div className="min-h-screen bg-gray-900 p-2 sm:p-4 font-sans">
             {selectedCluster && (
                 <DetailsModal
                     clusterName={selectedCluster.name}
@@ -345,17 +345,17 @@ const Dashboard: React.FC = () => {
                 />
             )}
 
-            <header className="mb-6 flex justify-between items-center border-b border-gray-700 pb-4 sticky top-0 bg-gray-900 z-10 shadow-lg">
+            <header className="mb-4 sm:mb-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 border-b border-gray-700 pb-3 sm:pb-4 sticky top-0 bg-gray-900 z-10 shadow-lg">
                 <div className="flex items-center gap-4">
-                    <h1 className="text-2xl font-bold text-white tracking-wide">Painel de Monitoração - SIR</h1>
+                    <h1 className="text-lg sm:text-2xl font-bold text-white tracking-wide">Painel de Monitoração - SIR</h1>
                 </div>
-                <span className="text-gray-400 text-xs flex items-center gap-2">
+                <span className="text-gray-400 text-[10px] sm:text-xs flex items-center gap-2">
                     {isRefreshing && <span className="animate-pulse text-green-400">●</span>}
                     Atualizado em: {data.updatedAt}
                 </span>
             </header>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
 
                 {/* RAL SECTION */}
                 <section className="bg-gray-800 p-4 rounded-lg border border-gray-700 shadow-xl">

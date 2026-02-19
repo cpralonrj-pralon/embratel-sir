@@ -7,7 +7,7 @@ from datetime import datetime
 DATA_UPDATE_INTERVAL = 5 * 60  # 5 minutos
 
 # Intervalo de envio de WhatsApp (em segundos)
-WHATSAPP_INTERVAL = 3 * 60 * 60  # 3 horas
+WHATSAPP_INTERVAL = 1 * 60 * 60  # 1 hora
 
 last_whatsapp_time = None
 

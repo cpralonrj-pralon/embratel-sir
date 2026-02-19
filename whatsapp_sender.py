@@ -7,7 +7,7 @@ from datetime import datetime
 API_URL = "http://localhost:8081"
 API_TOKEN = "4BC23141CFAD-48EC-A88C-4874A6305C2B"
 INSTANCE_NAME = "coprede_api"
-DEFAULT_PHONE = "5521993576090"
+DEFAULT_PHONE = "120363423786613991@g.us"
 
 def send_whatsapp_summary(stats, target_phone=None):
     """
