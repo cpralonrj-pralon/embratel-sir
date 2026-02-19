@@ -61,9 +61,7 @@ const CustomBarChart = ({ data, colors }: { data: any[], colors: string[] }) => 
     </div>
 );
 
-const FilterDropdown = ({ options, selected, onChange }: { options: string[], selected: string[], onChange: (val: string[]) => void }) => {
-    const [isOpen, setIsOpen] = useState(false);
-
+const FilterChips = ({ options, selected, onChange }: { options: string[], selected: string[], onChange: (val: string[]) => void }) => {
     const toggleOption = (option: string) => {
         if (selected.includes(option)) {
             onChange(selected.filter(s => s !== option));
@@ -73,42 +71,27 @@ const FilterDropdown = ({ options, selected, onChange }: { options: string[], se
     };
 
     return (
-        <div className="relative inline-block text-left">
-            <div>
+        <div className="flex flex-wrap gap-2 items-center">
+            <span className="text-gray-400 text-xs font-bold uppercase tracking-wide mr-1">Tipo RAL:</span>
+            {options.map((option) => (
                 <button
-                    onClick={() => setIsOpen(!isOpen)}
-                    type="button"
-                    className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none ring-1 ring-gray-600"
+                    key={option}
+                    onClick={() => toggleOption(option)}
+                    className={`px-3 py-1 rounded-full text-xs font-bold transition-all border ${selected.length === 0 || selected.includes(option)
+                            ? 'bg-yellow-600 text-white border-yellow-500 shadow-md'
+                            : 'bg-gray-700/50 text-gray-400 border-gray-600 hover:bg-gray-600 hover:text-gray-200'
+                        }`}
                 >
-                    Filtrar Tipo RAL {selected.length > 0 ? `(${selected.length})` : ''}
-                    <svg className="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                        <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                    </svg>
+                    {option}
                 </button>
-            </div>
-
-            {isOpen && (
-                <div className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 focus:outline-none z-10 max-h-60 overflow-y-auto">
-                    <div className="py-1">
-                        {options.map((option) => (
-                            <div key={option} className="flex items-center px-4 py-2 hover:bg-gray-700 cursor-pointer" onClick={() => toggleOption(option)}>
-                                <input
-                                    type="checkbox"
-                                    className="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-600 rounded"
-                                    checked={selected.includes(option)}
-                                    readOnly
-                                    title={`Selecionar ${option}`}
-                                />
-                                <span className="ml-3 text-sm text-gray-200 block truncate">{option}</span>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            )}
-
-            {/* Backdrop to close */}
-            {isOpen && (
-                <div className="fixed inset-0 z-0 bg-transparent" onClick={() => setIsOpen(false)}></div>
+            ))}
+            {selected.length > 0 && (
+                <button
+                    onClick={() => onChange([])}
+                    className="px-3 py-1 rounded-full text-xs font-bold bg-red-900/50 text-red-300 border border-red-700 hover:bg-red-800 transition-all"
+                >
+                    ✕ Limpar
+                </button>
             )}
         </div>
     );
@@ -330,24 +313,24 @@ const Dashboard: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
 
                 {/* RAL SECTION */}
-                <section className="bg-gray-800 p-4 rounded-lg border border-gray-700 shadow-xl">
-                    <div className="flex justify-between items-start mb-4">
-                        <div className='flex flex-col gap-2'>
-                            <h2 className="text-xl font-bold text-white uppercase tracking-wider">RAL (RRE)</h2>
-                            {/* FILTER */}
-                            {ralTypeOptions.length > 0 && (
-                                <FilterDropdown
-                                    options={ralTypeOptions}
-                                    selected={selectedRalTypes}
-                                    onChange={setSelectedRalTypes}
-                                />
-                            )}
-                        </div>
-
+                <section className="bg-gray-800 p-3 sm:p-4 rounded-lg border border-gray-700 shadow-xl">
+                    <div className="flex justify-between items-center mb-3">
+                        <h2 className="text-xl font-bold text-white uppercase tracking-wider">RAL (RRE)</h2>
                         <div className="bg-red-900 text-white px-4 py-2 rounded text-2xl font-bold border border-red-700 shadow-md">
                             {ralItems.length}
                         </div>
                     </div>
+
+                    {/* FILTER CHIPS - always visible */}
+                    {ralTypeOptions.length > 0 && (
+                        <div className="mb-4 p-2 sm:p-3 bg-gray-900/50 rounded-lg border border-gray-700">
+                            <FilterChips
+                                options={ralTypeOptions}
+                                selected={selectedRalTypes}
+                                onChange={setSelectedRalTypes}
+                            />
+                        </div>
+                    )}
 
                     <div className="mt-4">
                         <h3 className="text-gray-400 text-xs font-bold mb-2 uppercase tracking-wide">Por Cluster</h3>
