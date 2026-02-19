@@ -239,34 +239,6 @@ const Dashboard: React.FC = () => {
         return Array.from(types).sort();
     }, [data]);
 
-    // --- Auto Scroll Logic (Always On) ---
-    // --- Auto Scroll Logic (Always On) ---
-    useEffect(() => {
-        let lastScrollY = window.scrollY;
-
-        const scrollInterval = setInterval(() => {
-            // Only scroll if Modal is NOT open
-            if (!selectedCluster) {
-                // Scroll down by 2px (more visible movement)
-                window.scrollBy(0, 2);
-                const currentScrollY = window.scrollY;
-
-                // Detection: If we reached the bottom or the page doesn't scroll
-                // Using a 10px buffer for zoom independence
-                const isBottom = (window.innerHeight + currentScrollY) >= (document.documentElement.scrollHeight - 10);
-                const isStuck = currentScrollY === lastScrollY && currentScrollY > 0;
-
-                if (isBottom || isStuck) {
-                    window.scrollTo({ top: 0, behavior: 'instant' });
-                    lastScrollY = 0;
-                } else {
-                    lastScrollY = currentScrollY;
-                }
-            }
-        }, 50);
-
-        return () => clearInterval(scrollInterval);
-    }, [selectedCluster]);
 
 
     if (!data) return <div className="p-8 text-white">Carregando painel...</div>;
