@@ -204,6 +204,172 @@ const DetailsModal = ({
 
 
 // ═══════════════════════════════════════════════
+// CLUSTER ACCORDION SECTION
+// ═══════════════════════════════════════════════
+
+const ClusterAccordion = ({
+    clusterName,
+    totalCount,
+    regionCounts,
+    allClusterItems,
+    isExpanded,
+    onToggle,
+    onRegionClick,
+    accentColor,
+}: {
+    clusterName: string;
+    totalCount: number;
+    regionCounts: Record<string, number>;
+    allClusterItems: DatasetItem[];
+    isExpanded: boolean;
+    onToggle: () => void;
+    onRegionClick: (regionName: string) => void;
+    accentColor: string;
+}) => {
+    const sortedRegions = Object.keys(regionCounts).sort();
+
+    // Check if any region is critical
+    const hasCritical = allClusterItems.some(item => {
+        const desc = (item.description || "").toUpperCase();
+        const duration = item.duration || "";
+        const isTargetType = desc.includes("SWAP") || desc.includes("RUP CABO");
+        if (!isTargetType) return false;
+        try {
+            const parts = duration.split('.');
+            if (parts.length < 2) return false;
+            const days = parseInt(parts[0].replace('d', '')) || 0;
+            const hours = parseInt(parts[1].substring(0, 2)) || 0;
+            return days > 0 || hours >= 12;
+        } catch {
+            return false;
+        }
+    });
+
+    const getCardStyle = (count: number) => {
+        if (count === 0) return { bg: 'var(--status-ok)', border: '#059669' };
+        if (count < 5) return { bg: '#166534', border: '#15803d' };
+        if (count < 10) return { bg: '#92400e', border: '#b45309' };
+        return { bg: '#991b1b', border: '#dc2626' };
+    };
+
+    const isRegionCritical = (regionName: string) => {
+        const regionItems = allClusterItems.filter(i => ((i as any).cidade || "Unknown") === regionName);
+        return regionItems.some(item => {
+            const desc = (item.description || "").toUpperCase();
+            const duration = item.duration || "";
+            const isTargetType = desc.includes("SWAP") || desc.includes("RUP CABO");
+            if (!isTargetType) return false;
+            try {
+                const parts = duration.split('.');
+                if (parts.length < 2) return false;
+                const days = parseInt(parts[0].replace('d', '')) || 0;
+                const hours = parseInt(parts[1].substring(0, 2)) || 0;
+                return days > 0 || hours >= 12;
+            } catch {
+                return false;
+            }
+        });
+    };
+
+    return (
+        <div className="rounded-lg overflow-hidden transition-all duration-200"
+            style={{
+                background: 'var(--surface-card)',
+                border: hasCritical ? '1px solid var(--status-critical)' : '1px solid var(--border-subtle)',
+                boxShadow: hasCritical ? '0 0 12px rgba(239,68,68,0.15)' : 'none',
+            }}>
+
+            {/* Accordion Header — always visible */}
+            <button
+                onClick={onToggle}
+                className="w-full flex items-center justify-between px-3 py-2.5 sm:px-4 sm:py-3 cursor-pointer transition-colors duration-150 hover:brightness-110"
+                style={{ background: isExpanded ? 'var(--surface-elevated)' : 'transparent' }}
+            >
+                <div className="flex items-center gap-2.5">
+                    {/* Expand/Collapse chevron */}
+                    <svg
+                        className="w-3.5 h-3.5 transition-transform duration-200"
+                        style={{
+                            color: accentColor,
+                            transform: isExpanded ? 'rotate(90deg)' : 'rotate(0deg)',
+                        }}
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
+                    </svg>
+
+                    {/* Cluster name */}
+                    <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider"
+                        style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-body)' }}>
+                        {hasCritical && "🚨 "}{clusterName}
+                    </span>
+
+                    {/* Region count badge */}
+                    <span className="text-[9px] font-semibold px-1.5 py-0.5 rounded"
+                        style={{ background: 'var(--surface-base)', color: 'var(--text-muted)' }}>
+                        {sortedRegions.length} {sortedRegions.length === 1 ? 'região' : 'regiões'}
+                    </span>
+                </div>
+
+                {/* Total count */}
+                <div className="flex items-center gap-2">
+                    <div className="px-2.5 py-1 rounded text-sm font-black"
+                        style={{
+                            background: totalCount > 30 ? 'var(--status-critical)' :
+                                totalCount > 10 ? 'var(--status-warn)' : 'var(--status-ok)',
+                            color: totalCount > 10 ? '#000' : '#fff',
+                            fontFamily: 'var(--font-display)',
+                            minWidth: '36px',
+                            textAlign: 'center',
+                        }}>
+                        {totalCount}
+                    </div>
+                </div>
+            </button>
+
+            {/* Accordion Body — region cards */}
+            {isExpanded && (
+                <div className="px-3 pb-3 sm:px-4 sm:pb-4 pt-1 animate-slideUp">
+                    <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8 gap-1.5">
+                        {sortedRegions.map((region, idx) => {
+                            const count = regionCounts[region];
+                            const style = getCardStyle(count);
+                            const critical = isRegionCritical(region);
+
+                            return (
+                                <div
+                                    key={region}
+                                    onClick={() => onRegionClick(region)}
+                                    className={`${critical ? 'alert-glow' : ''} card-enter rounded cursor-pointer transition-all duration-150 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 flex flex-col items-center justify-center min-h-[60px] sm:min-h-[68px] group relative overflow-hidden`}
+                                    style={{
+                                        background: style.bg,
+                                        borderTop: `2px solid ${style.border}`,
+                                        boxShadow: '0 1px 4px rgba(0,0,0,0.25)',
+                                        animationDelay: `${idx * 20}ms`,
+                                    }}
+                                >
+                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-150"
+                                        style={{ background: 'linear-gradient(to bottom, rgba(255,255,255,0.1), transparent)' }} />
+                                    <span className="text-[8px] sm:text-[9px] font-bold uppercase text-center mb-0.5 tracking-wide relative z-10 px-1 leading-tight"
+                                        style={{ color: 'rgba(255,255,255,0.85)', fontFamily: 'var(--font-body)' }}>
+                                        {critical && "🚨 "}{region}
+                                    </span>
+                                    <span className="text-lg sm:text-xl font-black relative z-10"
+                                        style={{ color: '#fff', fontFamily: 'var(--font-display)', textShadow: '0 1px 3px rgba(0,0,0,0.3)' }}>
+                                        {count}
+                                    </span>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
+            )}
+        </div>
+    );
+};
+
+
+// ═══════════════════════════════════════════════
 // MAIN DASHBOARD
 // ═══════════════════════════════════════════════
 
@@ -212,9 +378,11 @@ const Dashboard: React.FC = () => {
     const [selectedRalTypes, setSelectedRalTypes] = useState<string[]>([]);
     const [isRefreshing, setIsRefreshing] = useState(false);
 
-    // Drill-down state
-    const [ralDrillCluster, setRalDrillCluster] = useState<string | null>(null);
-    const [recDrillCluster, setRecDrillCluster] = useState<string | null>(null);
+    // Accordion state: which clusters are expanded (all expanded by default)
+    const [expandedRal, setExpandedRal] = useState<Set<string>>(new Set());
+    const [expandedRec, setExpandedRec] = useState<Set<string>>(new Set());
+    const [ralInitialized, setRalInitialized] = useState(false);
+    const [recInitialized, setRecInitialized] = useState(false);
 
     // Modal state
     const [selectedCluster, setSelectedCluster] = useState<{ name: string; items: DatasetItem[] } | null>(null);
@@ -275,38 +443,58 @@ const Dashboard: React.FC = () => {
     const ralClusters = useMemo(() => getClusterCounts(ralItems), [ralItems]);
     const recClusters = useMemo(() => getClusterCounts(recItems), [recItems]);
 
+    // Auto-expand all clusters on first load
+    useEffect(() => {
+        if (!ralInitialized && Object.keys(ralClusters).length > 0) {
+            setExpandedRal(new Set(Object.keys(ralClusters)));
+            setRalInitialized(true);
+        }
+    }, [ralClusters, ralInitialized]);
+
+    useEffect(() => {
+        if (!recInitialized && Object.keys(recClusters).length > 0) {
+            setExpandedRec(new Set(Object.keys(recClusters)));
+            setRecInitialized(true);
+        }
+    }, [recClusters, recInitialized]);
+
     const ralTypeOptions = useMemo(() => {
         if (!data || !data.RAL.items) return [];
         const types = new Set(data.RAL.items.map(i => i.ralType).filter(t => t && t !== 'N/A' && t !== 'nan'));
         return Array.from(types).sort();
     }, [data]);
 
-    // ─── Card Helpers ───
-    const getCardStyle = (count: number) => {
-        if (count === 0) return { bg: 'var(--status-ok)', border: '#059669' };
-        if (count < 5) return { bg: '#166534', border: '#15803d' };
-        if (count < 10) return { bg: '#92400e', border: '#b45309' };
-        return { bg: '#991b1b', border: '#dc2626' };
-    };
-
-    const isClusterCritical = (items: DatasetItem[]) => {
-        return items.some(item => {
-            const desc = (item.description || "").toUpperCase();
-            const duration = item.duration || "";
-            const isTargetType = desc.includes("SWAP") || desc.includes("RUP CABO");
-            if (!isTargetType) return false;
-            try {
-                const parts = duration.split('.');
-                if (parts.length < 2) return false;
-                const days = parseInt(parts[0].replace('d', '')) || 0;
-                const hours = parseInt(parts[1].substring(0, 2)) || 0;
-                return days > 0 || hours >= 12;
-            } catch {
-                return false;
-            }
+    // ─── Accordion Toggles ───
+    const toggleRalCluster = (name: string) => {
+        setExpandedRal(prev => {
+            const next = new Set(prev);
+            if (next.has(name)) next.delete(name);
+            else next.add(name);
+            return next;
         });
     };
 
+    const toggleRecCluster = (name: string) => {
+        setExpandedRec(prev => {
+            const next = new Set(prev);
+            if (next.has(name)) next.delete(name);
+            else next.add(name);
+            return next;
+        });
+    };
+
+    // Expand/Collapse all
+    const toggleAllRal = () => {
+        const allKeys = Object.keys(ralClusters);
+        setExpandedRal(prev => prev.size === allKeys.length ? new Set() : new Set(allKeys));
+    };
+
+    const toggleAllRec = () => {
+        const allKeys = Object.keys(recClusters);
+        setExpandedRec(prev => prev.size === allKeys.length ? new Set() : new Set(allKeys));
+    };
+
+    // ─── Region Click → Modal ───
     const handleRegionClick = (regionName: string, clusterName: string, allItems: DatasetItem[]) => {
         const regionItems = allItems.filter(i =>
             (i.cluster || "Unknown") === clusterName &&
@@ -315,173 +503,7 @@ const Dashboard: React.FC = () => {
         setSelectedCluster({ name: `${clusterName} › ${regionName}`, items: regionItems });
     };
 
-    // ─── Card Grid ───
-    const renderCardGrid = (
-        counts: Record<string, number>,
-        onCardClick: (key: string) => void,
-        getItemsForCritical: (key: string) => DatasetItem[]
-    ) => {
-        const sortedKeys = Object.keys(counts).sort();
-
-        return (
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2">
-                {sortedKeys.map((key, idx) => {
-                    const items = getItemsForCritical(key);
-                    const isCritical = isClusterCritical(items);
-                    const style = getCardStyle(counts[key]);
-
-                    return (
-                        <div
-                            key={key}
-                            onClick={() => onCardClick(key)}
-                            className={`${isCritical ? 'alert-glow' : ''} card-enter rounded-lg cursor-pointer transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 flex flex-col items-center justify-center min-h-[80px] sm:min-h-[90px] group relative overflow-hidden`}
-                            style={{
-                                background: style.bg,
-                                borderTop: `3px solid ${style.border}`,
-                                boxShadow: '0 2px 8px rgba(0,0,0,0.3)',
-                                animationDelay: `${idx * 30}ms`,
-                            }}
-                        >
-                            {/* Inner glow on hover */}
-                            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-                                style={{ background: 'linear-gradient(to bottom, rgba(255,255,255,0.08), transparent)' }} />
-
-                            <span className="text-[9px] font-bold uppercase text-center mb-1 tracking-wider relative z-10 px-1 leading-tight"
-                                style={{ color: 'rgba(255,255,255,0.85)', fontFamily: 'var(--font-body)' }}>
-                                {isCritical && "🚨 "}{key}
-                            </span>
-                            <span className="text-2xl sm:text-3xl font-black relative z-10"
-                                style={{ color: '#fff', fontFamily: 'var(--font-display)', textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>
-                                {counts[key]}
-                            </span>
-                        </div>
-                    );
-                })}
-            </div>
-        );
-    };
-
-    // ─── Section Renderer ───
-    const renderSection = (
-        title: string,
-        items: DatasetItem[],
-        clusters: Record<string, number>,
-        drillCluster: string | null,
-        setDrillCluster: (v: string | null) => void,
-        showFilter?: boolean,
-        accentColor?: string
-    ) => {
-        const isDrilled = drillCluster !== null;
-        const regionCounts = isDrilled ? getRegionCounts(items, drillCluster) : {};
-        const accent = accentColor || 'var(--accent)';
-
-        return (
-            <section className="rounded-lg overflow-hidden"
-                style={{
-                    background: 'var(--surface-panel)',
-                    border: '1px solid var(--border-panel)',
-                    boxShadow: '0 4px 24px rgba(0,0,0,0.2)',
-                }}>
-
-                {/* Section Header */}
-                <div className="flex justify-between items-center px-4 py-3"
-                    style={{ background: 'var(--surface-base)', borderBottom: `2px solid ${accent}` }}>
-                    <div className="flex items-center gap-3">
-                        <div className="w-1.5 h-8 rounded-full" style={{ background: accent }} />
-                        <h2 style={{ fontFamily: 'var(--font-display)', color: 'var(--text-primary)' }}
-                            className="text-base sm:text-lg font-bold uppercase tracking-wider">
-                            {title}
-                        </h2>
-                    </div>
-                    <div className="flex items-center gap-2">
-                        <span className="text-[10px] font-semibold uppercase tracking-wider"
-                            style={{ color: 'var(--text-muted)', fontFamily: 'var(--font-body)' }}>
-                            Total
-                        </span>
-                        <div className="px-3 py-1 rounded"
-                            style={{
-                                background: items.length > 50 ? 'var(--status-critical)' : items.length > 20 ? 'var(--status-warn)' : 'var(--status-ok)',
-                                fontFamily: 'var(--font-display)',
-                                color: items.length > 20 ? '#000' : '#fff',
-                                boxShadow: `0 0 12px ${items.length > 50 ? 'rgba(239,68,68,0.3)' : 'transparent'}`,
-                            }}
-                        >
-                            <span className="text-xl font-black">{items.length}</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="p-3 sm:p-4">
-                    {/* Filter Chips */}
-                    {showFilter && ralTypeOptions.length > 0 && (
-                        <div className="mb-3 p-2.5 rounded-lg"
-                            style={{ background: 'var(--surface-base)', border: '1px solid var(--border-subtle)' }}>
-                            <FilterChips
-                                options={ralTypeOptions}
-                                selected={selectedRalTypes}
-                                onChange={setSelectedRalTypes}
-                            />
-                        </div>
-                    )}
-
-                    {/* Breadcrumb + Back */}
-                    {isDrilled && (
-                        <div className="flex items-center gap-2 mb-3">
-                            <button
-                                onClick={() => setDrillCluster(null)}
-                                className="flex items-center gap-1 px-3 py-1.5 rounded text-[11px] font-bold uppercase tracking-wide transition-all cursor-pointer hover:brightness-125"
-                                style={{
-                                    background: 'var(--surface-elevated)',
-                                    color: 'var(--text-primary)',
-                                    border: '1px solid var(--border-panel)',
-                                    fontFamily: 'var(--font-body)',
-                                }}
-                            >
-                                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
-                                </svg>
-                                Voltar
-                            </button>
-                            <div className="flex items-center gap-1.5 text-[11px]" style={{ fontFamily: 'var(--font-body)' }}>
-                                <span style={{ color: 'var(--text-muted)' }}>Clusters</span>
-                                <span style={{ color: 'var(--text-muted)' }}>›</span>
-                                <span className="font-bold" style={{ color: accent }}>{drillCluster}</span>
-                            </div>
-                        </div>
-                    )}
-
-                    {/* Section Label */}
-                    <div className="flex items-center gap-2 mb-2">
-                        <span className="text-[10px] font-bold uppercase tracking-widest"
-                            style={{ color: 'var(--text-muted)', fontFamily: 'var(--font-body)' }}>
-                            {isDrilled ? `Regiões — ${drillCluster}` : 'Por Cluster'}
-                        </span>
-                        <div className="flex-1 h-px" style={{ background: 'var(--border-subtle)' }} />
-                    </div>
-
-                    {/* Card Grid */}
-                    {!isDrilled ? (
-                        renderCardGrid(
-                            clusters,
-                            (key: string) => setDrillCluster(key),
-                            (key: string) => items.filter(i => (i.cluster || "Unknown") === key)
-                        )
-                    ) : (
-                        renderCardGrid(
-                            regionCounts,
-                            (regionKey: string) => handleRegionClick(regionKey, drillCluster, items),
-                            (regionKey: string) => items.filter(i =>
-                                (i.cluster || "Unknown") === drillCluster &&
-                                ((i as any).cidade || "Unknown") === regionKey
-                            )
-                        )
-                    )}
-                </div>
-            </section>
-        );
-    };
-
-    // ─── Loading State ───
+    // ─── Loading ───
     if (!data) {
         return (
             <div className="min-h-screen flex items-center justify-center" style={{ background: 'var(--surface-deep)' }}>
@@ -495,6 +517,99 @@ const Dashboard: React.FC = () => {
             </div>
         );
     }
+
+    // ─── Render Section ───
+    const renderSection = (
+        title: string,
+        items: DatasetItem[],
+        clusters: Record<string, number>,
+        expanded: Set<string>,
+        toggleCluster: (name: string) => void,
+        toggleAll: () => void,
+        accentColor: string,
+        showFilter?: boolean,
+    ) => {
+        const sortedClusters = Object.keys(clusters).sort();
+        const allExpanded = expanded.size === sortedClusters.length;
+
+        return (
+            <section className="rounded-lg overflow-hidden"
+                style={{
+                    background: 'var(--surface-panel)',
+                    border: '1px solid var(--border-panel)',
+                    boxShadow: '0 4px 24px rgba(0,0,0,0.2)',
+                }}>
+
+                {/* Section Header */}
+                <div className="flex justify-between items-center px-4 py-3"
+                    style={{ background: 'var(--surface-base)', borderBottom: `2px solid ${accentColor}` }}>
+                    <div className="flex items-center gap-3">
+                        <div className="w-1.5 h-8 rounded-full" style={{ background: accentColor }} />
+                        <h2 style={{ fontFamily: 'var(--font-display)', color: 'var(--text-primary)' }}
+                            className="text-base sm:text-lg font-bold uppercase tracking-wider">
+                            {title}
+                        </h2>
+                    </div>
+                    <div className="flex items-center gap-3">
+                        {/* Expand/Collapse All */}
+                        <button
+                            onClick={toggleAll}
+                            className="text-[9px] font-bold uppercase tracking-wider px-2 py-1 rounded transition-all cursor-pointer hover:brightness-125"
+                            style={{ color: 'var(--text-muted)', background: 'var(--surface-card)', border: '1px solid var(--border-subtle)', fontFamily: 'var(--font-body)' }}
+                        >
+                            {allExpanded ? '▼ Recolher' : '► Expandir'}
+                        </button>
+
+                        {/* Total */}
+                        <div className="flex items-center gap-1.5">
+                            <span className="text-[9px] font-semibold uppercase tracking-wider hidden sm:inline"
+                                style={{ color: 'var(--text-muted)', fontFamily: 'var(--font-body)' }}>
+                                Total
+                            </span>
+                            <div className="px-3 py-1 rounded"
+                                style={{
+                                    background: items.length > 50 ? 'var(--status-critical)' : items.length > 20 ? 'var(--status-warn)' : 'var(--status-ok)',
+                                    fontFamily: 'var(--font-display)',
+                                    color: items.length > 20 ? '#000' : '#fff',
+                                    boxShadow: `0 0 12px ${items.length > 50 ? 'rgba(239,68,68,0.3)' : 'transparent'}`,
+                                }}>
+                                <span className="text-xl font-black">{items.length}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="p-3 sm:p-4 space-y-2">
+                    {/* Filter Chips */}
+                    {showFilter && ralTypeOptions.length > 0 && (
+                        <div className="mb-2 p-2.5 rounded-lg"
+                            style={{ background: 'var(--surface-base)', border: '1px solid var(--border-subtle)' }}>
+                            <FilterChips
+                                options={ralTypeOptions}
+                                selected={selectedRalTypes}
+                                onChange={setSelectedRalTypes}
+                            />
+                        </div>
+                    )}
+
+                    {/* Accordion List */}
+                    {sortedClusters.map(clusterName => (
+                        <ClusterAccordion
+                            key={clusterName}
+                            clusterName={clusterName}
+                            totalCount={clusters[clusterName]}
+                            regionCounts={getRegionCounts(items, clusterName)}
+                            allClusterItems={items.filter(i => (i.cluster || "Unknown") === clusterName)}
+                            isExpanded={expanded.has(clusterName)}
+                            onToggle={() => toggleCluster(clusterName)}
+                            onRegionClick={(regionName) => handleRegionClick(regionName, clusterName, items)}
+                            accentColor={accentColor}
+                        />
+                    ))}
+                </div>
+            </section>
+        );
+    };
 
     // ─── Render ───
     return (
@@ -518,10 +633,7 @@ const Dashboard: React.FC = () => {
                 }}>
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
                     <div className="flex items-center gap-3">
-                        {/* Live indicator */}
-                        <div className="flex items-center gap-1.5">
-                            <div className="w-2 h-2 rounded-full animate-live" style={{ background: isRefreshing ? 'var(--status-ok)' : 'var(--accent)' }} />
-                        </div>
+                        <div className="w-2 h-2 rounded-full animate-live" style={{ background: isRefreshing ? 'var(--status-ok)' : 'var(--accent)' }} />
                         <div>
                             <h1 className="text-base sm:text-xl font-bold uppercase tracking-wider"
                                 style={{ fontFamily: 'var(--font-display)', color: 'var(--text-primary)' }}>
@@ -553,11 +665,11 @@ const Dashboard: React.FC = () => {
                 </div>
             </header>
 
-            {/* ═══ MAIN GRID ═══ */}
+            {/* ═══ MAIN CONTENT ═══ */}
             <main className="p-2 sm:p-4 lg:p-6">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-5">
-                    {renderSection('RAL (RRE)', ralItems, ralClusters, ralDrillCluster, setRalDrillCluster, true, '#f59e0b')}
-                    {renderSection('REC (RRE)', recItems, recClusters, recDrillCluster, setRecDrillCluster, false, '#06b6d4')}
+                    {renderSection('RAL (RRE)', ralItems, ralClusters, expandedRal, toggleRalCluster, toggleAllRal, '#f59e0b', true)}
+                    {renderSection('REC (RRE)', recItems, recClusters, expandedRec, toggleRecCluster, toggleAllRec, '#06b6d4', false)}
                 </div>
             </main>
         </div>
