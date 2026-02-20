@@ -35,36 +35,13 @@ def main(skip_whatsapp=False):
 
         if norm_code:
             cluster_name = str(row['Cluster']).strip()
-            # Standardize accents/names
-            if cluster_name.upper() in ["SÃO LUIS", "SÃO LUÍS", "SLS"]:
-                cluster_name = "SÃO LUÍS"
-            
-            upper_name = cluster_name.upper()
-            region = str(row['Region']).strip().upper()
-            raw_code = raw_code_orig.upper().replace(" ", "")
-            
-            # 1. NEW UNIFIED Merge rule for RIO / ESPIRITO SANTO
-            # Detect everything related to Rio (RJO) or ES (VTA)
-            # Use exact matches for generic terms to avoid matching 'CENTRO OESTE' or 'NORDESTE'
-            is_rio_or_es = (
-                "/RJO/" in raw_code or 
-                "/VTA/" in raw_code or
-                any(x in region for x in ["RIO DE JANEIRO", "ESPIRITO SANTO", "ESPÍRITO SANTO", "FLUMINENSE", "BAIXADA", "LAGOS", "METROPOLITANA"]) or
-                any(upper_name == x for x in ["RIO", "RIO DE JANEIRO", "VITORIA", "VITÓRIA", "METROPOLITANA", "BAIXADA", "BAIXADA FLUMINENSE", "CENTRO SUL", "OESTE", "NORTE 1", "NORTE 2", "NORTE 3", "NORTE FLUMINENSE", "SUL FLUMINENSE", "SERRA FLUMINENSE", "REGIÃO DOS LAGOS", "REGIÃO METROPOLITANA"])
-            )
-
-            # Exclude Rio Branco explicitly
-            if "RIO BRANCO" in raw_code or "RIO BRANCO" in upper_name:
-                is_rio_or_es = False
-
-            if is_rio_or_es:
-                cluster_name = "RIO DE JANEIRO / ESPIRITO SANTO"
+            region_name = str(row['Region']).strip()
 
             mapping[norm_code] = {
                 'Cluster': cluster_name,
-                'Region': row['Region'],
+                'Region': region_name,
                 'Type': row.get('Type', 'Unknown'),
-                'City': str(row['Cluster']).strip() # Keep original as City
+                'City': region_name  # Region column = sub-region for drill-down
             }
 
     # Initialize Stats
