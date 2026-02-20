@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useMemo, useCallback } from 'react';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 
 // Types derived from the new JSON structure
 interface DatasetItem {
@@ -25,41 +24,7 @@ interface DashboardData {
     REC: DatasetStats;
 }
 
-// Mock data for charts
-const mockChartData = [
-    { name: 'RT/VTA/JM/OUT/SW', value: 1 },
-    { name: 'RT/RJO/AM/VIV/SW', value: 1 },
-    { name: 'RT/VTA/JM/VIV/SW', value: 5 },
-    { name: 'RT/RJO/AM/OUT/SW', value: 9 },
-];
-
-const mockRecChartData = [
-    { name: 'RT/VTA/JM/VIV/SW', value: 1 },
-];
-
-const COLORS = ['#4ade80', '#4ade80', '#4ade80', '#fbbf24'];
-
 const DATA_REFRESH_INTERVAL = 5 * 60 * 1000; // 5 minutos em ms
-
-const CustomBarChart = ({ data, colors }: { data: any[], colors: string[] }) => (
-    <div className="h-48 w-full">
-        <ResponsiveContainer width="100%" height="100%">
-            <BarChart layout="vertical" data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-                <XAxis type="number" hide />
-                <YAxis type="category" dataKey="name" width={150} tick={{ fill: '#9ca3af', fontSize: 10 }} interval={0} />
-                <Tooltip
-                    contentStyle={{ backgroundColor: '#1f2937', border: 'none' }}
-                    itemStyle={{ color: '#fff' }}
-                />
-                <Bar dataKey="value" barSize={20} radius={[0, 4, 4, 0]}>
-                    {data.map((_, index) => (
-                        <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
-                    ))}
-                </Bar>
-            </BarChart>
-        </ResponsiveContainer>
-    </div>
-);
 
 const FilterChips = ({ options, selected, onChange }: { options: string[], selected: string[], onChange: (val: string[]) => void }) => {
     const toggleOption = (option: string) => {
@@ -78,8 +43,8 @@ const FilterChips = ({ options, selected, onChange }: { options: string[], selec
                     key={option}
                     onClick={() => toggleOption(option)}
                     className={`px-3 py-1 rounded-full text-xs font-bold transition-all border ${selected.length === 0 || selected.includes(option)
-                            ? 'bg-yellow-600 text-white border-yellow-500 shadow-md'
-                            : 'bg-gray-700/50 text-gray-400 border-gray-600 hover:bg-gray-600 hover:text-gray-200'
+                        ? 'bg-yellow-600 text-white border-yellow-500 shadow-md'
+                        : 'bg-gray-700/50 text-gray-400 border-gray-600 hover:bg-gray-600 hover:text-gray-200'
                         }`}
                 >
                     {option}
@@ -165,6 +130,10 @@ const Dashboard: React.FC = () => {
     const [selectedRalTypes, setSelectedRalTypes] = useState<string[]>([]);
     const [isRefreshing, setIsRefreshing] = useState(false);
 
+    // Drill-down state: which cluster is expanded (null = showing clusters)
+    const [ralDrillCluster, setRalDrillCluster] = useState<string | null>(null);
+    const [recDrillCluster, setRecDrillCluster] = useState<string | null>(null);
+
     // Modal State
     const [selectedCluster, setSelectedCluster] = useState<{ name: string, items: DatasetItem[] } | null>(null);
 
@@ -208,6 +177,18 @@ const Dashboard: React.FC = () => {
             const c = item.cluster || "Unknown";
             counts[c] = (counts[c] || 0) + 1;
         });
+        return counts;
+    };
+
+    // Group by cidade/region within a cluster
+    const getRegionCounts = (items: DatasetItem[], clusterName: string) => {
+        const counts: Record<string, number> = {};
+        items
+            .filter(item => (item.cluster || "Unknown") === clusterName)
+            .forEach(item => {
+                const r = (item as any).cidade || "Unknown";
+                counts[r] = (counts[r] || 0) + 1;
+            });
         return counts;
     };
 
@@ -259,34 +240,118 @@ const Dashboard: React.FC = () => {
         });
     };
 
-    const handleCardClick = (cluster: string, allItems: DatasetItem[]) => {
-        const clusterItems = allItems.filter(i => (i.cluster || "Unknown") === cluster);
-        setSelectedCluster({ name: cluster, items: clusterItems });
+    // Click on a region card → open details modal
+    const handleRegionClick = (regionName: string, clusterName: string, allItems: DatasetItem[]) => {
+        const regionItems = allItems.filter(i =>
+            (i.cluster || "Unknown") === clusterName &&
+            ((i as any).cidade || "Unknown") === regionName
+        );
+        setSelectedCluster({ name: `${clusterName} › ${regionName}`, items: regionItems });
     };
 
-    const renderClusterGrid = (clusters: Record<string, number>, sourceItems: DatasetItem[]) => {
-        const sortedKeys = Object.keys(clusters).sort();
+    const renderCardGrid = (
+        counts: Record<string, number>,
+        onCardClick: (key: string) => void,
+        getItemsForCritical: (key: string) => DatasetItem[]
+    ) => {
+        const sortedKeys = Object.keys(counts).sort();
 
         return (
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
                 {sortedKeys.map((key) => {
-                    const clusterItems = sourceItems.filter(i => (i.cluster || "Unknown") === key);
-                    const isCritical = isClusterCritical(clusterItems);
+                    const items = getItemsForCritical(key);
+                    const isCritical = isClusterCritical(items);
 
                     return (
                         <div
                             key={key}
-                            onClick={() => handleCardClick(key, sourceItems)}
-                            className={`${getCardColor(clusters[key])} ${isCritical ? 'alert-glow scale-105 z-10' : ''} p-2 sm:p-3 rounded-lg shadow-lg border-b-4 border-black/20 transform transition-all hover:brightness-110 hover:-translate-y-1 active:border-b-0 active:translate-y-0 cursor-pointer flex flex-col items-center justify-center min-h-[70px] sm:min-h-[90px] group`}
+                            onClick={() => onCardClick(key)}
+                            className={`${getCardColor(counts[key])} ${isCritical ? 'alert-glow scale-105 z-10' : ''} p-2 sm:p-3 rounded-lg shadow-lg border-b-4 border-black/20 transform transition-all hover:brightness-110 hover:-translate-y-1 active:border-b-0 active:translate-y-0 cursor-pointer flex flex-col items-center justify-center min-h-[70px] sm:min-h-[90px] group`}
                         >
                             <span className="text-[10px] font-bold text-gray-100 uppercase text-center mb-1 tracking-wider group-hover:text-white">
                                 {isCritical && "🚨 "}{key}
                             </span>
-                            <span className="text-2xl sm:text-3xl font-black text-white drop-shadow-md">{clusters[key]}</span>
+                            <span className="text-2xl sm:text-3xl font-black text-white drop-shadow-md">{counts[key]}</span>
                         </div>
                     );
                 })}
             </div>
+        );
+    };
+
+    // Render a section (RAL or REC) with drill-down support
+    const renderSection = (
+        title: string,
+        items: DatasetItem[],
+        clusters: Record<string, number>,
+        drillCluster: string | null,
+        setDrillCluster: (v: string | null) => void,
+        showFilter?: boolean
+    ) => {
+        const isdrilled = drillCluster !== null;
+        const regionCounts = isdrilled ? getRegionCounts(items, drillCluster) : {};
+
+        return (
+            <section className="bg-gray-800 p-3 sm:p-4 rounded-lg border border-gray-700 shadow-xl">
+                <div className="flex justify-between items-center mb-3">
+                    <h2 className="text-xl font-bold text-white uppercase tracking-wider">{title}</h2>
+                    <div className="bg-red-900 text-white px-4 py-2 rounded text-2xl font-bold border border-red-700 shadow-md">
+                        {items.length}
+                    </div>
+                </div>
+
+                {/* FILTER CHIPS - RAL only */}
+                {showFilter && ralTypeOptions.length > 0 && (
+                    <div className="mb-4 p-2 sm:p-3 bg-gray-900/50 rounded-lg border border-gray-700">
+                        <FilterChips
+                            options={ralTypeOptions}
+                            selected={selectedRalTypes}
+                            onChange={setSelectedRalTypes}
+                        />
+                    </div>
+                )}
+
+                {/* BREADCRUMB + BACK */}
+                {isdrilled && (
+                    <div className="flex items-center gap-2 mb-3">
+                        <button
+                            onClick={() => setDrillCluster(null)}
+                            className="flex items-center gap-1 px-3 py-1.5 bg-gray-700 hover:bg-gray-600 text-white rounded-lg text-xs font-bold transition-colors border border-gray-600"
+                        >
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path></svg>
+                            Voltar
+                        </button>
+                        <span className="text-gray-400 text-xs">
+                            Clusters › <span className="text-yellow-500 font-bold">{drillCluster}</span>
+                        </span>
+                    </div>
+                )}
+
+                <div className="mt-2">
+                    <h3 className="text-gray-400 text-xs font-bold mb-2 uppercase tracking-wide">
+                        {isdrilled ? `Regiões de ${drillCluster}` : 'Por Cluster'}
+                    </h3>
+
+                    {!isdrilled ? (
+                        /* LEVEL 1: Cluster cards */
+                        renderCardGrid(
+                            clusters,
+                            (key: string) => setDrillCluster(key),
+                            (key: string) => items.filter(i => (i.cluster || "Unknown") === key)
+                        )
+                    ) : (
+                        /* LEVEL 2: Region cards within the selected cluster */
+                        renderCardGrid(
+                            regionCounts,
+                            (regionKey: string) => handleRegionClick(regionKey, drillCluster, items),
+                            (regionKey: string) => items.filter(i =>
+                                (i.cluster || "Unknown") === drillCluster &&
+                                ((i as any).cidade || "Unknown") === regionKey
+                            )
+                        )
+                    )}
+                </div>
+            </section>
         );
     };
 
@@ -313,55 +378,10 @@ const Dashboard: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
 
                 {/* RAL SECTION */}
-                <section className="bg-gray-800 p-3 sm:p-4 rounded-lg border border-gray-700 shadow-xl">
-                    <div className="flex justify-between items-center mb-3">
-                        <h2 className="text-xl font-bold text-white uppercase tracking-wider">RAL (RRE)</h2>
-                        <div className="bg-red-900 text-white px-4 py-2 rounded text-2xl font-bold border border-red-700 shadow-md">
-                            {ralItems.length}
-                        </div>
-                    </div>
-
-                    {/* FILTER CHIPS - always visible */}
-                    {ralTypeOptions.length > 0 && (
-                        <div className="mb-4 p-2 sm:p-3 bg-gray-900/50 rounded-lg border border-gray-700">
-                            <FilterChips
-                                options={ralTypeOptions}
-                                selected={selectedRalTypes}
-                                onChange={setSelectedRalTypes}
-                            />
-                        </div>
-                    )}
-
-                    <div className="mt-4">
-                        <h3 className="text-gray-400 text-xs font-bold mb-2 uppercase tracking-wide">Por Cluster</h3>
-                        {renderClusterGrid(ralClusters, ralItems)}
-                    </div>
-
-                    <div className="mt-6 border-t border-gray-700 pt-4">
-                        <h3 className="text-gray-400 text-xs font-bold mb-2 uppercase tracking-wide">PAINEL RAL - SWAP RRE</h3>
-                        <CustomBarChart data={mockChartData} colors={COLORS} />
-                    </div>
-                </section>
+                {renderSection('RAL (RRE)', ralItems, ralClusters, ralDrillCluster, setRalDrillCluster, true)}
 
                 {/* REC SECTION */}
-                <section className="bg-gray-800 p-4 rounded-lg border border-gray-700 shadow-xl">
-                    <div className="flex justify-between items-center mb-4">
-                        <h2 className="text-xl font-bold text-white uppercase tracking-wider">REC (RRE)</h2>
-                        <div className="bg-red-900 text-white px-4 py-2 rounded text-2xl font-bold border border-red-700 shadow-md">
-                            {recItems.length}
-                        </div>
-                    </div>
-
-                    <div className="mt-4">
-                        <h3 className="text-gray-400 text-xs font-bold mb-2 uppercase tracking-wide">Por Cluster</h3>
-                        {renderClusterGrid(recClusters, recItems)}
-                    </div>
-
-                    <div className="mt-6 border-t border-gray-700 pt-4">
-                        <h3 className="text-gray-400 text-xs font-bold mb-2 uppercase tracking-wide">PAINEL REC - SWAP RRE</h3>
-                        <CustomBarChart data={mockRecChartData} colors={['#4ade80']} />
-                    </div>
-                </section>
+                {renderSection('REC (RRE)', recItems, recClusters, recDrillCluster, setRecDrillCluster, false)}
 
             </div>
         </div>
