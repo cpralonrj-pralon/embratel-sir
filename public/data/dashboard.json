@@ -1,5 +1,5 @@
 {
-  "updatedAt": "27/02/2026 09:07",
+  "updatedAt": "27/02/2026 09:13",
   "RAL": {
     "total": 503,
     "clusters": {
@@ -3372,9 +3372,9 @@
   "REC": {
     "total": 69,
     "clusters": {
-      "RIO DE JANEIRO": 32,
+      "RIO DE JANEIRO": 31,
       "NORTE": 9,
-      "MINAS GERAIS": 10,
+      "MINAS GERAIS": 11,
       "BAHIA/SERGIPE": 2,
       "CENTRO OESTE": 11,
       "NORDESTE": 4,
@@ -3490,6 +3490,16 @@
         "date": "20/02/2026 09:39",
         "duration": "N/A",
         "num": "REC-105160/2026"
+      },
+      {
+        "cluster": "MINAS GERAIS",
+        "cidade": "DESPACHO (DP)",
+        "code": "DP/BHE /ES /NET/FO",
+        "ralType": "SOFTPLAN",
+        "description": "CEM/IP/05827",
+        "date": "26/02/2026 15:53",
+        "duration": "N/A",
+        "num": "REC-119837/2026"
       },
       {
         "cluster": "CENTRO OESTE",
@@ -3714,6 +3724,16 @@
       {
         "cluster": "RIO DE JANEIRO",
         "cidade": "CENTRO SUL",
+        "code": "RT/RJO /OE1/NET/FO",
+        "ralType": "RJO SME",
+        "description": "RJO/IP/21960",
+        "date": "26/02/2026 09:12",
+        "duration": "N/A",
+        "num": "REC-118312/2026"
+      },
+      {
+        "cluster": "RIO DE JANEIRO",
+        "cidade": "CENTRO SUL",
         "code": "RC/RJO /OE1/NET/BS",
         "ralType": "DROGASIL",
         "description": "RJO/IP/38891",
@@ -3762,14 +3782,14 @@
         "num": "REC-118767/2026"
       },
       {
-        "cluster": "RIO DE JANEIRO",
-        "cidade": "CENTRO SUL",
-        "code": "RT/RJO /OE1/NET/FO",
-        "ralType": "RJO SME",
-        "description": "RJO/IP/21960",
-        "date": "26/02/2026 09:12",
+        "cluster": "MINAS GERAIS",
+        "cidade": "BELO HORIZONTE",
+        "code": "RT/BHE /ES /FFA/FO",
+        "ralType": "HAPVIDA",
+        "description": "BHE/IP/30122",
+        "date": "26/02/2026 09:08",
         "duration": "N/A",
-        "num": "REC-118312/2026"
+        "num": "REC-118291/2026"
       },
       {
         "cluster": "MINAS GERAIS",
@@ -3820,16 +3840,6 @@
         "date": "26/02/2026 12:03",
         "duration": "N/A",
         "num": "REC-119081/2026"
-      },
-      {
-        "cluster": "MINAS GERAIS",
-        "cidade": "BELO HORIZONTE",
-        "code": "RT/BHE /ES /FFA/FO",
-        "ralType": "HAPVIDA",
-        "description": "BHE/IP/30122",
-        "date": "26/02/2026 09:08",
-        "duration": "N/A",
-        "num": "REC-118291/2026"
       },
       {
         "cluster": "RIO DE JANEIRO",
@@ -3983,8 +3993,8 @@
       },
       {
         "cluster": "NORDESTE",
-        "cidade": "DESPACHO (DP)",
-        "code": "DP/FLA /CE /NET/BS",
+        "cidade": "FORTALEZA",
+        "code": "RC/FLA /CE /NET/BS",
         "ralType": "TELMEX BRASIL",
         "description": "097003398505",
         "date": "27/02/2026 08:10",
@@ -4000,16 +4010,6 @@
         "date": "27/02/2026 07:45",
         "duration": "N/A",
         "num": "REC-120874/2026"
-      },
-      {
-        "cluster": "RIO DE JANEIRO",
-        "cidade": "DESPACHO (DP)",
-        "code": "DP/RJO /AM /NET/FO",
-        "ralType": "PCRJ",
-        "description": "RJO/IP/25586",
-        "date": "27/02/2026 08:41",
-        "duration": "N/A",
-        "num": "REC-120982/2026"
       },
       {
         "cluster": "NORDESTE",
@@ -4033,16 +4033,6 @@
       },
       {
         "cluster": "MINAS GERAIS",
-        "cidade": "BELO HORIZONTE",
-        "code": "RT/BHE /ES /FFA/FO",
-        "ralType": "MINAS RURAL",
-        "description": "3134697000",
-        "date": "27/02/2026 08:46",
-        "duration": "N/A",
-        "num": "REC-120995/2026"
-      },
-      {
-        "cluster": "MINAS GERAIS",
         "cidade": "DESPACHO (DP)",
         "code": "DP/BHE /ES /NET/FO",
         "ralType": "SENAC MG",
@@ -4050,6 +4040,16 @@
         "date": "27/02/2026 08:55",
         "duration": "N/A",
         "num": "REC-121027/2026"
+      },
+      {
+        "cluster": "MINAS GERAIS",
+        "cidade": "BELO HORIZONTE",
+        "code": "RT/BHE /ES /FFA/FO",
+        "ralType": "MINAS RURAL",
+        "description": "3134697000",
+        "date": "27/02/2026 08:46",
+        "duration": "N/A",
+        "num": "REC-120995/2026"
       },
       {
         "cluster": "CENTRO OESTE",
@@ -4080,9 +4080,9 @@
       "SALVADOR": 1,
       "BRASILIA": 3,
       "ARACAJU": 1,
+      "DESPACHO (DP)": 4,
       "CUIABA": 4,
       "SÃO LUIS": 3,
-      "DESPACHO (DP)": 5,
       "RECIFE": 2,
       "MANAUS": 2,
       "CAMPO GRANDE": 1,
@@ -4091,6 +4091,7 @@
       "PORTO VELHO": 1,
       "METROPOLITANA": 1,
       "GOIÂNIA": 1,
+      "FORTALEZA": 1,
       "Unknown": 1
     }
   }
