@@ -45,6 +45,8 @@ def git_push_data():
         # Arquivos que devem ser sincronizados
         data_files = [
             "public/data/dashboard.json",
+            "dados_ral.csv",
+            "dados_rec.csv",
             "dados_ral_enriched.csv",
             "dados_rec_enriched.csv"
         ]

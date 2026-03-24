@@ -17,7 +17,7 @@ REC_URL = "http://172.30.130.133/generico/NOVAlistaDeTarefasItensRecebidos.cfm"
 RAL_FRAMESET_URL = "http://172.30.130.133/navegacao/NOVAframesetNivel2ListaDeTarefas.cfm"
 
 USUARIO = "SOARESM"
-SENHA = "123"
+SENHA = "5032"
 
 from selenium.webdriver.support.ui import Select
 
@@ -86,7 +86,7 @@ def extrair_dados_tabela(html_source, nome_arquivo):
     tabelas = soup.find_all("table")
     if not tabelas:
         print("Nenhuma tabela encontrada.")
-        return
+        return False
         
     # Pega a tabela com mais texto (assumindo ser a de dados)
     # Ajuste: A tabela de dados costuma ter classe 'listaTable' ou similar, mas vamos manter a lógica de max texto por enquanto
@@ -99,9 +99,18 @@ def extrair_dados_tabela(html_source, nome_arquivo):
     rows_data = []
     for tr in linhas:
         cols = tr.find_all(["td", "th"])
-        cols_text = [ele.get_text(strip=True) for ele in cols]
+        # Limpa o texto de cada célula (remove quebras de linha internas e espaços duplos)
+        cols_text = []
+        for ele in cols:
+            text = ele.get_text(strip=True).replace('\n', ' ').replace('\r', ' ')
+            # Remove espaços múltiplos
+            text = ' '.join(text.split())
+            cols_text.append(text)
+            
         if cols_text:
-            rows_data.append(cols_text)
+            # Pula linha se todas as colunas estiverem vazias ou se for apenas whitespace
+            if any(c.strip() for c in cols_text):
+                rows_data.append(cols_text)
 
     if not rows_data:
         print("Nenhuma linha de dados encontrada.")
@@ -130,23 +139,16 @@ def extrair_dados_tabela(html_source, nome_arquivo):
 
     if dados_finais:
         try:
-            # Se a primeira linha dos dados for igual ao header (ex: texto repetido), removemos
-            # Mas como vimos, no CSV atual a primeira linha já é dado.
-            
             df = pd.DataFrame(dados_finais, columns=headers)
             df.to_csv(nome_arquivo, index=False, encoding='utf-8-sig', sep=';')
             print(f"Sucesso! {len(df)} linhas salvas em {nome_arquivo}")
+            return True
         except Exception as e:
             print(f"Erro ao salvar CSV: {e}")
-            # Fallback sem header
-            try:
-                df = pd.DataFrame(dados_finais)
-                df.to_csv(nome_arquivo, index=False, encoding='utf-8-sig', sep=';', header=False)
-                print(f"Salvo sem headers devido a erro.")
-            except:
-                pass
+            return False
     else:
         print("Nenhum dado extraído após filtro de colunas.")
+        return False
 
 def main(skip_whatsapp=False):
     driver = setup_driver()
@@ -225,12 +227,18 @@ def main(skip_whatsapp=False):
         
     except Exception as e:
         print(f"Erro fatal: {e}")
+        import sys
+        sys.exit(1)
     finally:
-        # Mantém aberto um pouco antes de fechar ou fecha direto
-        # time.sleep(5)
         driver.quit()
 
 if __name__ == "__main__":
     import sys
     skip_whatsapp = "--no-whatsapp" in sys.argv
-    main(skip_whatsapp=skip_whatsapp)
+    try:
+        main(skip_whatsapp=skip_whatsapp)
+    except SystemExit:
+        raise
+    except Exception as e:
+        print(f"Erro inesperado: {e}")
+        sys.exit(1)

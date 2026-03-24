@@ -25,24 +25,29 @@ def main(skip_whatsapp=False):
     
     # Create lookup dict: NormalizedCode -> {Cluster, Region, Type}
     mapping = {}
+    prefix_mapping = {} # To match by CITY code if full code fails (e.g., MNS, CBA)
+    
     for _, row in clusters_df.iterrows():
         raw_code_orig = str(row['Code'])
         norm_code = normalize_code(raw_code_orig)
         
-        # 0. EXCLUDE /SG DATA
-        if norm_code and "/SG" in norm_code.upper():
-            continue
-
         if norm_code:
             cluster_name = str(row['Cluster']).strip()
             region_name = str(row['Region']).strip()
-
-            mapping[norm_code] = {
+            item_info = {
                 'Cluster': cluster_name,
                 'Region': region_name,
                 'Type': row.get('Type', 'Unknown'),
-                'City': region_name  # Region column = sub-region for drill-down
+                'City': region_name
             }
+            mapping[norm_code] = item_info
+            
+            # Map by split parts for fallback (e.g., RC/MNS/NO -> MNS)
+            parts = norm_code.split('/')
+            if len(parts) > 1:
+                city_code = parts[1] # Usually the second part
+                if city_code not in prefix_mapping:
+                    prefix_mapping[city_code] = item_info
 
     # Initialize Stats
     stats = {
@@ -95,12 +100,33 @@ def main(skip_whatsapp=False):
                     val = row[col_map["code"]]
                     norm_val = normalize_code(val)
                     
-                    # 0. GLOBAL EXCLUDE /SG DATA
-                    if norm_val and "/SG" in norm_val.upper():
-                        continue
-                        
+                    
                     info = mapping.get(norm_val)
                     
+                    # Fallback matching
+                    if not info and norm_val:
+                        # 1. Try SG <-> FO swap
+                        alt_val = None
+                        if norm_val.endswith('/SG'): alt_val = norm_val.replace('/SG', '/FO')
+                        elif norm_val.endswith('/FO'): alt_val = norm_val.replace('/FO', '/SG')
+                        if alt_val: info = mapping.get(alt_val)
+                        
+                        # 2. Try matching by the 2nd part (City Code)
+                        if not info:
+                            parts = norm_val.split('/')
+                            if len(parts) > 1:
+                                city_code = parts[1]
+                                info = prefix_mapping.get(city_code)
+                        
+                        # 3. Try matching by prefix (Original fallback)
+                        if not info and '/' in norm_val:
+                            parts = norm_val.split('/')
+                            prefix = '/'.join(parts[:-1])
+                            for key, m_info in mapping.items():
+                                if key.startswith(prefix):
+                                    info = m_info
+                                    break
+
                     if info:
                         cluster = info['Cluster']
                         df.at[index, 'Cluster'] = cluster
@@ -124,21 +150,24 @@ def main(skip_whatsapp=False):
                     stats[dataset_name]["cities"][city] += 1
                     
                     # Add to items list with FULL DETAILS
-                    # Ensure no NaN values for JSON safety
+                    # Ensure no NaN values for JSON safety and REMOVE NEWLINES
                     def safe_str(v):
                         if pd.isna(v): return "N/A"
-                        return str(v).strip()
+                        s = str(v).strip().replace('\n', ' ').replace('\r', ' ')
+                        # Remove extra spaces inside
+                        return ' '.join(s.split())
 
-                    stats[dataset_name]["items"].append({
+                    item_data = {
                         "cluster": cluster,
                         "cidade": safe_str(city),
                         "code": safe_str(val),
-                        "ralType": safe_str(row.get(col_map["type"])), # Use .get for safety
+                        "ralType": safe_str(row.get(col_map["type"])),
                         "description": safe_str(row.get(col_map["desc"])),
                         "date": safe_str(row.get(col_map["date"])),
                         "duration": safe_str(row.get(col_map["duration"])),
                         "num": safe_str(row.get(col_map["num"]))
-                    })
+                    }
+                    stats[dataset_name]["items"].append(item_data)
                 
                 # Export Enriched CSV
                 enriched_filename = f"{os.path.splitext(filepath)[0]}_enriched.csv"
@@ -176,4 +205,6 @@ def main(skip_whatsapp=False):
             print(f"Erro ao disparar WhatsApp: {e}")
 
 if __name__ == "__main__":
-    main()
+    import sys
+    skip_whatsapp = "--no-whatsapp" in sys.argv
+    main(skip_whatsapp=skip_whatsapp)
