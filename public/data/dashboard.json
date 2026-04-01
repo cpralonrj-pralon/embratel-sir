@@ -1,5 +1,5 @@
 {
-  "updatedAt": "01/04/2026 09:25",
+  "updatedAt": "01/04/2026 09:31",
   "RAL": {
     "total": 517,
     "clusters": {
@@ -5235,9 +5235,9 @@
     "clusters": {
       "NORTE": 15,
       "BAHIA/SERGIPE": 4,
-      "NORDESTE": 6,
-      "ESPIRITO SANTO": 3,
-      "CENTRO OESTE": 10,
+      "NORDESTE": 5,
+      "ESPIRITO SANTO": 2,
+      "CENTRO OESTE": 12,
       "RIO DE JANEIRO": 13,
       "MINAS GERAIS": 8
     },
@@ -5413,16 +5413,6 @@
         "num": "REC-189621/2026"
       },
       {
-        "cluster": "CENTRO OESTE",
-        "cidade": "CUIABA",
-        "code": "RT/CBA /CO /NET/FO",
-        "ralType": "SEAL TELECOM",
-        "description": "CBA/IP/04994",
-        "date": "30/03/2026 15:53",
-        "duration": "N/A",
-        "num": "REC-189871/2026"
-      },
-      {
         "cluster": "NORTE",
         "cidade": "MANAUS",
         "code": "RT/MNS /NO /NET/FO",
@@ -5431,6 +5421,16 @@
         "date": "30/03/2026 17:26",
         "duration": "N/A",
         "num": "REC-190205/2026"
+      },
+      {
+        "cluster": "CENTRO OESTE",
+        "cidade": "CUIABA",
+        "code": "RT/CBA /CO /NET/FO",
+        "ralType": "SEAL TELECOM",
+        "description": "CBA/IP/04994",
+        "date": "30/03/2026 15:53",
+        "duration": "N/A",
+        "num": "REC-189871/2026"
       },
       {
         "cluster": "RIO DE JANEIRO",
@@ -5566,21 +5566,21 @@
         "cluster": "CENTRO OESTE",
         "cidade": "CUIABA",
         "code": "RC/CBA /CO /NET/BS",
-        "ralType": "INTERNETSAT",
-        "description": "CBA/IP/05284",
-        "date": "01/04/2026 02:03",
-        "duration": "N/A",
-        "num": "REC-193606/2026"
-      },
-      {
-        "cluster": "CENTRO OESTE",
-        "cidade": "CUIABA",
-        "code": "RC/CBA /CO /NET/BS",
         "ralType": "ICATUSEGUROS",
         "description": "CBA/IP/04211",
         "date": "01/04/2026 02:29",
         "duration": "N/A",
         "num": "REC-193639/2026"
+      },
+      {
+        "cluster": "CENTRO OESTE",
+        "cidade": "CUIABA",
+        "code": "RC/CBA /CO /NET/BS",
+        "ralType": "INTERNETSAT",
+        "description": "CBA/IP/05284",
+        "date": "01/04/2026 02:03",
+        "duration": "N/A",
+        "num": "REC-193606/2026"
       },
       {
         "cluster": "CENTRO OESTE",
@@ -5634,6 +5634,16 @@
       },
       {
         "cluster": "RIO DE JANEIRO",
+        "cidade": "NORTE 3",
+        "code": "RT/RJO /NO3/PCS/FO",
+        "ralType": "ECT",
+        "description": "RJO/IP/39970",
+        "date": "31/03/2026 17:26",
+        "duration": "N/A",
+        "num": "REC-193049/2026"
+      },
+      {
+        "cluster": "RIO DE JANEIRO",
         "cidade": "CENTRO SUL",
         "code": "RT/RJO /OE1/NET/FO",
         "ralType": "RJO SME",
@@ -5641,16 +5651,6 @@
         "date": "31/03/2026 17:09",
         "duration": "N/A",
         "num": "REC-193003/2026"
-      },
-      {
-        "cluster": "ESPIRITO SANTO",
-        "cidade": "VITORIA",
-        "code": "RT/VTA /MTS/FFA/FO",
-        "ralType": "LAB BIOCLINIC",
-        "description": "VVA/IP/03676",
-        "date": "31/03/2026 16:05",
-        "duration": "N/A",
-        "num": "REC-192815/2026"
       },
       {
         "cluster": "MINAS GERAIS",
@@ -5671,16 +5671,6 @@
         "date": "31/03/2026 16:20",
         "duration": "N/A",
         "num": "REC-192861/2026"
-      },
-      {
-        "cluster": "RIO DE JANEIRO",
-        "cidade": "NORTE 3",
-        "code": "RT/RJO /NO3/PCS/FO",
-        "ralType": "ECT",
-        "description": "RJO/IP/39970",
-        "date": "31/03/2026 17:26",
-        "duration": "N/A",
-        "num": "REC-193049/2026"
       },
       {
         "cluster": "BAHIA/SERGIPE",
@@ -5713,16 +5703,6 @@
         "num": "REC-193300/2026"
       },
       {
-        "cluster": "NORDESTE",
-        "cidade": "RECIFE",
-        "code": "RT/RCE /NE /NET/FO",
-        "ralType": "DECATHLON",
-        "description": "RCE/IP/20596",
-        "date": "01/04/2026 01:41",
-        "duration": "N/A",
-        "num": "REC-193576/2026"
-      },
-      {
         "cluster": "NORTE",
         "cidade": "MANAUS",
         "code": "RT/MNS /NO /NET/FO",
@@ -5751,6 +5731,16 @@
         "date": "01/04/2026 03:27",
         "duration": "N/A",
         "num": "REC-193703/2026"
+      },
+      {
+        "cluster": "RIO DE JANEIRO",
+        "cidade": "DESPACHO (DP)",
+        "code": "DP/RJO /AM /NET/FO",
+        "ralType": "RICA",
+        "description": "QUEA/IP/02088",
+        "date": "01/04/2026 08:49",
+        "duration": "N/A",
+        "num": "REC-194179/2026"
       },
       {
         "cluster": "NORDESTE",
@@ -5803,14 +5793,14 @@
         "num": "REC-193961/2026"
       },
       {
-        "cluster": "RIO DE JANEIRO",
+        "cluster": "CENTRO OESTE",
         "cidade": "DESPACHO (DP)",
-        "code": "DP/RJO /AM /NET/FO",
-        "ralType": "RICA",
-        "description": "QUEA/IP/02088",
-        "date": "01/04/2026 08:49",
+        "code": "DP/CBA /CO /NET/BS",
+        "ralType": "TELMEX BRASIL",
+        "description": "CBA/IP/05173",
+        "date": "01/04/2026 08:50",
         "duration": "N/A",
-        "num": "REC-194179/2026"
+        "num": "REC-194182/2026"
       },
       {
         "cluster": "BAHIA/SERGIPE",
@@ -5825,12 +5815,22 @@
       {
         "cluster": "CENTRO OESTE",
         "cidade": "DESPACHO (DP)",
-        "code": "DP/CBA /CO /NET/BS",
-        "ralType": "TELMEX BRASIL",
-        "description": "CBA/IP/05173",
-        "date": "01/04/2026 08:50",
+        "code": "DP/CBA /CO /NET/FO",
+        "ralType": "CEF",
+        "description": "BAG/IP/00275",
+        "date": "01/04/2026 09:08",
         "duration": "N/A",
-        "num": "REC-194182/2026"
+        "num": "REC-194247/2026"
+      },
+      {
+        "cluster": "CENTRO OESTE",
+        "cidade": "DESPACHO (DP)",
+        "code": "DP/PMJ /CO /NET/FO",
+        "ralType": "ECT",
+        "description": "FGP/IP/00111",
+        "date": "01/04/2026 09:13",
+        "duration": "N/A",
+        "num": "REC-194259/2026"
       }
     ],
     "cities": {
@@ -5839,7 +5839,7 @@
       "MANAUS": 9,
       "VITORIA DA CONQUISTA": 3,
       "JOÃO PESSOA": 1,
-      "VITORIA": 2,
+      "VITORIA": 1,
       "CUIABA": 5,
       "NORTE 3": 3,
       "CACHOEIRO DE ITAPEMIRIM": 1,
@@ -5854,10 +5854,10 @@
       "POUSO ALEGRE": 1,
       "NORTE 1": 3,
       "MONTES CLAROS": 1,
-      "RECIFE": 4,
+      "RECIFE": 3,
       "CAMPO GRANDE": 1,
       "TERESINA": 1,
-      "DESPACHO (DP)": 2
+      "DESPACHO (DP)": 4
     }
   }
 }
