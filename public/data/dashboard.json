@@ -1,5 +1,5 @@
 {
-  "updatedAt": "09/04/2026 10:04",
+  "updatedAt": "09/04/2026 10:10",
   "RAL": {
     "total": 532,
     "clusters": {
@@ -5381,15 +5381,15 @@
     }
   },
   "REC": {
-    "total": 78,
+    "total": 80,
     "clusters": {
       "NORTE": 18,
       "BAHIA/SERGIPE": 8,
-      "NORDESTE": 8,
+      "NORDESTE": 9,
       "ESPIRITO SANTO": 5,
       "MINAS GERAIS": 5,
       "CENTRO OESTE": 16,
-      "RIO DE JANEIRO": 18
+      "RIO DE JANEIRO": 19
     },
     "items": [
       {
@@ -5733,6 +5733,16 @@
         "num": "REC-209060/2026"
       },
       {
+        "cluster": "ESPIRITO SANTO",
+        "cidade": "VITORIA",
+        "code": "RT/VTA /MTS/FFA/FO",
+        "ralType": "FERT.HERINGER",
+        "description": "VIA/IP/00063",
+        "date": "08/04/2026 14:57",
+        "duration": "N/A",
+        "num": "REC-209764/2026"
+      },
+      {
         "cluster": "RIO DE JANEIRO",
         "cidade": "METROPOLITANA",
         "code": "RT/RJO /MTP/NET/FO",
@@ -5801,16 +5811,6 @@
         "date": "08/04/2026 15:56",
         "duration": "N/A",
         "num": "REC-210049/2026"
-      },
-      {
-        "cluster": "ESPIRITO SANTO",
-        "cidade": "VITORIA",
-        "code": "RT/VTA /MTS/FFA/FO",
-        "ralType": "FERT.HERINGER",
-        "description": "VIA/IP/00063",
-        "date": "08/04/2026 14:57",
-        "duration": "N/A",
-        "num": "REC-209764/2026"
       },
       {
         "cluster": "CENTRO OESTE",
@@ -6004,6 +6004,16 @@
       },
       {
         "cluster": "RIO DE JANEIRO",
+        "cidade": "BAIXADA",
+        "code": "RT/RJO /BX1/NET/FO",
+        "ralType": "TELMEX BRASIL",
+        "description": "MGE/IP/01119",
+        "date": "09/04/2026 09:21",
+        "duration": "N/A",
+        "num": "REC-211589/2026"
+      },
+      {
+        "cluster": "RIO DE JANEIRO",
         "cidade": "CENTRO SUL",
         "code": "RT/RJO /OE1/NET/FO",
         "ralType": "CSB",
@@ -6043,16 +6053,6 @@
         "num": "REC-211229/2026"
       },
       {
-        "cluster": "RIO DE JANEIRO",
-        "cidade": "BAIXADA",
-        "code": "RT/RJO /BX1/NET/FO",
-        "ralType": "TELMEX BRASIL",
-        "description": "MGE/IP/01119",
-        "date": "09/04/2026 09:21",
-        "duration": "N/A",
-        "num": "REC-211589/2026"
-      },
-      {
         "cluster": "NORTE",
         "cidade": "SÃO LUIS",
         "code": "RT/SLS /CE /NET/FO",
@@ -6083,26 +6083,6 @@
         "num": "REC-211257/2026"
       },
       {
-        "cluster": "CENTRO OESTE",
-        "cidade": "GOIÂNIA",
-        "code": "RT/GNA /CO /NET/FO",
-        "ralType": "VEDAPRESS",
-        "description": "6232504100",
-        "date": "09/04/2026 08:58",
-        "duration": "N/A",
-        "num": "REC-211515/2026"
-      },
-      {
-        "cluster": "NORDESTE",
-        "cidade": "JOÃO PESSOA",
-        "code": "RT/JPA /NE /NET/FO",
-        "ralType": "GAZIN MOVEIS",
-        "description": "CGE/IP/01258",
-        "date": "09/04/2026 09:29",
-        "duration": "N/A",
-        "num": "REC-211610/2026"
-      },
-      {
         "cluster": "BAHIA/SERGIPE",
         "cidade": "SALVADOR",
         "code": "RT/SDR /BA /JL /FO",
@@ -6111,6 +6091,16 @@
         "date": "09/04/2026 09:20",
         "duration": "N/A",
         "num": "REC-211587/2026"
+      },
+      {
+        "cluster": "CENTRO OESTE",
+        "cidade": "GOIÂNIA",
+        "code": "RT/GNA /CO /NET/FO",
+        "ralType": "VEDAPRESS",
+        "description": "6232504100",
+        "date": "09/04/2026 08:58",
+        "duration": "N/A",
+        "num": "REC-211515/2026"
       },
       {
         "cluster": "RIO DE JANEIRO",
@@ -6123,14 +6113,24 @@
         "num": "REC-211658/2026"
       },
       {
-        "cluster": "RIO DE JANEIRO",
-        "cidade": "CENTRO SUL",
-        "code": "RT/RJO /OE1/NET/FO",
-        "ralType": "FUNDACAO LEAO XIII",
-        "description": "RJO/IP/44206",
-        "date": "09/04/2026 09:39",
+        "cluster": "NORDESTE",
+        "cidade": "JOÃO PESSOA",
+        "code": "RT/JPA /NE /NET/FO",
+        "ralType": "GAZIN MOVEIS",
+        "description": "CGE/IP/01258",
+        "date": "09/04/2026 09:29",
         "duration": "N/A",
-        "num": "REC-211641/2026"
+        "num": "REC-211610/2026"
+      },
+      {
+        "cluster": "NORDESTE",
+        "cidade": "DESPACHO (DP)",
+        "code": "DP/RCE /NE /NET/BS",
+        "ralType": "LAGEAN COMERC",
+        "description": "RCE/IP/18217",
+        "date": "09/04/2026 09:20",
+        "duration": "N/A",
+        "num": "REC-211585/2026"
       },
       {
         "cluster": "ESPIRITO SANTO",
@@ -6141,6 +6141,16 @@
         "date": "09/04/2026 09:19",
         "duration": "N/A",
         "num": "REC-211579/2026"
+      },
+      {
+        "cluster": "RIO DE JANEIRO",
+        "cidade": "CENTRO SUL",
+        "code": "RT/RJO /OE1/NET/FO",
+        "ralType": "FUNDACAO LEAO XIII",
+        "description": "RJO/IP/44206",
+        "date": "09/04/2026 09:39",
+        "duration": "N/A",
+        "num": "REC-211641/2026"
       },
       {
         "cluster": "CENTRO OESTE",
@@ -6164,13 +6174,23 @@
       },
       {
         "cluster": "RIO DE JANEIRO",
-        "cidade": "DESPACHO (DP)",
-        "code": "DP/RJO /AM /NET/FO",
+        "cidade": "METROPOLITANA",
+        "code": "RT/RJO /MTP/NET/FO",
         "ralType": "CBMERJ",
         "description": "NRI/IP/06287",
         "date": "09/04/2026 09:57",
         "duration": "N/A",
         "num": "REC-211703/2026"
+      },
+      {
+        "cluster": "RIO DE JANEIRO",
+        "cidade": "DESPACHO (DP)",
+        "code": "DP/RJO /AM /NET/FO",
+        "ralType": "RJO SME",
+        "description": "RJO/IP/41575",
+        "date": "09/04/2026 09:56",
+        "duration": "N/A",
+        "num": "REC-211702/2026"
       }
     ],
     "cities": {
@@ -6185,11 +6205,11 @@
       "BELEM": 3,
       "NORTE 3": 2,
       "BRASILIA": 2,
-      "DESPACHO (DP)": 3,
+      "DESPACHO (DP)": 4,
       "CUIABA": 5,
       "NORTE 2": 4,
       "RECIFE": 3,
-      "METROPOLITANA": 5,
+      "METROPOLITANA": 6,
       "BAIXADA": 2,
       "VARGINHA": 1,
       "FORTALEZA": 1,
