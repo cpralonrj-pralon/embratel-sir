@@ -1,5 +1,5 @@
 {
-  "updatedAt": "19/06/2026 16:27",
+  "updatedAt": "19/06/2026 16:33",
   "RAL": {
     "total": 379,
     "clusters": {
@@ -3850,15 +3850,15 @@
     }
   },
   "REC": {
-    "total": 74,
+    "total": 76,
     "clusters": {
       "NORDESTE": 18,
-      "NORTE": 20,
+      "NORTE": 21,
       "RIO DE JANEIRO": 9,
+      "BAHIA/SERGIPE": 10,
       "MINAS GERAIS": 5,
       "ESPIRITO SANTO": 5,
-      "CENTRO OESTE": 8,
-      "BAHIA/SERGIPE": 9
+      "CENTRO OESTE": 8
     },
     "items": [
       {
@@ -3960,6 +3960,16 @@
         "date": "16/06/2026 11:38",
         "duration": "N/A",
         "num": "REC-361821/2026"
+      },
+      {
+        "cluster": "BAHIA/SERGIPE",
+        "cidade": "DESPACHO (DP)",
+        "code": "DP/SDR /BA /NET/FO",
+        "ralType": "VLR 35097409",
+        "description": "SDR/IP/33409",
+        "date": "18/06/2026 17:42",
+        "duration": "N/A",
+        "num": "REC-368401/2026"
       },
       {
         "cluster": "NORTE",
@@ -4073,6 +4083,16 @@
       },
       {
         "cluster": "NORTE",
+        "cidade": "MANAUS",
+        "code": "RT/MNS /NO /NET/FO",
+        "ralType": "CORPRINT AM",
+        "description": "MNS/IP/02290",
+        "date": "19/06/2026 09:56",
+        "duration": "N/A",
+        "num": "REC-369557/2026"
+      },
+      {
+        "cluster": "NORTE",
         "cidade": "BELEM",
         "code": "RT/BLM /NO /NET/FO",
         "ralType": "M PUB UNIAO",
@@ -4142,16 +4162,6 @@
         "num": "REC-369860/2026"
       },
       {
-        "cluster": "NORTE",
-        "cidade": "MANAUS",
-        "code": "RT/MNS /NO /NET/FO",
-        "ralType": "CORPRINT AM",
-        "description": "MNS/IP/02290",
-        "date": "19/06/2026 09:56",
-        "duration": "N/A",
-        "num": "REC-369557/2026"
-      },
-      {
         "cluster": "MINAS GERAIS",
         "cidade": "JUIZ DE FORA",
         "code": "RT/JFA /JC /FFA/FO",
@@ -4182,16 +4192,6 @@
         "num": "REC-370016/2026"
       },
       {
-        "cluster": "BAHIA/SERGIPE",
-        "cidade": "FEIRA DE SANTANA",
-        "code": "RT/FSA / /NOR/FO",
-        "ralType": "CENCOSUD",
-        "description": "SEH/IP/00174",
-        "date": "19/06/2026 11:00",
-        "duration": "N/A",
-        "num": "REC-369776/2026"
-      },
-      {
         "cluster": "NORDESTE",
         "cidade": "RECIFE",
         "code": "RT/RCE /NE /NET/FO",
@@ -4200,6 +4200,16 @@
         "date": "19/06/2026 11:40",
         "duration": "N/A",
         "num": "REC-369953/2026"
+      },
+      {
+        "cluster": "BAHIA/SERGIPE",
+        "cidade": "FEIRA DE SANTANA",
+        "code": "RT/FSA / /NOR/FO",
+        "ralType": "CENCOSUD",
+        "description": "SEH/IP/00174",
+        "date": "19/06/2026 11:00",
+        "duration": "N/A",
+        "num": "REC-369776/2026"
       },
       {
         "cluster": "NORDESTE",
@@ -4342,26 +4352,6 @@
         "num": "REC-369870/2026"
       },
       {
-        "cluster": "BAHIA/SERGIPE",
-        "cidade": "SALVADOR",
-        "code": "RC/SDR /BA /NET/BS",
-        "ralType": "TELMEX BRASIL",
-        "description": "SDR/IP/33353",
-        "date": "19/06/2026 13:54",
-        "duration": "N/A",
-        "num": "REC-370297/2026"
-      },
-      {
-        "cluster": "CENTRO OESTE",
-        "cidade": "GOIÂNIA",
-        "code": "RT/GNA /CO /NET/FO",
-        "ralType": "HP TRANSPORT.",
-        "description": "GNA/IP/02994",
-        "date": "19/06/2026 11:33",
-        "duration": "N/A",
-        "num": "REC-369925/2026"
-      },
-      {
         "cluster": "CENTRO OESTE",
         "cidade": "PALMAS",
         "code": "RT/PMJ /CO /NET/FO",
@@ -4380,6 +4370,26 @@
         "date": "19/06/2026 14:57",
         "duration": "N/A",
         "num": "REC-370481/2026"
+      },
+      {
+        "cluster": "BAHIA/SERGIPE",
+        "cidade": "SALVADOR",
+        "code": "RC/SDR /BA /NET/BS",
+        "ralType": "TELMEX BRASIL",
+        "description": "SDR/IP/33353",
+        "date": "19/06/2026 13:54",
+        "duration": "N/A",
+        "num": "REC-370297/2026"
+      },
+      {
+        "cluster": "CENTRO OESTE",
+        "cidade": "GOIÂNIA",
+        "code": "RT/GNA /CO /NET/FO",
+        "ralType": "HP TRANSPORT.",
+        "description": "GNA/IP/02994",
+        "date": "19/06/2026 11:33",
+        "duration": "N/A",
+        "num": "REC-369925/2026"
       },
       {
         "cluster": "NORDESTE",
@@ -4412,16 +4422,6 @@
         "num": "REC-370484/2026"
       },
       {
-        "cluster": "BAHIA/SERGIPE",
-        "cidade": "FEIRA DE SANTANA",
-        "code": "RT/FSA / /NOR/FO",
-        "ralType": "ECT",
-        "description": "SEH/IP/00181",
-        "date": "19/06/2026 14:37",
-        "duration": "N/A",
-        "num": "REC-370416/2026"
-      },
-      {
         "cluster": "NORDESTE",
         "cidade": "RECIFE",
         "code": "RT/RCE /NE /NET/FO",
@@ -4430,16 +4430,6 @@
         "date": "19/06/2026 13:56",
         "duration": "N/A",
         "num": "REC-370308/2026"
-      },
-      {
-        "cluster": "NORDESTE",
-        "cidade": "RECIFE",
-        "code": "RT/RCE /NE /NET/FO",
-        "ralType": "DASA_1",
-        "description": "RCE/IP/20713",
-        "date": "19/06/2026 13:31",
-        "duration": "N/A",
-        "num": "REC-370237/2026"
       },
       {
         "cluster": "ESPIRITO SANTO",
@@ -4472,14 +4462,14 @@
         "num": "REC-370531/2026"
       },
       {
-        "cluster": "MINAS GERAIS",
-        "cidade": "JUIZ DE FORA",
-        "code": "RT/JFA /JC /FFA/FO",
-        "ralType": "17759622",
-        "description": "3235322215",
-        "date": "19/06/2026 15:18",
+        "cluster": "BAHIA/SERGIPE",
+        "cidade": "FEIRA DE SANTANA",
+        "code": "RT/FSA / /NOR/FO",
+        "ralType": "ECT",
+        "description": "SEH/IP/00181",
+        "date": "19/06/2026 14:37",
         "duration": "N/A",
-        "num": "REC-370526/2026"
+        "num": "REC-370416/2026"
       },
       {
         "cluster": "BAHIA/SERGIPE",
@@ -4493,18 +4483,28 @@
       },
       {
         "cluster": "NORDESTE",
-        "cidade": "JOÃO PESSOA",
-        "code": "RT/JPA /NE /NET/FO",
-        "ralType": "JAPUNGU",
-        "description": "SRI/IP/00200",
-        "date": "19/06/2026 15:51",
+        "cidade": "RECIFE",
+        "code": "RT/RCE /NE /NET/FO",
+        "ralType": "DASA_1",
+        "description": "RCE/IP/20713",
+        "date": "19/06/2026 13:31",
         "duration": "N/A",
-        "num": "REC-370642/2026"
+        "num": "REC-370237/2026"
+      },
+      {
+        "cluster": "MINAS GERAIS",
+        "cidade": "JUIZ DE FORA",
+        "code": "RT/JFA /JC /FFA/FO",
+        "ralType": "17759622",
+        "description": "3235322215",
+        "date": "19/06/2026 15:18",
+        "duration": "N/A",
+        "num": "REC-370526/2026"
       },
       {
         "cluster": "NORDESTE",
-        "cidade": "DESPACHO (DP)",
-        "code": "DP/RCE /NE /NET/FO",
+        "cidade": "RECIFE",
+        "code": "RT/RCE /NE /NET/FO",
         "ralType": "DROGASIL",
         "description": "CBO/IP/00763",
         "date": "19/06/2026 16:11",
@@ -4512,14 +4512,14 @@
         "num": "REC-370695/2026"
       },
       {
-        "cluster": "NORTE",
-        "cidade": "MANAUS",
-        "code": "RT/MNS /NO /NET/FO",
-        "ralType": "TEC BANCARIA",
-        "description": "MNS/IP/06568",
-        "date": "19/06/2026 15:52",
+        "cluster": "NORDESTE",
+        "cidade": "JOÃO PESSOA",
+        "code": "RT/JPA /NE /NET/FO",
+        "ralType": "JAPUNGU",
+        "description": "SRI/IP/00200",
+        "date": "19/06/2026 15:51",
         "duration": "N/A",
-        "num": "REC-370644/2026"
+        "num": "REC-370642/2026"
       },
       {
         "cluster": "CENTRO OESTE",
@@ -4530,6 +4530,26 @@
         "date": "19/06/2026 15:01",
         "duration": "N/A",
         "num": "REC-370490/2026"
+      },
+      {
+        "cluster": "NORTE",
+        "cidade": "MANAUS",
+        "code": "RT/MNS /NO /NET/AD",
+        "ralType": "AMAZON COMPRE",
+        "description": "9232322300",
+        "date": "19/06/2026 16:06",
+        "duration": "N/A",
+        "num": "REC-370681/2026"
+      },
+      {
+        "cluster": "NORTE",
+        "cidade": "MANAUS",
+        "code": "RT/MNS /NO /NET/FO",
+        "ralType": "TEC BANCARIA",
+        "description": "MNS/IP/06568",
+        "date": "19/06/2026 15:52",
+        "duration": "N/A",
+        "num": "REC-370644/2026"
       },
       {
         "cluster": "BAHIA/SERGIPE",
@@ -4563,13 +4583,23 @@
       },
       {
         "cluster": "RIO DE JANEIRO",
-        "cidade": "DESPACHO (DP)",
-        "code": "DP/RJO /AM /NET/FO",
+        "cidade": "NORTE 3",
+        "code": "RT/RJO /NO3/PCS/FO",
         "ralType": "CEF",
         "description": "RJO/IP/42922",
         "date": "19/06/2026 16:19",
         "duration": "N/A",
         "num": "REC-370724/2026"
+      },
+      {
+        "cluster": "RIO DE JANEIRO",
+        "cidade": "NORTE 3",
+        "code": "RT/RJO /NO3/PCS/FO",
+        "ralType": "DECATHLON",
+        "description": "RJO/IP/39057",
+        "date": "19/06/2026 16:16",
+        "duration": "N/A",
+        "num": "REC-370714/2026"
       },
       {
         "cluster": "NORTE",
@@ -4590,16 +4620,6 @@
         "date": "19/06/2026 15:20",
         "duration": "N/A",
         "num": "REC-370528/2026"
-      },
-      {
-        "cluster": "RIO DE JANEIRO",
-        "cidade": "DESPACHO (DP)",
-        "code": "DP/RJO /AM /NET/FO",
-        "ralType": "DECATHLON",
-        "description": "RJO/IP/39057",
-        "date": "19/06/2026 16:16",
-        "duration": "N/A",
-        "num": "REC-370714/2026"
       }
     ],
     "cities": {
@@ -4607,14 +4627,14 @@
       "BELEM": 5,
       "NORTE 2": 2,
       "SÃO LUÍS": 2,
-      "RECIFE": 8,
-      "MANAUS": 6,
+      "RECIFE": 9,
+      "MANAUS": 7,
       "SÃO LUIS": 3,
       "BOA VISTA": 3,
+      "DESPACHO (DP)": 2,
       "BELO HORIZONTE": 1,
       "SÃO LUIZ": 1,
       "VITORIA": 5,
-      "DESPACHO (DP)": 4,
       "JUIZ DE FORA": 4,
       "GOIÂNIA": 6,
       "JOÃO PESSOA": 2,
@@ -4622,7 +4642,7 @@
       "BAIXADA": 1,
       "SALVADOR": 6,
       "PALMAS": 2,
-      "NORTE 3": 2,
+      "NORTE 3": 4,
       "FORTALEZA": 1,
       "NORTE 1": 1
     }
