@@ -1,5 +1,5 @@
 {
-  "updatedAt": "21/06/2026 12:07",
+  "updatedAt": "21/06/2026 12:13",
   "RAL": {
     "total": 380,
     "clusters": {
@@ -3857,11 +3857,11 @@
     }
   },
   "REC": {
-    "total": 49,
+    "total": 48,
     "clusters": {
       "NORDESTE": 4,
       "NORTE": 16,
-      "RIO DE JANEIRO": 7,
+      "RIO DE JANEIRO": 6,
       "CENTRO OESTE": 14,
       "MINAS GERAIS": 3,
       "BAHIA/SERGIPE": 2,
@@ -4159,6 +4159,16 @@
         "num": "REC-371745/2026"
       },
       {
+        "cluster": "NORTE",
+        "cidade": "DESPACHO (DP)",
+        "code": "DP/MNS /NO /NET/BS",
+        "ralType": "PAGUEMENOSFAR",
+        "description": "MNS/IP/08147",
+        "date": "21/06/2026 09:38",
+        "duration": "N/A",
+        "num": "REC-372796/2026"
+      },
+      {
         "cluster": "CENTRO OESTE",
         "cidade": "CUIABA",
         "code": "RT/CBA /CO /NET/FO",
@@ -4177,16 +4187,6 @@
         "date": "20/06/2026 13:43",
         "duration": "N/A",
         "num": "REC-371961/2026"
-      },
-      {
-        "cluster": "NORTE",
-        "cidade": "DESPACHO (DP)",
-        "code": "DP/MNS /NO /NET/BS",
-        "ralType": "PAGUEMENOSFAR",
-        "description": "MNS/IP/08147",
-        "date": "21/06/2026 09:38",
-        "duration": "N/A",
-        "num": "REC-372796/2026"
       },
       {
         "cluster": "NORTE",
@@ -4270,26 +4270,6 @@
       },
       {
         "cluster": "RIO DE JANEIRO",
-        "cidade": "NORTE 1",
-        "code": "RT/RJO /NO1/NET/FO",
-        "ralType": "POUPEX",
-        "description": "RJO/IP/03502",
-        "date": "21/06/2026 00:45",
-        "duration": "N/A",
-        "num": "REC-372528/2026"
-      },
-      {
-        "cluster": "RIO DE JANEIRO",
-        "cidade": "NORTE 1",
-        "code": "RT/RJO /NO1/NET/FO",
-        "ralType": "POUPEX",
-        "description": "RJO/IP/35285",
-        "date": "21/06/2026 00:47",
-        "duration": "N/A",
-        "num": "REC-372530/2026"
-      },
-      {
-        "cluster": "RIO DE JANEIRO",
         "cidade": "NORTE 3",
         "code": "RT/RJO /NO3/PCS/FO",
         "ralType": "CEF",
@@ -4357,6 +4337,16 @@
         "date": "21/06/2026 11:29",
         "duration": "N/A",
         "num": "REC-372886/2026"
+      },
+      {
+        "cluster": "RIO DE JANEIRO",
+        "cidade": "DESPACHO (DP)",
+        "code": "DP/RJO /AM /NET/BS",
+        "ralType": "VIA VAREJO",
+        "description": "RJO/IP/40173",
+        "date": "21/06/2026 12:08",
+        "duration": "N/A",
+        "num": "REC-372907/2026"
       }
     ],
     "cities": {
@@ -4373,8 +4363,7 @@
       "SALVADOR": 2,
       "CUIABA": 6,
       "VITORIA": 3,
-      "DESPACHO (DP)": 1,
-      "NORTE 1": 2,
+      "DESPACHO (DP)": 2,
       "NORTE 3": 1,
       "BAIXADA": 1,
       "SUL FLUMINENSE": 1,
