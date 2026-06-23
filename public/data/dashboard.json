@@ -1,5 +1,5 @@
 {
-  "updatedAt": "23/06/2026 15:02",
+  "updatedAt": "23/06/2026 15:08",
   "RAL": {
     "total": 348,
     "clusters": {
@@ -3541,10 +3541,10 @@
     "clusters": {
       "NORTE": 22,
       "RIO DE JANEIRO": 10,
-      "NORDESTE": 12,
+      "NORDESTE": 11,
+      "BAHIA/SERGIPE": 4,
       "CENTRO OESTE": 25,
       "ESPIRITO SANTO": 3,
-      "BAHIA/SERGIPE": 3,
       "MINAS GERAIS": 1
     },
     "items": [
@@ -3587,6 +3587,16 @@
         "date": "06/06/2026 00:58",
         "duration": "N/A",
         "num": "REC-340798/2026"
+      },
+      {
+        "cluster": "BAHIA/SERGIPE",
+        "cidade": "DESPACHO (DP)",
+        "code": "DP/SDR /BA /NET/FO",
+        "ralType": "TELMEX BRASIL",
+        "description": "SDR/IP/33945",
+        "date": "19/06/2026 11:09",
+        "duration": "N/A",
+        "num": "REC-369823/2026"
       },
       {
         "cluster": "NORTE",
@@ -3699,6 +3709,16 @@
         "num": "REC-375190/2026"
       },
       {
+        "cluster": "CENTRO OESTE",
+        "cidade": "PALMAS",
+        "code": "RT/PMJ /CO /NET/FO",
+        "ralType": "ITAU",
+        "description": "PMJ/IP/02023",
+        "date": "23/06/2026 10:31",
+        "duration": "N/A",
+        "num": "REC-376949/2026"
+      },
+      {
         "cluster": "NORTE",
         "cidade": "SÃO LUIS",
         "code": "RT/SLS /CE /NET/FO",
@@ -3717,16 +3737,6 @@
         "date": "22/06/2026 10:57",
         "duration": "N/A",
         "num": "REC-374369/2026"
-      },
-      {
-        "cluster": "CENTRO OESTE",
-        "cidade": "PALMAS",
-        "code": "RT/PMJ /CO /NET/FO",
-        "ralType": "ITAU",
-        "description": "PMJ/IP/02023",
-        "date": "23/06/2026 10:31",
-        "duration": "N/A",
-        "num": "REC-376949/2026"
       },
       {
         "cluster": "NORTE",
@@ -3869,16 +3879,6 @@
         "num": "REC-375234/2026"
       },
       {
-        "cluster": "BAHIA/SERGIPE",
-        "cidade": "DESPACHO (DP)",
-        "code": "DP/SDR /BA /NET/BS",
-        "ralType": "LOCALIZA",
-        "description": "SDR/IP/33051",
-        "date": "23/06/2026 08:08",
-        "duration": "N/A",
-        "num": "REC-376477/2026"
-      },
-      {
         "cluster": "RIO DE JANEIRO",
         "cidade": "NORTE FLUMINENSE",
         "code": "RT/RJO /NOF/NET/FO",
@@ -3887,6 +3887,16 @@
         "date": "23/06/2026 07:56",
         "duration": "N/A",
         "num": "REC-376452/2026"
+      },
+      {
+        "cluster": "BAHIA/SERGIPE",
+        "cidade": "SALVADOR",
+        "code": "RC/SDR /BA /NET/BS",
+        "ralType": "LOCALIZA",
+        "description": "SDR/IP/33051",
+        "date": "23/06/2026 08:08",
+        "duration": "N/A",
+        "num": "REC-376477/2026"
       },
       {
         "cluster": "NORTE",
@@ -4019,16 +4029,6 @@
         "num": "REC-376709/2026"
       },
       {
-        "cluster": "NORDESTE",
-        "cidade": "JOÃO PESSOA",
-        "code": "RT/JPA /NE /NET/FO",
-        "ralType": "VIA VAREJO",
-        "description": "MME/IP/00148",
-        "date": "23/06/2026 11:34",
-        "duration": "N/A",
-        "num": "REC-377155/2026"
-      },
-      {
         "cluster": "NORTE",
         "cidade": "BELEM",
         "code": "RT/BLM /NO /NET/FO",
@@ -4050,13 +4050,13 @@
       },
       {
         "cluster": "NORDESTE",
-        "cidade": "RECIFE",
-        "code": "RT/RCE /NE /NET/FO",
-        "ralType": "VLR 226797981",
-        "description": "RCE/IP/20842",
-        "date": "23/06/2026 11:14",
+        "cidade": "JOÃO PESSOA",
+        "code": "RT/JPA /NE /NET/FO",
+        "ralType": "VIA VAREJO",
+        "description": "MME/IP/00148",
+        "date": "23/06/2026 11:34",
         "duration": "N/A",
-        "num": "REC-377102/2026"
+        "num": "REC-377155/2026"
       },
       {
         "cluster": "NORDESTE",
@@ -4077,16 +4077,6 @@
         "date": "23/06/2026 10:40",
         "duration": "N/A",
         "num": "REC-376985/2026"
-      },
-      {
-        "cluster": "NORDESTE",
-        "cidade": "RECIFE",
-        "code": "RT/RCE /NE /NET/FO",
-        "ralType": "DASA_1",
-        "description": "RCE/IP/20731",
-        "date": "23/06/2026 10:29",
-        "duration": "N/A",
-        "num": "REC-376943/2026"
       },
       {
         "cluster": "CENTRO OESTE",
@@ -4139,6 +4129,16 @@
         "num": "REC-377243/2026"
       },
       {
+        "cluster": "NORDESTE",
+        "cidade": "JOÃO PESSOA",
+        "code": "RT/JPA /NE /NET/FO",
+        "ralType": "SICREDI EVO",
+        "description": "MME/IP/00149",
+        "date": "23/06/2026 11:54",
+        "duration": "N/A",
+        "num": "REC-377227/2026"
+      },
+      {
         "cluster": "RIO DE JANEIRO",
         "cidade": "CENTRO SUL",
         "code": "RC/RJO /OE1/NET/BS",
@@ -4179,16 +4179,6 @@
         "num": "REC-377437/2026"
       },
       {
-        "cluster": "NORDESTE",
-        "cidade": "JOÃO PESSOA",
-        "code": "RT/JPA /NE /NET/FO",
-        "ralType": "SICREDI EVO",
-        "description": "MME/IP/00149",
-        "date": "23/06/2026 11:54",
-        "duration": "N/A",
-        "num": "REC-377227/2026"
-      },
-      {
         "cluster": "NORTE",
         "cidade": "MANAUS",
         "code": "RT/MNS /NO /NET/FO",
@@ -4207,6 +4197,16 @@
         "date": "23/06/2026 13:00",
         "duration": "N/A",
         "num": "REC-377421/2026"
+      },
+      {
+        "cluster": "NORDESTE",
+        "cidade": "DESPACHO (DP)",
+        "code": "DP/FLA /CE /NET/FO",
+        "ralType": "CLEGOMES",
+        "description": "VLN/PVN/8540096999",
+        "date": "23/06/2026 14:21",
+        "duration": "N/A",
+        "num": "REC-377645/2026"
       },
       {
         "cluster": "NORTE",
@@ -4259,26 +4259,6 @@
         "num": "REC-377593/2026"
       },
       {
-        "cluster": "CENTRO OESTE",
-        "cidade": "CUIABA",
-        "code": "RT/CBA /CO /NET/FO",
-        "ralType": "CENTROACO",
-        "description": "SNO/IP/00964",
-        "date": "23/06/2026 13:13",
-        "duration": "N/A",
-        "num": "REC-377443/2026"
-      },
-      {
-        "cluster": "NORTE",
-        "cidade": "MANAUS",
-        "code": "RT/MNS /NO /NET/FO",
-        "ralType": "MEGA PACK",
-        "description": "MNS/IP/03018",
-        "date": "23/06/2026 13:07",
-        "duration": "N/A",
-        "num": "REC-377434/2026"
-      },
-      {
         "cluster": "NORDESTE",
         "cidade": "DESPACHO (DP)",
         "code": "DP/MCO /NE /NET/BS",
@@ -4301,6 +4281,26 @@
       {
         "cluster": "CENTRO OESTE",
         "cidade": "CUIABA",
+        "code": "RT/CBA /CO /NET/FO",
+        "ralType": "CENTROACO",
+        "description": "SNO/IP/00964",
+        "date": "23/06/2026 13:13",
+        "duration": "N/A",
+        "num": "REC-377443/2026"
+      },
+      {
+        "cluster": "NORTE",
+        "cidade": "MANAUS",
+        "code": "RT/MNS /NO /NET/FO",
+        "ralType": "MEGA PACK",
+        "description": "MNS/IP/03018",
+        "date": "23/06/2026 13:07",
+        "duration": "N/A",
+        "num": "REC-377434/2026"
+      },
+      {
+        "cluster": "CENTRO OESTE",
+        "cidade": "CUIABA",
         "code": "RC/CBA /CO /NET/BS",
         "ralType": "ELETROPAR",
         "description": "6521218500",
@@ -4313,7 +4313,8 @@
       "BELEM": 8,
       "MANAUS": 6,
       "NORTE 2": 2,
-      "RECIFE": 8,
+      "RECIFE": 6,
+      "DESPACHO (DP)": 3,
       "SÃO LUIS": 7,
       "CUIABA": 15,
       "GOIÂNIA": 3,
@@ -4322,8 +4323,8 @@
       "VITORIA DA CONQUISTA": 1,
       "NORTE 1": 5,
       "BELO HORIZONTE": 1,
-      "DESPACHO (DP)": 2,
       "NORTE FLUMINENSE": 1,
+      "SALVADOR": 1,
       "ITABUNA": 1,
       "CAMPO GRANDE": 2,
       "JOÃO PESSOA": 2,
