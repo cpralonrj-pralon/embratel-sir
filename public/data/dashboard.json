@@ -1,5 +1,5 @@
 {
-  "updatedAt": "14/07/2026 22:28",
+  "updatedAt": "14/07/2026 22:38",
   "RAL": {
     "total": 369,
     "clusters": {
@@ -3748,10 +3748,10 @@
     }
   },
   "REC": {
-    "total": 58,
+    "total": 60,
     "clusters": {
       "NORDESTE": 8,
-      "RIO DE JANEIRO": 11,
+      "RIO DE JANEIRO": 13,
       "NORTE": 23,
       "BAHIA/SERGIPE": 9,
       "CENTRO OESTE": 5,
@@ -4110,16 +4110,6 @@
         "num": "REC-422681/2026"
       },
       {
-        "cluster": "NORTE",
-        "cidade": "BELEM",
-        "code": "RT/BLM /NO /NET/FO",
-        "ralType": "ECT",
-        "description": "MTUB/IP/00412",
-        "date": "14/07/2026 15:06",
-        "duration": "N/A",
-        "num": "REC-422558/2026"
-      },
-      {
         "cluster": "NORDESTE",
         "cidade": "RECIFE",
         "code": "RT/RCE /NE /NET/FO",
@@ -4128,6 +4118,16 @@
         "date": "14/07/2026 20:07",
         "duration": "N/A",
         "num": "REC-423214/2026"
+      },
+      {
+        "cluster": "NORTE",
+        "cidade": "BELEM",
+        "code": "RT/BLM /NO /NET/FO",
+        "ralType": "ECT",
+        "description": "MTUB/IP/00412",
+        "date": "14/07/2026 15:06",
+        "duration": "N/A",
+        "num": "REC-422558/2026"
       },
       {
         "cluster": "RIO DE JANEIRO",
@@ -4280,6 +4280,26 @@
         "num": "REC-422993/2026"
       },
       {
+        "cluster": "RIO DE JANEIRO",
+        "cidade": "DESPACHO (DP)",
+        "code": "DP/RJO /AM /NET/BS",
+        "ralType": "REDE DOR",
+        "description": "2124143600",
+        "date": "14/07/2026 20:41",
+        "duration": "N/A",
+        "num": "REC-423243/2026"
+      },
+      {
+        "cluster": "RIO DE JANEIRO",
+        "cidade": "NORTE 1",
+        "code": "RT/RJO /NO1/NET/FO",
+        "ralType": "HUGHES",
+        "description": "RJO/IP/40369",
+        "date": "14/07/2026 19:18",
+        "duration": "N/A",
+        "num": "REC-423165/2026"
+      },
+      {
         "cluster": "BAHIA/SERGIPE",
         "cidade": "SALVADOR",
         "code": "RT/SDR /BA /JL /FO",
@@ -4301,13 +4321,13 @@
       },
       {
         "cluster": "RIO DE JANEIRO",
-        "cidade": "NORTE 1",
-        "code": "RT/RJO /NO1/NET/FO",
-        "ralType": "HUGHES",
-        "description": "RJO/IP/40369",
-        "date": "14/07/2026 19:18",
+        "cidade": "DESPACHO (DP)",
+        "code": "DP/RJO /AM /NET/FO",
+        "ralType": "ESTACIO DE SA",
+        "description": "CBF/IP/02376",
+        "date": "14/07/2026 21:53",
         "duration": "N/A",
-        "num": "REC-423165/2026"
+        "num": "REC-423302/2026"
       },
       {
         "cluster": "BAHIA/SERGIPE",
@@ -4360,6 +4380,7 @@
       "CAMPO GRANDE": 1,
       "ITABUNA": 1,
       "FORTALEZA": 1,
+      "DESPACHO (DP)": 2,
       "NORTE 1": 1
     }
   }
