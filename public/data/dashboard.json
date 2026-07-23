@@ -1,5 +1,5 @@
 {
-  "updatedAt": "23/07/2026 16:52",
+  "updatedAt": "23/07/2026 16:57",
   "RAL": {
     "total": 439,
     "clusters": {
@@ -4447,15 +4447,15 @@
     }
   },
   "REC": {
-    "total": 69,
+    "total": 71,
     "clusters": {
-      "RIO DE JANEIRO": 9,
-      "NORTE": 17,
+      "RIO DE JANEIRO": 10,
+      "NORTE": 19,
       "ESPIRITO SANTO": 7,
       "MINAS GERAIS": 3,
       "BAHIA/SERGIPE": 3,
       "NORDESTE": 12,
-      "CENTRO OESTE": 18
+      "CENTRO OESTE": 17
     },
     "items": [
       {
@@ -4769,6 +4769,16 @@
         "num": "REC-441865/2026"
       },
       {
+        "cluster": "BAHIA/SERGIPE",
+        "cidade": "ARACAJU",
+        "code": "RC/AJU /BA /NET/BS",
+        "ralType": "PAGUEMENOSFAR",
+        "description": "AJU/IP/08746",
+        "date": "23/07/2026 10:32",
+        "duration": "N/A",
+        "num": "REC-441944/2026"
+      },
+      {
         "cluster": "NORTE",
         "cidade": "MANAUS",
         "code": "RT/MNS /NO /NET/FO",
@@ -4859,26 +4869,6 @@
         "num": "REC-442478/2026"
       },
       {
-        "cluster": "BAHIA/SERGIPE",
-        "cidade": "ARACAJU",
-        "code": "RC/AJU /BA /NET/BS",
-        "ralType": "PAGUEMENOSFAR",
-        "description": "AJU/IP/08746",
-        "date": "23/07/2026 10:32",
-        "duration": "N/A",
-        "num": "REC-441944/2026"
-      },
-      {
-        "cluster": "CENTRO OESTE",
-        "cidade": "CAMPO GRANDE",
-        "code": "RT/CPE /CO /NET/FO",
-        "ralType": "SSP MS",
-        "description": "TRN/IP/00113",
-        "date": "23/07/2026 10:16",
-        "duration": "N/A",
-        "num": "REC-441868/2026"
-      },
-      {
         "cluster": "NORTE",
         "cidade": "MANAUS",
         "code": "RT/MNS /NO /NET/FO",
@@ -4909,16 +4899,6 @@
         "num": "REC-442511/2026"
       },
       {
-        "cluster": "MINAS GERAIS",
-        "cidade": "GOVERNADOR VALADARES",
-        "code": "RT/GVS /JK /FFA/FO",
-        "ralType": "CREFISA",
-        "description": "TOT/IP/00497",
-        "date": "23/07/2026 15:57",
-        "duration": "N/A",
-        "num": "REC-442949/2026"
-      },
-      {
         "cluster": "RIO DE JANEIRO",
         "cidade": "SUL FLUMINENSE",
         "code": "RT/RJO /SUF/NET/FO",
@@ -4939,14 +4919,14 @@
         "num": "REC-442620/2026"
       },
       {
-        "cluster": "CENTRO OESTE",
-        "cidade": "CUIABA",
-        "code": "RT/CBA /CO /NET/FO",
-        "ralType": "ECT",
-        "description": "PLAG/IP/00107",
-        "date": "23/07/2026 10:59",
+        "cluster": "MINAS GERAIS",
+        "cidade": "GOVERNADOR VALADARES",
+        "code": "RT/GVS /JK /FFA/FO",
+        "ralType": "CREFISA",
+        "description": "TOT/IP/00497",
+        "date": "23/07/2026 15:57",
         "duration": "N/A",
-        "num": "REC-442051/2026"
+        "num": "REC-442949/2026"
       },
       {
         "cluster": "CENTRO OESTE",
@@ -4957,6 +4937,16 @@
         "date": "23/07/2026 13:38",
         "duration": "N/A",
         "num": "REC-442481/2026"
+      },
+      {
+        "cluster": "CENTRO OESTE",
+        "cidade": "CUIABA",
+        "code": "RT/CBA /CO /NET/FO",
+        "ralType": "ECT",
+        "description": "PLAG/IP/00107",
+        "date": "23/07/2026 10:59",
+        "duration": "N/A",
+        "num": "REC-442051/2026"
       },
       {
         "cluster": "NORDESTE",
@@ -5147,6 +5137,36 @@
         "date": "23/07/2026 15:35",
         "duration": "N/A",
         "num": "REC-442831/2026"
+      },
+      {
+        "cluster": "RIO DE JANEIRO",
+        "cidade": "DESPACHO (DP)",
+        "code": "DP/RJO /AM /NET/FO",
+        "ralType": "CEF",
+        "description": "DQX/IP/12473",
+        "date": "23/07/2026 16:43",
+        "duration": "N/A",
+        "num": "REC-443072/2026"
+      },
+      {
+        "cluster": "NORTE",
+        "cidade": "SÃO LUIS",
+        "code": "RT/SLS /CE /NET/FO",
+        "ralType": "EXPEREO",
+        "description": "SLS/IP/08621",
+        "date": "23/07/2026 16:47",
+        "duration": "N/A",
+        "num": "REC-443091/2026"
+      },
+      {
+        "cluster": "NORTE",
+        "cidade": "DESPACHO (DP)",
+        "code": "DP/BLM /NO /NET/FO",
+        "ralType": "SWBR",
+        "description": "AIU/IP/00381",
+        "date": "23/07/2026 16:46",
+        "duration": "N/A",
+        "num": "REC-443083/2026"
       }
     ],
     "cities": {
@@ -5170,13 +5190,14 @@
       "VITORIA DA CONQUISTA": 1,
       "JUIZ DE FORA": 1,
       "BELEM": 1,
+      "ARACAJU": 1,
       "TERESINA": 1,
       "BELÉM": 1,
       "PALMAS": 2,
-      "ARACAJU": 1,
-      "CAMPO GRANDE": 2,
       "GOVERNADOR VALADARES": 1,
-      "DESPACHO (DP)": 2
+      "DESPACHO (DP)": 4,
+      "CAMPO GRANDE": 1,
+      "SÃO LUIS": 1
     }
   }
 }
