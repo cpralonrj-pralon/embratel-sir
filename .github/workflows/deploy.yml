@@ -3,9 +3,12 @@ name: Deploy SIR Dashboard to GitHub Pages
 on:
   push:
     branches: ['main']
-    paths-ignore:
-      - 'public/data/**'
-      - 'dados_*.csv'
+    paths:
+      - 'src/**'
+      - 'public/index.html'
+      - 'package.json'
+      - 'vite.config.ts'
+      - '.github/workflows/**'
   workflow_dispatch:
 
 permissions:
