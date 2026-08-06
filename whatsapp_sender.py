@@ -1,7 +1,12 @@
 import requests
 import json
 import os
+import sys
 from datetime import datetime
+
+# Fix encoding para console Windows
+if sys.stdout.encoding != 'utf-8':
+    sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
 # Evolution API Configuration
 API_URL = "http://localhost:8081"
@@ -159,13 +164,13 @@ def send_whatsapp_summary(stats, target_phone=None):
         response = requests.post(endpoint, headers=headers, json=payload, timeout=30)
         
         if response.status_code in [200, 201]:
-            print(f"✓ WhatsApp enviado com sucesso para {phone}")
+            print(f"[OK] WhatsApp enviado com sucesso para {phone}")
             return True
         else:
-            print(f"✗ Erro ao enviar WhatsApp (HTTP {response.status_code}): {response.text}")
+            print(f"[ERRO] Erro ao enviar WhatsApp (HTTP {response.status_code}): {response.text}")
             return False
     except Exception as e:
-        print(f"✗ Falha crítica no envio de WhatsApp: {e}")
+        print(f"[FALHA] Falha critica no envio de WhatsApp: {e}")
         return False
 
 if __name__ == "__main__":
