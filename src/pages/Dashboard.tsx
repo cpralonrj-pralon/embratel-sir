@@ -393,19 +393,33 @@ const Dashboard: React.FC = () => {
             setIsRefreshing(true);
             const timestamp = new Date().getTime();
             const basePath = import.meta.env.BASE_URL || '/';
+            
+            // 1. API do GitHub (Sem cache de CDN - Instantâneo)
+            const apiUrl = `https://api.github.com/repos/cpralonrj-pralon/embratel-sir/contents/public/data/dashboard.json?t=${timestamp}`;
+            // 2. Raw GitHub (Fallback)
             const rawUrl = `https://raw.githubusercontent.com/cpralonrj-pralon/embratel-sir/main/public/data/dashboard.json?t=${timestamp}`;
+            // 3. Local (Fallback)
             const localUrl = `${basePath}data/dashboard.json?t=${timestamp}`;
 
-            let response: Response;
+            let response: Response | null = null;
+
             try {
-                response = await fetch(rawUrl);
+                response = await fetch(apiUrl, {
+                    headers: { 'Accept': 'application/vnd.github.v3.raw' }
+                });
                 if (!response.ok) throw new Error(`HTTP ${response.status}`);
             } catch (err) {
-                console.warn('Falha ao carregar do Raw GitHub, tentando fallback local...', err);
-                response = await fetch(localUrl);
+                console.warn('Falha na API GitHub, tentando Raw GitHub...', err);
+                try {
+                    response = await fetch(rawUrl);
+                    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                } catch (err2) {
+                    console.warn('Falha no Raw GitHub, tentando local...', err2);
+                    response = await fetch(localUrl);
+                }
             }
 
-            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            if (!response || !response.ok) throw new Error('Todas as fontes de dados falharam');
             const jsonData = await response.json();
             setData(jsonData as DashboardData);
         } catch (error) {
