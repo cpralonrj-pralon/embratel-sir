@@ -3,12 +3,6 @@ name: Deploy SIR Dashboard to GitHub Pages
 on:
   push:
     branches: ['main']
-    paths:
-      - 'src/**'
-      - 'public/index.html'
-      - 'package.json'
-      - 'vite.config.ts'
-      - '.github/workflows/**'
   workflow_dispatch:
 
 permissions:
@@ -17,8 +11,8 @@ permissions:
   id-token: write
 
 concurrency:
-  group: 'pages-v2'
-  cancel-in-progress: false
+  group: 'pages'
+  cancel-in-progress: true
 
 jobs:
   build:
