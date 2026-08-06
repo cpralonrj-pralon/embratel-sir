@@ -393,7 +393,18 @@ const Dashboard: React.FC = () => {
             setIsRefreshing(true);
             const timestamp = new Date().getTime();
             const basePath = import.meta.env.BASE_URL || '/';
-            const response = await fetch(`${basePath}data/dashboard.json?t=${timestamp}`);
+            const rawUrl = `https://raw.githubusercontent.com/cpralonrj-pralon/embratel-sir/main/public/data/dashboard.json?t=${timestamp}`;
+            const localUrl = `${basePath}data/dashboard.json?t=${timestamp}`;
+
+            let response: Response;
+            try {
+                response = await fetch(rawUrl);
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            } catch (err) {
+                console.warn('Falha ao carregar do Raw GitHub, tentando fallback local...', err);
+                response = await fetch(localUrl);
+            }
+
             if (!response.ok) throw new Error(`HTTP ${response.status}`);
             const jsonData = await response.json();
             setData(jsonData as DashboardData);
