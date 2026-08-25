@@ -1,13 +1,13 @@
 {
-  "updatedAt": "25/08/2026 12:28",
+  "updatedAt": "25/08/2026 12:34",
   "RAL": {
-    "total": 100,
+    "total": 102,
     "clusters": {
-      "NORTE": 84,
-      "CENTRO OESTE": 4,
+      "NORTE": 85,
+      "CENTRO OESTE": 3,
       "RIO DE JANEIRO": 9,
-      "BAHIA/SERGIPE": 1,
-      "NORDESTE": 1,
+      "ESPIRITO SANTO": 2,
+      "NORDESTE": 2,
       "Unknown": 1
     },
     "items": [
@@ -18,7 +18,7 @@
         "ralType": "FOTÔNICA",
         "description": "SLS US STY FB OTS",
         "date": "12/01/2026 - 11:15",
-        "duration": "174d.00h11m",
+        "duration": "174d.00h16m",
         "num": "RAL-20385/2026"
       },
       {
@@ -28,7 +28,7 @@
         "ralType": "FOTÔNICA",
         "description": "RUP CABO OPTICO CRTNU-LZA",
         "date": "25/08/2026 - 09:06",
-        "duration": "0d.01h38m",
+        "duration": "0d.01h43m",
         "num": "RAL-519284/2026"
       },
       {
@@ -38,17 +38,17 @@
         "ralType": "FOTÔNICA",
         "description": "RUP CABO OPTICO ENTOKB-VN",
         "date": "25/08/2026 - 11:02",
-        "duration": "0d.01h04m",
+        "duration": "0d.01h09m",
         "num": "RAL-519910/2026"
       },
       {
         "cluster": "NORTE",
-        "cidade": "DESPACHO (DP)",
-        "code": "DP/BLM /NO /NET/FO",
+        "cidade": "BELÉM",
+        "code": "RT/BLM /NO /ETG/FO",
         "ralType": "FOTÔNICA",
         "description": "RUP CABO OPTICO JUNN90-MB",
         "date": "25/08/2026 - 11:26",
-        "duration": "0d.00h07m",
+        "duration": "0d.00h02m",
         "num": "RAL-520069/2026"
       },
       {
@@ -58,7 +58,7 @@
         "ralType": "BACKBONE",
         "description": "BVS BR CPN CZ OTS",
         "date": "01/10/2025 - 16:17",
-        "duration": "327d.19h49m",
+        "duration": "327d.19h54m",
         "num": "RAL-605016/2025"
       },
       {
@@ -68,7 +68,7 @@
         "ralType": "BACKBONE",
         "description": "BLM QB CAH BR OTS",
         "date": "23/07/2026 - 17:37",
-        "duration": "32d.18h37m",
+        "duration": "32d.18h42m",
         "num": "RAL-443256/2026"
       },
       {
@@ -78,7 +78,7 @@
         "ralType": "BACKBONE",
         "description": "MNS HZ MNS 34R 10G 002F",
         "date": "25/07/2026 - 06:15",
-        "duration": "31d.06h08m",
+        "duration": "31d.06h13m",
         "num": "RAL-446530/2026"
       },
       {
@@ -88,7 +88,7 @@
         "ralType": "BACKBONE",
         "description": "RUP CABO 12 CVZLB-MNSEM",
         "date": "20/08/2026 - 15:24",
-        "duration": "4d.21h00m",
+        "duration": "4d.21h05m",
         "num": "RAL-509489/2026"
       },
       {
@@ -98,18 +98,8 @@
         "ralType": "BACKBONE",
         "description": "BSA SU IT MNS HZ IT 100G",
         "date": "25/08/2026 - 11:20",
-        "duration": "0d.00h48m",
+        "duration": "0d.00h53m",
         "num": "RAL-520026/2026"
-      },
-      {
-        "cluster": "CENTRO OESTE",
-        "cidade": "DESPACHO (DP)",
-        "code": "DP/GNA /CO /NET/FO",
-        "ralType": "BACKBONE",
-        "description": "IP RAN/GO EBT11/GO SHG04",
-        "date": "25/08/2026 - 12:14",
-        "duration": "0d.00h01m",
-        "num": "RAL-520283/2026"
       },
       {
         "cluster": "NORTE",
@@ -118,7 +108,7 @@
         "ralType": "COLETOR",
         "description": "BLM LC A BLM TK0 00031",
         "date": "12/08/2026 - 14:03",
-        "duration": "1d.01h21m",
+        "duration": "1d.01h26m",
         "num": "RAL-489993/2026"
       },
       {
@@ -128,7 +118,7 @@
         "ralType": "COLETOR",
         "description": "ESTAÇÃO PAAIU14 ISOLADA",
         "date": "25/08/2026 - 08:53",
-        "duration": "0d.03h32m",
+        "duration": "0d.03h37m",
         "num": "RAL-519218/2026"
       },
       {
@@ -138,8 +128,18 @@
         "ralType": "COLETOR",
         "description": "BSA SULINEBSA 2K4LINB4S",
         "date": "25/08/2026 - 12:29",
-        "duration": "0d.00h00m",
+        "duration": "0d.00h05m",
         "num": "RAL-520339/2026"
+      },
+      {
+        "cluster": "CENTRO OESTE",
+        "cidade": "DESPACHO (DP)",
+        "code": "DP/BSA /CO /NET/FO",
+        "ralType": "COLETOR",
+        "description": "BSA SULINEBSA UVXLINB4S",
+        "date": "25/08/2026 - 12:33",
+        "duration": "0d.00h01m",
+        "num": "RAL-520349/2026"
       },
       {
         "cluster": "RIO DE JANEIRO",
@@ -148,7 +148,7 @@
         "ralType": "ACESSO CLIENTE",
         "description": "RJO AMLINERJO Z5VLINB16S",
         "date": "26/04/2026 - 13:39",
-        "duration": "116d.14h54m",
+        "duration": "116d.14h59m",
         "num": "RAL-248007/2026"
       },
       {
@@ -158,7 +158,7 @@
         "ralType": "ACESSO CLIENTE",
         "description": "BEROBELINEBEROV2TLINB1S",
         "date": "07/05/2026 - 04:40",
-        "duration": "110d.07h07m",
+        "duration": "110d.07h12m",
         "num": "RAL-272088/2026"
       },
       {
@@ -168,7 +168,7 @@
         "ralType": "ACESSO CLIENTE",
         "description": "RJO GZ2LINRJO 4U7LINB1S",
         "date": "17/05/2026 - 09:54",
-        "duration": "100d.01h55m",
+        "duration": "100d.02h00m",
         "num": "RAL-296248/2026"
       },
       {
@@ -178,7 +178,7 @@
         "ralType": "ACESSO CLIENTE",
         "description": "DM4370_MNS4NQ-01/SEM_RESP",
         "date": "22/07/2026 - 10:19",
-        "duration": "34d.01h44m",
+        "duration": "34d.01h49m",
         "num": "RAL-439221/2026"
       },
       {
@@ -188,7 +188,7 @@
         "ralType": "ACESSO CLIENTE",
         "description": "RJO B8ULINRJO MKGLINB1S",
         "date": "28/07/2026 - 20:41",
-        "duration": "19d.03h03m",
+        "duration": "19d.03h08m",
         "num": "RAL-454109/2026"
       },
       {
@@ -198,7 +198,7 @@
         "ralType": "ACESSO CLIENTE",
         "description": "MPA 0HX MPA 0HX DMSTM",
         "date": "03/08/2026 - 16:22",
-        "duration": "21d.20h00m",
+        "duration": "21d.20h05m",
         "num": "RAL-468644/2026"
       },
       {
@@ -208,7 +208,7 @@
         "ralType": "ACESSO CLIENTE",
         "description": "MPA CRLINEMPA GGLINEVC4S",
         "date": "06/08/2026 - 10:07",
-        "duration": "19d.02h20m",
+        "duration": "19d.02h25m",
         "num": "RAL-475741/2026"
       },
       {
@@ -218,7 +218,7 @@
         "ralType": "ACESSO CLIENTE",
         "description": "RJO EMULINRJO PGQLINVC4S",
         "date": "06/08/2026 - 11:02",
-        "duration": "19d.01h00m",
+        "duration": "19d.01h05m",
         "num": "RAL-475971/2026"
       },
       {
@@ -228,7 +228,7 @@
         "ralType": "ACESSO CLIENTE",
         "description": "MPA 0GSLINMPA 0N4LINB1S",
         "date": "10/08/2026 - 01:05",
-        "duration": "15d.10h32m",
+        "duration": "15d.10h37m",
         "num": "RAL-482929/2026"
       },
       {
@@ -238,7 +238,7 @@
         "ralType": "ACESSO CLIENTE",
         "description": "MPA 0HFLINMPA 0JYLINVC4S",
         "date": "12/08/2026 - 19:22",
-        "duration": "12d.16h59m",
+        "duration": "12d.17h04m",
         "num": "RAL-490936/2026"
       },
       {
@@ -248,7 +248,7 @@
         "ralType": "ACESSO CLIENTE",
         "description": "RJO JFBLINRJO RX0LINB1S",
         "date": "16/08/2026 - 10:03",
-        "duration": "7d.19h29m",
+        "duration": "7d.19h34m",
         "num": "RAL-498162/2026"
       },
       {
@@ -258,7 +258,7 @@
         "ralType": "ACESSO CLIENTE",
         "description": "MNS EMLINEMNS 3Z1LINVC4S",
         "date": "16/08/2026 - 17:42",
-        "duration": "8d.18h28m",
+        "duration": "8d.18h33m",
         "num": "RAL-498591/2026"
       },
       {
@@ -268,7 +268,7 @@
         "ralType": "ACESSO CLIENTE",
         "description": "RJO M8MLINRJO YL8LINB4S",
         "date": "17/08/2026 - 17:03",
-        "duration": "0d.18h43m",
+        "duration": "0d.18h48m",
         "num": "RAL-501123/2026"
       },
       {
@@ -278,7 +278,7 @@
         "ralType": "ACESSO CLIENTE",
         "description": "SLS USLINESLS ZMMLINB1S",
         "date": "24/08/2026 - 19:17",
-        "duration": "0d.16h59m",
+        "duration": "0d.17h04m",
         "num": "RAL-518451/2026"
       },
       {
@@ -288,7 +288,7 @@
         "ralType": "ACESSO CLIENTE",
         "description": "MPA 0M6LINMPA 0RCLINVC4S",
         "date": "24/08/2026 - 21:29",
-        "duration": "0d.14h46m",
+        "duration": "0d.14h51m",
         "num": "RAL-518598/2026"
       },
       {
@@ -298,7 +298,7 @@
         "ralType": "ACESSO CLIENTE",
         "description": "AIU BRLINEAIU CAFLINB16S",
         "date": "25/08/2026 - 11:15",
-        "duration": "0d.01h03m",
+        "duration": "0d.01h08m",
         "num": "RAL-519997/2026"
       },
       {
@@ -308,18 +308,28 @@
         "ralType": "ACESSO CLIENTE",
         "description": "AIU CAFLINAIU 0FTLINB1S",
         "date": "25/08/2026 - 11:20",
-        "duration": "0d.01h03m",
+        "duration": "0d.01h08m",
         "num": "RAL-520024/2026"
       },
       {
-        "cluster": "BAHIA/SERGIPE",
+        "cluster": "ESPIRITO SANTO",
         "cidade": "DESPACHO (DP)",
-        "code": "DP/SDR /BA /NET/FO",
+        "code": "DP/VTA /JM /NET/FO",
         "ralType": "ACESSO CLIENTE",
-        "description": "FSA GV FSA MT2 B0480",
-        "date": "25/08/2026 - 12:09",
-        "duration": "0d.00h20m",
-        "num": "RAL-520272/2026"
+        "description": "CCA JASLINVIA 0GWLINB4S",
+        "date": "25/08/2026 - 12:32",
+        "duration": "0d.00h02m",
+        "num": "RAL-520347/2026"
+      },
+      {
+        "cluster": "ESPIRITO SANTO",
+        "cidade": "DESPACHO (DP)",
+        "code": "DP/VTA /JM /NET/FO",
+        "ralType": "ACESSO CLIENTE",
+        "description": "CCA VEALINVIA 0FVLINB4S",
+        "date": "25/08/2026 - 12:33",
+        "duration": "0d.00h01m",
+        "num": "RAL-520355/2026"
       },
       {
         "cluster": "NORTE",
@@ -328,7 +338,7 @@
         "ralType": "BACKBONE",
         "description": "AIUAGLAAOLT01",
         "date": "15/08/2026 - 10:10",
-        "duration": "10d.02h05m",
+        "duration": "10d.02h10m",
         "num": "RAL-496909/2026"
       },
       {
@@ -338,7 +348,7 @@
         "ralType": "COLETOR",
         "description": "NODE B PABLM67 X PAAIU25",
         "date": "17/08/2026 - 14:28",
-        "duration": "7d.21h37m",
+        "duration": "7d.21h42m",
         "num": "RAL-500607/2026"
       },
       {
@@ -348,7 +358,7 @@
         "ralType": "COLETOR",
         "description": "RUP NODE B PAOAN01",
         "date": "18/08/2026 - 16:08",
-        "duration": "6d.20h15m",
+        "duration": "6d.20h20m",
         "num": "RAL-503904/2026"
       },
       {
@@ -358,7 +368,7 @@
         "ralType": "COLETOR",
         "description": "NODE B PATLA09 X PATLA01",
         "date": "25/08/2026 - 10:04",
-        "duration": "0d.02h19m",
+        "duration": "0d.02h24m",
         "num": "RAL-519591/2026"
       },
       {
@@ -368,18 +378,28 @@
         "ralType": "COLETOR",
         "description": "TSATBJAAOLT01 ETHERNET0/9",
         "date": "25/08/2026 - 12:28",
-        "duration": "0d.00h01m",
+        "duration": "0d.00h06m",
         "num": "RAL-520337/2026"
+      },
+      {
+        "cluster": "NORTE",
+        "cidade": "DESPACHO (DP)",
+        "code": "DP/SLS /CE /NET/FO",
+        "ralType": "COLETOR",
+        "description": "NODE B MAPDU01 X MAJEL01",
+        "date": "25/08/2026 - 12:29",
+        "duration": "0d.00h05m",
+        "num": "RAL-520340/2026"
       },
       {
         "cluster": "RIO DE JANEIRO",
         "cidade": "DESPACHO (DP)",
         "code": "DP/RJO /AM /NET/FO",
         "ralType": "COLETOR",
-        "description": "NODE B RJOLP02 X RJCOW62",
-        "date": "25/08/2026 - 12:29",
-        "duration": "0d.00h00m",
-        "num": "RAL-520338/2026"
+        "description": "NODE B RJNFR09 X RJNFR04",
+        "date": "25/08/2026 - 12:33",
+        "duration": "0d.00h01m",
+        "num": "RAL-520348/2026"
       },
       {
         "cluster": "NORTE",
@@ -388,18 +408,8 @@
         "ralType": "PPC",
         "description": "BUTP FC - PERDA DE SUPERV",
         "date": "11/08/2026 - 09:03",
-        "duration": "14d.02h42m",
+        "duration": "14d.02h47m",
         "num": "RAL-486084/2026"
-      },
-      {
-        "cluster": "CENTRO OESTE",
-        "cidade": "DESPACHO (DP)",
-        "code": "DP/GNA /CO /NET/FO",
-        "ralType": "PPC",
-        "description": "GNA RD SEZ KB 2MGER",
-        "date": "25/08/2026 - 07:53",
-        "duration": "0d.00h01m",
-        "num": "RAL-519075/2026"
       },
       {
         "cluster": "RIO DE JANEIRO",
@@ -408,7 +418,7 @@
         "ralType": "ACESSO CLIENTE",
         "description": "RJO TPLINERJO 0TILINB16S",
         "date": "04/08/2026 - 10:06",
-        "duration": "19d.01h16m",
+        "duration": "19d.01h21m",
         "num": "RAL-470114/2026"
       },
       {
@@ -418,7 +428,7 @@
         "ralType": "QUALIDADE",
         "description": "ALLGAG1 BUTOFC OTS",
         "date": "13/05/2025 - 12:39",
-        "duration": "16d.16h06m",
+        "duration": "16d.16h11m",
         "num": "RAL-294968/2025"
       },
       {
@@ -428,7 +438,7 @@
         "ralType": "QUALIDADE",
         "description": "ENTOKB PQIAFC OTS",
         "date": "09/06/2025 - 11:27",
-        "duration": "397d.03h55m",
+        "duration": "397d.04h00m",
         "num": "RAL-358084/2025"
       },
       {
@@ -438,7 +448,7 @@
         "ralType": "QUALIDADE",
         "description": "CVZ LB MNS EM OTS",
         "date": "24/06/2025 - 10:49",
-        "duration": "426d.04h12m",
+        "duration": "426d.04h17m",
         "num": "RAL-389331/2025"
       },
       {
@@ -448,7 +458,7 @@
         "ralType": "QUALIDADE",
         "description": "ATM AC VTXUVIV OTS",
         "date": "18/07/2025 - 11:08",
-        "duration": "292d.03h00m",
+        "duration": "292d.03h05m",
         "num": "RAL-440565/2025"
       },
       {
@@ -458,7 +468,7 @@
         "ralType": "QUALIDADE",
         "description": "SWAP FIBRA V.TAL; CRN -ET",
         "date": "22/07/2025 - 16:50",
-        "duration": "296d.05h29m",
+        "duration": "296d.05h34m",
         "num": "RAL-448351/2025"
       },
       {
@@ -468,7 +478,7 @@
         "ralType": "QUALIDADE",
         "description": "BUTPFC PQIAFC OTS",
         "date": "05/08/2025 - 17:59",
-        "duration": "16d.16h06m",
+        "duration": "16d.16h11m",
         "num": "RAL-477901/2025"
       },
       {
@@ -478,7 +488,7 @@
         "ralType": "QUALIDADE",
         "description": "AZS CL1 CVZ LB OTS",
         "date": "02/09/2025 - 12:22",
-        "duration": "356d.23h29m",
+        "duration": "356d.23h34m",
         "num": "RAL-536306/2025"
       },
       {
@@ -488,7 +498,7 @@
         "ralType": "QUALIDADE",
         "description": "CXS VO TSA AN OTS",
         "date": "22/09/2025 - 14:38",
-        "duration": "336d.20h16m",
+        "duration": "336d.20h21m",
         "num": "RAL-581800/2025"
       },
       {
@@ -498,7 +508,7 @@
         "ralType": "QUALIDADE",
         "description": "ALQ 0E2 SRM SP OTS",
         "date": "22/09/2025 - 16:50",
-        "duration": "336d.15h08m",
+        "duration": "336d.15h13m",
         "num": "RAL-582475/2025"
       },
       {
@@ -508,7 +518,7 @@
         "ralType": "QUALIDADE",
         "description": "ALLGAG1 SIS KB OTS",
         "date": "22/09/2025 - 17:48",
-        "duration": "335d.22h54m",
+        "duration": "335d.22h59m",
         "num": "RAL-582758/2025"
       },
       {
@@ -518,7 +528,7 @@
         "ralType": "QUALIDADE",
         "description": "ENTOKB VNTEBR OTS",
         "date": "23/09/2025 - 11:09",
-        "duration": "312d.12h33m",
+        "duration": "312d.12h38m",
         "num": "RAL-584967/2025"
       },
       {
@@ -528,7 +538,7 @@
         "ralType": "QUALIDADE",
         "description": "HUT SU PVO FN OTS",
         "date": "22/10/2025 - 11:54",
-        "duration": "216d.02h08m",
+        "duration": "216d.02h13m",
         "num": "RAL-651280/2025"
       },
       {
@@ -538,7 +548,7 @@
         "ralType": "QUALIDADE",
         "description": "BLA CR SMN MN1 OTS",
         "date": "22/10/2025 - 16:07",
-        "duration": "277d.02h59m",
+        "duration": "277d.03h04m",
         "num": "RAL-652143/2025"
       },
       {
@@ -548,7 +558,7 @@
         "ralType": "QUALIDADE",
         "description": "CJROFJ NVODKB OTS",
         "date": "24/10/2025 - 05:27",
-        "duration": "300d.14h02m",
+        "duration": "300d.14h07m",
         "num": "RAL-656001/2025"
       },
       {
@@ -558,7 +568,7 @@
         "ralType": "QUALIDADE",
         "description": "AGNPFC ITZ RC OTS 001",
         "date": "29/10/2025 - 14:35",
-        "duration": "259d.13h30m",
+        "duration": "259d.13h35m",
         "num": "RAL-667838/2025"
       },
       {
@@ -568,7 +578,7 @@
         "ralType": "QUALIDADE",
         "description": "BELTSEA RRI C02 OTS",
         "date": "24/11/2025 - 18:06",
-        "duration": "273d.18h17m",
+        "duration": "273d.18h22m",
         "num": "RAL-724024/2025"
       },
       {
@@ -578,7 +588,7 @@
         "ralType": "QUALIDADE",
         "description": "IOT VIV RPE VIV OTS",
         "date": "29/11/2025 - 12:47",
-        "duration": "248d.00h22m",
+        "duration": "248d.00h27m",
         "num": "RAL-735630/2025"
       },
       {
@@ -588,7 +598,7 @@
         "ralType": "QUALIDADE",
         "description": "ITZ RC PQIAFC OTS",
         "date": "30/11/2025 - 11:28",
-        "duration": "259d.13h29m",
+        "duration": "259d.13h34m",
         "num": "RAL-736536/2025"
       },
       {
@@ -598,7 +608,7 @@
         "ralType": "QUALIDADE",
         "description": "CAH BR SID BR OTS",
         "date": "02/12/2025 - 11:47",
-        "duration": "259d.20h09m",
+        "duration": "259d.20h14m",
         "num": "RAL-740812/2025"
       },
       {
@@ -608,7 +618,7 @@
         "ralType": "QUALIDADE",
         "description": "ALQ CAM OXA ISO OTS",
         "date": "14/12/2025 - 17:16",
-        "duration": "253d.00h09m",
+        "duration": "253d.00h14m",
         "num": "RAL-769456/2025"
       },
       {
@@ -618,7 +628,7 @@
         "ralType": "QUALIDADE",
         "description": "IXT 0DY SKV VIV OTS",
         "date": "17/12/2025 - 12:32",
-        "duration": "248d.01h55m",
+        "duration": "248d.02h00m",
         "num": "RAL-777266/2025"
       },
       {
@@ -628,7 +638,7 @@
         "ralType": "QUALIDADE",
         "description": "MNS EM MNS SEW OTS",
         "date": "05/01/2026 - 16:56",
-        "duration": "231d.18h17m",
+        "duration": "231d.18h22m",
         "num": "RAL-6153/2026"
       },
       {
@@ -638,7 +648,7 @@
         "ralType": "QUALIDADE",
         "description": "CXUABR STY FB OTS",
         "date": "18/01/2026 - 18:56",
-        "duration": "171d.00h47m",
+        "duration": "171d.00h52m",
         "num": "RAL-34031/2026"
       },
       {
@@ -648,7 +658,7 @@
         "ralType": "QUALIDADE",
         "description": "PSS16-CDORP-01",
         "date": "19/01/2026 - 15:18",
-        "duration": "205d.02h48m",
+        "duration": "205d.02h53m",
         "num": "RAL-35909/2026"
       },
       {
@@ -658,7 +668,7 @@
         "ralType": "QUALIDADE",
         "description": "SWAP WIKI DEU X ULNS",
         "date": "19/01/2026 - 16:18",
-        "duration": "207d.05h03m",
+        "duration": "207d.05h08m",
         "num": "RAL-36107/2026"
       },
       {
@@ -668,7 +678,7 @@
         "ralType": "QUALIDADE",
         "description": "SLS US STY 0E0 OTS",
         "date": "20/01/2026 - 17:19",
-        "duration": "16d.16h05m",
+        "duration": "16d.16h10m",
         "num": "RAL-39331/2026"
       },
       {
@@ -678,7 +688,7 @@
         "ralType": "QUALIDADE",
         "description": "SDZTDZ1 SMN MN1 OTS",
         "date": "29/01/2026 - 10:19",
-        "duration": "205d.02h47m",
+        "duration": "205d.02h52m",
         "num": "RAL-57062/2026"
       },
       {
@@ -688,7 +698,7 @@
         "ralType": "QUALIDADE",
         "description": "BBEIC01 SLS US OTS",
         "date": "04/02/2026 - 18:37",
-        "duration": "85d.20h50m",
+        "duration": "85d.20h55m",
         "num": "RAL-71201/2026"
       },
       {
@@ -698,7 +708,7 @@
         "ralType": "QUALIDADE",
         "description": "CDO RP CXUABR OTS",
         "date": "08/02/2026 - 18:46",
-        "duration": "197d.17h24m",
+        "duration": "197d.17h29m",
         "num": "RAL-78993/2026"
       },
       {
@@ -708,7 +718,7 @@
         "ralType": "QUALIDADE",
         "description": "MIC AT TPU JB OTS",
         "date": "27/02/2026 - 12:44",
-        "duration": "178d.22h02m",
+        "duration": "178d.22h07m",
         "num": "RAL-121779/2026"
       },
       {
@@ -718,7 +728,7 @@
         "ralType": "QUALIDADE",
         "description": "COS 01 PDU 010 OTS",
         "date": "04/03/2026 - 11:15",
-        "duration": "173d.21h59m",
+        "duration": "173d.22h04m",
         "num": "RAL-131741/2026"
       },
       {
@@ -728,7 +738,7 @@
         "ralType": "QUALIDADE",
         "description": "CXUABR PDU 010 OTS",
         "date": "04/03/2026 - 12:05",
-        "duration": "172d.15h10m",
+        "duration": "172d.15h15m",
         "num": "RAL-131915/2026"
       },
       {
@@ -738,7 +748,7 @@
         "ralType": "QUALIDADE",
         "description": "ANJ FC SIS KB OTS",
         "date": "06/03/2026 - 11:40",
-        "duration": "171d.21h47m",
+        "duration": "171d.21h52m",
         "num": "RAL-137195/2026"
       },
       {
@@ -748,7 +758,7 @@
         "ralType": "QUALIDADE",
         "description": "AMM CL2 MPA GG OTS",
         "date": "06/03/2026 - 15:31",
-        "duration": "171d.20h49m",
+        "duration": "171d.20h54m",
         "num": "RAL-137815/2026"
       },
       {
@@ -758,7 +768,7 @@
         "ralType": "QUALIDADE",
         "description": "CVZ LB MNS HZ OTS",
         "date": "12/03/2026 - 10:31",
-        "duration": "166d.01h44m",
+        "duration": "166d.01h49m",
         "num": "RAL-149972/2026"
       },
       {
@@ -768,7 +778,7 @@
         "ralType": "QUALIDADE",
         "description": "MNS EM RPE C01 OTS",
         "date": "27/03/2026 - 11:54",
-        "duration": "132d.02h08m",
+        "duration": "132d.02h13m",
         "num": "RAL-183751/2026"
       },
       {
@@ -778,7 +788,7 @@
         "ralType": "QUALIDADE",
         "description": "SWAP FO V.TAL SMN - SDZT",
         "date": "31/03/2026 - 11:36",
-        "duration": "20d.02h40m",
+        "duration": "20d.02h45m",
         "num": "RAL-191898/2026"
       },
       {
@@ -788,7 +798,7 @@
         "ralType": "QUALIDADE",
         "description": "SWAP ATENUAÇÂO V.TAL MIC",
         "date": "15/04/2026 - 11:39",
-        "duration": "132d.00h40m",
+        "duration": "132d.00h45m",
         "num": "RAL-225382/2026"
       },
       {
@@ -798,7 +808,7 @@
         "ralType": "QUALIDADE",
         "description": "CDO RP CXUABR OTS",
         "date": "20/05/2026 - 18:59",
-        "duration": "75d.01h55m",
+        "duration": "75d.02h00m",
         "num": "RAL-304388/2026"
       },
       {
@@ -808,7 +818,7 @@
         "ralType": "QUALIDADE",
         "description": "BLM SZ BVS BR OTS",
         "date": "27/05/2026 - 12:15",
-        "duration": "89d.02h59m",
+        "duration": "89d.03h04m",
         "num": "RAL-319638/2026"
       },
       {
@@ -818,7 +828,7 @@
         "ralType": "QUALIDADE",
         "description": "BBL FO SIS KB OTS",
         "date": "29/05/2026 - 11:28",
-        "duration": "87d.14h44m",
+        "duration": "87d.14h49m",
         "num": "RAL-325357/2026"
       },
       {
@@ -828,7 +838,7 @@
         "ralType": "QUALIDADE",
         "description": "ANAYVIV PCJ VIV OTS",
         "date": "29/05/2026 - 13:54",
-        "duration": "87d.17h14m",
+        "duration": "87d.17h19m",
         "num": "RAL-325910/2026"
       },
       {
@@ -838,7 +848,7 @@
         "ralType": "QUALIDADE",
         "description": "BLM QB CAH BR OTS",
         "date": "29/05/2026 - 16:42",
-        "duration": "87d.19h06m",
+        "duration": "87d.19h11m",
         "num": "RAL-326407/2026"
       },
       {
@@ -848,7 +858,7 @@
         "ralType": "QUALIDADE",
         "description": "JUN N90 MBA TM OTS",
         "date": "10/06/2026 - 17:16",
-        "duration": "75d.18h58m",
+        "duration": "75d.19h03m",
         "num": "RAL-350532/2026"
       },
       {
@@ -858,7 +868,7 @@
         "ralType": "QUALIDADE",
         "description": "CXS VO TSA AN OTS",
         "date": "12/06/2026 - 16:38",
-        "duration": "57d.18h13m",
+        "duration": "57d.18h18m",
         "num": "RAL-355700/2026"
       },
       {
@@ -868,7 +878,7 @@
         "ralType": "QUALIDADE",
         "description": "BLM QB BLM SZ OTS",
         "date": "19/06/2026 - 15:29",
-        "duration": "66d.20h54m",
+        "duration": "66d.20h59m",
         "num": "RAL-370569/2026"
       },
       {
@@ -878,7 +888,7 @@
         "ralType": "QUALIDADE",
         "description": "BVS BR SID BR OTS",
         "date": "19/06/2026 - 16:01",
-        "duration": "66d.18h57m",
+        "duration": "66d.19h02m",
         "num": "RAL-370670/2026"
       },
       {
@@ -888,7 +898,7 @@
         "ralType": "QUALIDADE",
         "description": "NVODKB SIS KB OTS",
         "date": "22/06/2026 - 13:37",
-        "duration": "63d.18h06m",
+        "duration": "63d.18h11m",
         "num": "RAL-374930/2026"
       },
       {
@@ -898,7 +908,7 @@
         "ralType": "QUALIDADE",
         "description": "SID BR SLPAKB OTS",
         "date": "22/06/2026 - 14:52",
-        "duration": "63d.03h43m",
+        "duration": "63d.03h48m",
         "num": "RAL-375152/2026"
       },
       {
@@ -908,7 +918,7 @@
         "ralType": "QUALIDADE",
         "description": "BLA CR RIH H01 OTS",
         "date": "23/06/2026 - 08:51",
-        "duration": "63d.03h34m",
+        "duration": "63d.03h39m",
         "num": "RAL-376587/2026"
       },
       {
@@ -918,7 +928,7 @@
         "ralType": "QUALIDADE",
         "description": "ITZ RC PQIAFC OTS",
         "date": "23/06/2026 - 10:11",
-        "duration": "62d.22h41m",
+        "duration": "62d.22h46m",
         "num": "RAL-376875/2026"
       },
       {
@@ -928,7 +938,7 @@
         "ralType": "QUALIDADE",
         "description": "AMM ISO VTXUVIV OTS",
         "date": "29/06/2026 - 18:30",
-        "duration": "56d.17h40m",
+        "duration": "56d.17h45m",
         "num": "RAL-391100/2026"
       },
       {
@@ -938,7 +948,7 @@
         "ralType": "QUALIDADE",
         "description": "SWAP V.TAL CRN - RIH",
         "date": "22/07/2026 - 11:22",
-        "duration": "34d.00h41m",
+        "duration": "34d.00h46m",
         "num": "RAL-439428/2026"
       },
       {
@@ -948,7 +958,7 @@
         "ralType": "QUALIDADE",
         "description": "SWAP VIVO - PDU X DPD",
         "date": "24/07/2026 - 11:48",
-        "duration": "32d.00h16m",
+        "duration": "32d.00h21m",
         "num": "RAL-444895/2026"
       },
       {
@@ -958,7 +968,7 @@
         "ralType": "QUALIDADE",
         "description": "SWAP V.TAL BLA X SMN",
         "date": "24/07/2026 - 15:30",
-        "duration": "31d.20h42m",
+        "duration": "31d.20h47m",
         "num": "RAL-445492/2026"
       },
       {
@@ -968,7 +978,7 @@
         "ralType": "QUALIDADE",
         "description": "AGNPFC ITZ RC OTS",
         "date": "03/08/2026 - 12:45",
-        "duration": "21d.19h06m",
+        "duration": "21d.19h11m",
         "num": "RAL-467867/2026"
       },
       {
@@ -978,7 +988,7 @@
         "ralType": "QUALIDADE",
         "description": "NODE B AMMNS16 X AMMAO66",
         "date": "04/08/2026 - 12:38",
-        "duration": "20d.19h47m",
+        "duration": "20d.19h52m",
         "num": "RAL-470693/2026"
       },
       {
@@ -988,7 +998,7 @@
         "ralType": "QUALIDADE",
         "description": "SWAP DEGRAÇÃO V.TAL JOTB",
         "date": "07/08/2026 - 14:19",
-        "duration": "17d.21h50m",
+        "duration": "17d.21h55m",
         "num": "RAL-479701/2026"
       },
       {
@@ -998,7 +1008,7 @@
         "ralType": "QUALIDADE",
         "description": "SWAP FO VIVO: SUC X SDZT",
         "date": "19/08/2026 - 17:34",
-        "duration": "5d.18h42m",
+        "duration": "5d.18h47m",
         "num": "RAL-507086/2026"
       },
       {
@@ -1008,14 +1018,24 @@
         "ralType": "QUALIDADE",
         "description": "NODE B MAJEL01 X MAESS01",
         "date": "25/08/2026 - 12:12",
-        "duration": "0d.00h13m",
+        "duration": "0d.00h18m",
         "num": "RAL-520280/2026"
+      },
+      {
+        "cluster": "NORDESTE",
+        "cidade": "DESPACHO (DP)",
+        "code": "DP/JPA /NE /NET/FO",
+        "ralType": "QUALIDADE",
+        "description": "JPA LM JPA TR PROT",
+        "date": "25/08/2026 - 12:32",
+        "duration": "0d.00h01m",
+        "num": "RAL-520346/2026"
       }
     ],
     "cities": {
       "SÃO LUÍS": 34,
-      "DESPACHO (DP)": 16,
-      "BELÉM": 24,
+      "DESPACHO (DP)": 17,
+      "BELÉM": 25,
       "MANAUS": 15,
       "MACAPA": 5,
       "BELEM": 2,
@@ -1024,10 +1044,10 @@
     }
   },
   "REC": {
-    "total": 21,
+    "total": 20,
     "clusters": {
       "NORTE": 17,
-      "NORDESTE": 3,
+      "CENTRO OESTE": 2,
       "Unknown": 1
     },
     "items": [
@@ -1102,16 +1122,6 @@
         "num": "REC-516813/2026"
       },
       {
-        "cluster": "NORDESTE",
-        "cidade": "DESPACHO (DP)",
-        "code": "DP/RCE /NE /NET/BS",
-        "ralType": "MDCOMUNICACOES",
-        "description": "RCE/IP/21718",
-        "date": "24/08/2026 13:29",
-        "duration": "N/A",
-        "num": "REC-517479/2026"
-      },
-      {
         "cluster": "NORTE",
         "cidade": "BELÉM",
         "code": "RT/BLM /NO /ETG/AD",
@@ -1120,6 +1130,26 @@
         "date": "25/08/2026 10:54",
         "duration": "N/A",
         "num": "REC-519860/2026"
+      },
+      {
+        "cluster": "NORTE",
+        "cidade": "BELÉM",
+        "code": "RT/BLM /NO /ETG/FO",
+        "ralType": "MATEUS SUPERM",
+        "description": "PUP/IP/00445",
+        "date": "25/08/2026 06:15",
+        "duration": "N/A",
+        "num": "REC-518955/2026"
+      },
+      {
+        "cluster": "CENTRO OESTE",
+        "cidade": "DESPACHO (DP)",
+        "code": "DP/BSA /CO /NET/FO",
+        "ralType": "TELMEX BRASIL",
+        "description": "BSA/IP/29204",
+        "date": "25/08/2026 10:48",
+        "duration": "N/A",
+        "num": "REC-519819/2026"
       },
       {
         "cluster": "NORTE",
@@ -1134,16 +1164,6 @@
       {
         "cluster": "NORTE",
         "cidade": "MANAUS",
-        "code": "RC/MNS /NO /NET/FO",
-        "ralType": "PROMIL",
-        "description": "MNS/IP/08751",
-        "date": "25/08/2026 09:42",
-        "duration": "N/A",
-        "num": "REC-519461/2026"
-      },
-      {
-        "cluster": "NORTE",
-        "cidade": "MANAUS",
         "code": "RT/MNS /NO /NET/FO",
         "ralType": "TMX USA EACES",
         "description": "MNS 4O/SPO PH/DP*V/0001",
@@ -1153,13 +1173,13 @@
       },
       {
         "cluster": "NORTE",
-        "cidade": "BELÉM",
-        "code": "RT/BLM /NO /ETG/FO",
-        "ralType": "MATEUS SUPERM",
-        "description": "PUP/IP/00445",
-        "date": "25/08/2026 06:15",
+        "cidade": "MANAUS",
+        "code": "RC/MNS /NO /NET/FO",
+        "ralType": "PROMIL",
+        "description": "MNS/IP/08751",
+        "date": "25/08/2026 09:42",
         "duration": "N/A",
-        "num": "REC-518955/2026"
+        "num": "REC-519461/2026"
       },
       {
         "cluster": "NORTE",
@@ -1202,6 +1222,16 @@
         "num": "REC-519658/2026"
       },
       {
+        "cluster": "CENTRO OESTE",
+        "cidade": "DESPACHO (DP)",
+        "code": "DP/PMJ /CO /NET/FO",
+        "ralType": "GOL",
+        "description": "PMJ/IP/02047",
+        "date": "25/08/2026 11:34",
+        "duration": "N/A",
+        "num": "REC-520112/2026"
+      },
+      {
         "cluster": "NORTE",
         "cidade": "SÃO LUÍS",
         "code": "RT/SLS /NO /MVA/FO",
@@ -1212,41 +1242,21 @@
         "num": "REC-519675/2026"
       },
       {
-        "cluster": "NORDESTE",
-        "cidade": "DESPACHO (DP)",
-        "code": "DP/TSA /CE /NET/FO",
-        "ralType": "ATACADAO",
-        "description": "PCZ/IP/00234",
-        "date": "25/08/2026 11:44",
-        "duration": "N/A",
-        "num": "REC-520166/2026"
-      },
-      {
         "cluster": "NORTE",
-        "cidade": "DESPACHO (DP)",
-        "code": "DP/MNS /NO /NET/FO",
+        "cidade": "MANAUS",
+        "code": "RT/MNS /NO /NET/FO",
         "ralType": "FORTBRAS",
         "description": "MNS/IP/07485",
         "date": "25/08/2026 12:00",
         "duration": "N/A",
         "num": "REC-520233/2026"
-      },
-      {
-        "cluster": "NORDESTE",
-        "cidade": "DESPACHO (DP)",
-        "code": "DP/FLA /CE /NET/FO",
-        "ralType": "SESI - CE",
-        "description": "8535336000",
-        "date": "25/08/2026 12:25",
-        "duration": "N/A",
-        "num": "REC-520326/2026"
       }
     ],
     "cities": {
-      "MANAUS": 5,
+      "MANAUS": 6,
       "BELÉM": 8,
       "SÃO LUÍS": 3,
-      "DESPACHO (DP)": 4,
+      "DESPACHO (DP)": 2,
       "Unknown": 1
     }
   }
