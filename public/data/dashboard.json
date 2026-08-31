@@ -1,5 +1,5 @@
 {
-  "updatedAt": "31/08/2026 13:25",
+  "updatedAt": "31/08/2026 13:30",
   "RAL": {
     "total": 387,
     "clusters": {
@@ -3930,11 +3930,12 @@
     "total": 124,
     "clusters": {
       "BAHIA/SERGIPE": 11,
-      "NORDESTE": 14,
-      "CENTRO OESTE": 31,
+      "NORDESTE": 13,
+      "CENTRO OESTE": 32,
       "RIO DE JANEIRO": 22,
-      "NORTE": 11,
+      "NORTE": 10,
       "MINAS GERAIS": 34,
+      "MINAS GERAISTE": 1,
       "ESPIRITO SANTO": 1
     },
     "items": [
@@ -4210,8 +4211,8 @@
       },
       {
         "cluster": "BAHIA/SERGIPE",
-        "cidade": "DESPACHO (DP)",
-        "code": "DP/SDR /BA /NET/FO",
+        "cidade": "FEIRA DE SANTANA",
+        "code": "RT/FSA / /NOR/FO",
         "ralType": "TELMEX BRASIL",
         "description": "ALH/IP/03321",
         "date": "31/08/2026 07:38",
@@ -4269,16 +4270,6 @@
         "num": "REC-534026/2026"
       },
       {
-        "cluster": "NORDESTE",
-        "cidade": "JOÃO PESSOA",
-        "code": "RT/JPA /NE /NET/FO",
-        "ralType": "TELEFONICA BR",
-        "description": "CGE/IP/01243",
-        "date": "31/08/2026 08:38",
-        "duration": "N/A",
-        "num": "REC-533347/2026"
-      },
-      {
         "cluster": "CENTRO OESTE",
         "cidade": "CUIABA",
         "code": "RT/CBA /CO /NET/FO",
@@ -4327,6 +4318,16 @@
         "date": "31/08/2026 11:27",
         "duration": "N/A",
         "num": "REC-534049/2026"
+      },
+      {
+        "cluster": "CENTRO OESTE",
+        "cidade": "CUIABA",
+        "code": "RT/CBA /CO /NET/FO",
+        "ralType": "MPMT",
+        "description": "SJK/IP/00120",
+        "date": "31/08/2026 11:07",
+        "duration": "N/A",
+        "num": "REC-533956/2026"
       },
       {
         "cluster": "NORDESTE",
@@ -4459,16 +4460,6 @@
         "num": "REC-533240/2026"
       },
       {
-        "cluster": "CENTRO OESTE",
-        "cidade": "CUIABA",
-        "code": "RT/CBA /CO /NET/FO",
-        "ralType": "MPMT",
-        "description": "SJK/IP/00120",
-        "date": "31/08/2026 11:07",
-        "duration": "N/A",
-        "num": "REC-533956/2026"
-      },
-      {
         "cluster": "MINAS GERAIS",
         "cidade": "BELO HORIZONTE",
         "code": "RC/BHE /ES /NET/FO",
@@ -4497,6 +4488,16 @@
         "date": "31/08/2026 10:51",
         "duration": "N/A",
         "num": "REC-533863/2026"
+      },
+      {
+        "cluster": "MINAS GERAIS",
+        "cidade": "UBERLANDIA",
+        "code": "RT/ULA /MA /FFA/FO",
+        "ralType": "BCO BRASIL",
+        "description": "ULA/IP/04806",
+        "date": "31/08/2026 10:49",
+        "duration": "N/A",
+        "num": "REC-533857/2026"
       },
       {
         "cluster": "RIO DE JANEIRO",
@@ -4529,6 +4530,26 @@
         "num": "REC-533740/2026"
       },
       {
+        "cluster": "MINAS GERAIS",
+        "cidade": "BELO HORIZONTE",
+        "code": "RC/BHE /ES /NET/FO",
+        "ralType": "VLR 49657461",
+        "description": "BHE/IP/32663",
+        "date": "31/08/2026 11:52",
+        "duration": "N/A",
+        "num": "REC-534162/2026"
+      },
+      {
+        "cluster": "CENTRO OESTE",
+        "cidade": "CUIABA",
+        "code": "RT/CBA /CO /NET/FO",
+        "ralType": "VIANORTE MT",
+        "description": "SNO/IP/01194",
+        "date": "31/08/2026 11:42",
+        "duration": "N/A",
+        "num": "REC-534122/2026"
+      },
+      {
         "cluster": "NORDESTE",
         "cidade": "RECIFE",
         "code": "RC/RCE /NE /NET/FO",
@@ -4540,13 +4561,13 @@
       },
       {
         "cluster": "MINAS GERAIS",
-        "cidade": "UBERLANDIA",
-        "code": "RT/ULA /MA /FFA/FO",
-        "ralType": "BCO BRASIL",
-        "description": "ULA/IP/04806",
-        "date": "31/08/2026 10:49",
+        "cidade": "BELO HORIZONTE",
+        "code": "RC/BHE /ES /NET/BS",
+        "ralType": "MADERO IND",
+        "description": "BHE/IP/31908",
+        "date": "31/08/2026 11:03",
         "duration": "N/A",
-        "num": "REC-533857/2026"
+        "num": "REC-533934/2026"
       },
       {
         "cluster": "CENTRO OESTE",
@@ -4569,6 +4590,16 @@
         "num": "REC-534227/2026"
       },
       {
+        "cluster": "MINAS GERAISTE",
+        "cidade": "DESPACHO (DP)",
+        "code": "DP/BHE /ES /NET/BS",
+        "ralType": "DROGASIL",
+        "description": "BHE/IP/29492",
+        "date": "31/08/2026 12:05",
+        "duration": "N/A",
+        "num": "REC-534219/2026"
+      },
+      {
         "cluster": "MINAS GERAIS",
         "cidade": "BELO HORIZONTE",
         "code": "RC/BHE /ES /NET/BS",
@@ -4589,16 +4620,6 @@
         "num": "REC-534152/2026"
       },
       {
-        "cluster": "CENTRO OESTE",
-        "cidade": "CUIABA",
-        "code": "RT/CBA /CO /NET/FO",
-        "ralType": "VIANORTE MT",
-        "description": "SNO/IP/01194",
-        "date": "31/08/2026 11:42",
-        "duration": "N/A",
-        "num": "REC-534122/2026"
-      },
-      {
         "cluster": "BAHIA/SERGIPE",
         "cidade": "FEIRA DE SANTANA",
         "code": "RT/FSA / /NOR/FO",
@@ -4611,22 +4632,32 @@
       {
         "cluster": "MINAS GERAIS",
         "cidade": "BELO HORIZONTE",
-        "code": "RC/BHE /ES /NET/BS",
-        "ralType": "MADERO IND",
-        "description": "BHE/IP/31908",
-        "date": "31/08/2026 11:03",
-        "duration": "N/A",
-        "num": "REC-533934/2026"
-      },
-      {
-        "cluster": "MINAS GERAIS",
-        "cidade": "BELO HORIZONTE",
         "code": "RC/BHE /ES /NET/FO",
         "ralType": "LINX TELECOM",
         "description": "BHE/IP/31536",
         "date": "31/08/2026 10:59",
         "duration": "N/A",
         "num": "REC-533907/2026"
+      },
+      {
+        "cluster": "BAHIA/SERGIPE",
+        "cidade": "FEIRA DE SANTANA",
+        "code": "RT/FSA / /NOR/FO",
+        "ralType": "CREFISA",
+        "description": "JBN/IP/00129",
+        "date": "31/08/2026 10:53",
+        "duration": "N/A",
+        "num": "REC-533875/2026"
+      },
+      {
+        "cluster": "MINAS GERAIS",
+        "cidade": "UBERLANDIA",
+        "code": "RT/ULA /MA /FFA/FO",
+        "ralType": "ARCELORMITTAL",
+        "description": "ULA/IP/01574",
+        "date": "31/08/2026 10:51",
+        "duration": "N/A",
+        "num": "REC-533866/2026"
       },
       {
         "cluster": "MINAS GERAIS",
@@ -4661,12 +4692,22 @@
       {
         "cluster": "MINAS GERAIS",
         "cidade": "BELO HORIZONTE",
-        "code": "RC/BHE /ES /NET/FO",
-        "ralType": "VLR 49657461",
-        "description": "BHE/IP/32663",
-        "date": "31/08/2026 11:52",
+        "code": "RC/BHE /ES /NET/BS",
+        "ralType": "IFP PLANEJAME",
+        "description": "BHE/IP/32228",
+        "date": "31/08/2026 12:13",
         "duration": "N/A",
-        "num": "REC-534162/2026"
+        "num": "REC-534252/2026"
+      },
+      {
+        "cluster": "NORTE",
+        "cidade": "BELÉM",
+        "code": "RT/BLM /NO /ETG/FO",
+        "ralType": "GEAP",
+        "description": "BLM/IP/05881",
+        "date": "31/08/2026 11:53",
+        "duration": "N/A",
+        "num": "REC-534172/2026"
       },
       {
         "cluster": "MINAS GERAIS",
@@ -4709,26 +4750,6 @@
         "num": "REC-533874/2026"
       },
       {
-        "cluster": "BAHIA/SERGIPE",
-        "cidade": "FEIRA DE SANTANA",
-        "code": "RT/FSA / /NOR/FO",
-        "ralType": "CREFISA",
-        "description": "JBN/IP/00129",
-        "date": "31/08/2026 10:53",
-        "duration": "N/A",
-        "num": "REC-533875/2026"
-      },
-      {
-        "cluster": "MINAS GERAIS",
-        "cidade": "UBERLANDIA",
-        "code": "RT/ULA /MA /FFA/FO",
-        "ralType": "ARCELORMITTAL",
-        "description": "ULA/IP/01574",
-        "date": "31/08/2026 10:51",
-        "duration": "N/A",
-        "num": "REC-533866/2026"
-      },
-      {
         "cluster": "RIO DE JANEIRO",
         "cidade": "NORTE 2",
         "code": "RT/RJO /NO2/NET/FO",
@@ -4769,14 +4790,14 @@
         "num": "REC-534208/2026"
       },
       {
-        "cluster": "MINAS GERAIS",
-        "cidade": "BELO HORIZONTE",
-        "code": "RC/BHE /ES /NET/BS",
-        "ralType": "IFP PLANEJAME",
-        "description": "BHE/IP/32228",
-        "date": "31/08/2026 12:13",
+        "cluster": "NORDESTE",
+        "cidade": "RECIFE",
+        "code": "RC/RCE /NE /NET/FO",
+        "ralType": "IBISPETROLINA",
+        "description": "PTA/IP/00905",
+        "date": "31/08/2026 11:53",
         "duration": "N/A",
-        "num": "REC-534252/2026"
+        "num": "REC-534170/2026"
       },
       {
         "cluster": "CENTRO OESTE",
@@ -4792,21 +4813,21 @@
         "cluster": "NORTE",
         "cidade": "BELÉM",
         "code": "RT/BLM /NO /ETG/FO",
-        "ralType": "MATEUS SUPERM",
-        "description": "CAH/IP/00565",
-        "date": "31/08/2026 11:44",
-        "duration": "N/A",
-        "num": "REC-534137/2026"
-      },
-      {
-        "cluster": "NORTE",
-        "cidade": "BELÉM",
-        "code": "RT/BLM /NO /ETG/FO",
         "ralType": "ARMATEUS",
         "description": "CAH/IP/00348",
         "date": "31/08/2026 11:44",
         "duration": "N/A",
         "num": "REC-534135/2026"
+      },
+      {
+        "cluster": "NORTE",
+        "cidade": "BELÉM",
+        "code": "RT/BLM /NO /ETG/FO",
+        "ralType": "MATEUS SUPERM",
+        "description": "CAH/IP/00565",
+        "date": "31/08/2026 11:44",
+        "duration": "N/A",
+        "num": "REC-534137/2026"
       },
       {
         "cluster": "CENTRO OESTE",
@@ -4859,6 +4880,16 @@
         "num": "REC-533879/2026"
       },
       {
+        "cluster": "MINAS GERAIS",
+        "cidade": "UBERLANDIA",
+        "code": "RT/ULA /MA /FFA/FO",
+        "ralType": "AMBEV S.A.",
+        "description": "ULA/IP/03999",
+        "date": "31/08/2026 10:52",
+        "duration": "N/A",
+        "num": "REC-533871/2026"
+      },
+      {
         "cluster": "BAHIA/SERGIPE",
         "cidade": "FEIRA DE SANTANA",
         "code": "RT/FSA / /NOR/FO",
@@ -4887,6 +4918,36 @@
         "date": "31/08/2026 10:31",
         "duration": "N/A",
         "num": "REC-533761/2026"
+      },
+      {
+        "cluster": "ESPIRITO SANTO",
+        "cidade": "VITORIA",
+        "code": "RT/VTA /MTN/FFA/FO",
+        "ralType": "RNP",
+        "description": "VTA/IP/05455",
+        "date": "31/08/2026 12:42",
+        "duration": "N/A",
+        "num": "REC-534361/2026"
+      },
+      {
+        "cluster": "CENTRO OESTE",
+        "cidade": "PORTO VELHO",
+        "code": "RC/PVO /CO /NET/BS",
+        "ralType": "MIN JUSTICA",
+        "description": "PVO/IP/02915",
+        "date": "31/08/2026 12:17",
+        "duration": "N/A",
+        "num": "REC-534269/2026"
+      },
+      {
+        "cluster": "MINAS GERAIS",
+        "cidade": "BELO HORIZONTE",
+        "code": "RC/BHE /ES /NET/FO",
+        "ralType": "DROGASIL",
+        "description": "BHE/IP/31964",
+        "date": "31/08/2026 12:10",
+        "duration": "N/A",
+        "num": "REC-534236/2026"
       },
       {
         "cluster": "BAHIA/SERGIPE",
@@ -4921,22 +4982,12 @@
       {
         "cluster": "NORDESTE",
         "cidade": "RECIFE",
-        "code": "RC/RCE /NE /NET/FO",
-        "ralType": "IBISPETROLINA",
-        "description": "PTA/IP/00905",
-        "date": "31/08/2026 11:53",
+        "code": "RT/RCE /NE /NET/FO",
+        "ralType": "BCO BRASIL",
+        "description": "RCE/IP/21633",
+        "date": "31/08/2026 11:37",
         "duration": "N/A",
-        "num": "REC-534170/2026"
-      },
-      {
-        "cluster": "NORTE",
-        "cidade": "BELÉM",
-        "code": "RT/BLM /NO /ETG/FO",
-        "ralType": "GEAP",
-        "description": "BLM/IP/05881",
-        "date": "31/08/2026 11:53",
-        "duration": "N/A",
-        "num": "REC-534172/2026"
+        "num": "REC-534100/2026"
       },
       {
         "cluster": "MINAS GERAIS",
@@ -4962,41 +5013,11 @@
         "cluster": "MINAS GERAIS",
         "cidade": "UBERLANDIA",
         "code": "RT/ULA /MA /FFA/FO",
-        "ralType": "AMBEV S.A.",
-        "description": "ULA/IP/03999",
-        "date": "31/08/2026 10:52",
-        "duration": "N/A",
-        "num": "REC-533871/2026"
-      },
-      {
-        "cluster": "MINAS GERAIS",
-        "cidade": "UBERLANDIA",
-        "code": "RT/ULA /MA /FFA/FO",
         "ralType": "PELLEGRINO LT",
         "description": "ULA/IP/02125",
         "date": "31/08/2026 10:32",
         "duration": "N/A",
         "num": "REC-533767/2026"
-      },
-      {
-        "cluster": "ESPIRITO SANTO",
-        "cidade": "VITORIA",
-        "code": "RT/VTA /MTN/FFA/FO",
-        "ralType": "RNP",
-        "description": "VTA/IP/05455",
-        "date": "31/08/2026 12:42",
-        "duration": "N/A",
-        "num": "REC-534361/2026"
-      },
-      {
-        "cluster": "CENTRO OESTE",
-        "cidade": "PORTO VELHO",
-        "code": "RC/PVO /CO /NET/BS",
-        "ralType": "MIN JUSTICA",
-        "description": "PVO/IP/02915",
-        "date": "31/08/2026 12:17",
-        "duration": "N/A",
-        "num": "REC-534269/2026"
       },
       {
         "cluster": "BAHIA/SERGIPE",
@@ -5009,16 +5030,6 @@
         "num": "REC-534253/2026"
       },
       {
-        "cluster": "MINAS GERAIS",
-        "cidade": "BELO HORIZONTE",
-        "code": "RC/BHE /ES /NET/FO",
-        "ralType": "DROGASIL",
-        "description": "BHE/IP/31964",
-        "date": "31/08/2026 12:10",
-        "duration": "N/A",
-        "num": "REC-534236/2026"
-      },
-      {
         "cluster": "RIO DE JANEIRO",
         "cidade": "NORTE 1",
         "code": "RT/RJO /NO1/NET/FO",
@@ -5029,14 +5040,14 @@
         "num": "REC-534241/2026"
       },
       {
-        "cluster": "NORDESTE",
-        "cidade": "RECIFE",
-        "code": "RT/RCE /NE /NET/FO",
-        "ralType": "BCO BRASIL",
-        "description": "RCE/IP/21633",
-        "date": "31/08/2026 11:37",
+        "cluster": "MINAS GERAIS",
+        "cidade": "UBERLANDIA",
+        "code": "RT/ULA /MA /FFA/FO",
+        "ralType": "SOUZACRUZ",
+        "description": "ULA/IP/04729",
+        "date": "31/08/2026 12:08",
         "duration": "N/A",
-        "num": "REC-534100/2026"
+        "num": "REC-534231/2026"
       },
       {
         "cluster": "MINAS GERAIS",
@@ -5049,14 +5060,34 @@
         "num": "REC-533968/2026"
       },
       {
-        "cluster": "MINAS GERAIS",
-        "cidade": "UBERLANDIA",
-        "code": "RT/ULA /MA /FFA/FO",
-        "ralType": "SOUZACRUZ",
-        "description": "ULA/IP/04729",
-        "date": "31/08/2026 12:08",
+        "cluster": "CENTRO OESTE",
+        "cidade": "CUIABA",
+        "code": "RT/CBA /CO /NET/FO",
+        "ralType": "42428440",
+        "description": "CBA/IP/05063",
+        "date": "31/08/2026 11:06",
         "duration": "N/A",
-        "num": "REC-534231/2026"
+        "num": "REC-533943/2026"
+      },
+      {
+        "cluster": "NORDESTE",
+        "cidade": "RECIFE",
+        "code": "RT/RCE /NE /NET/FO",
+        "ralType": "C A MODAS",
+        "description": "CGB/IP/00457",
+        "date": "31/08/2026 13:02",
+        "duration": "N/A",
+        "num": "REC-534427/2026"
+      },
+      {
+        "cluster": "CENTRO OESTE",
+        "cidade": "CUIABA",
+        "code": "RT/CBA /CO /NET/FO",
+        "ralType": "HAVAN",
+        "description": "SNO/IP/00987",
+        "date": "31/08/2026 12:45",
+        "duration": "N/A",
+        "num": "REC-534378/2026"
       },
       {
         "cluster": "MINAS GERAIS",
@@ -5089,34 +5120,14 @@
         "num": "REC-533962/2026"
       },
       {
-        "cluster": "CENTRO OESTE",
-        "cidade": "CUIABA",
-        "code": "RT/CBA /CO /NET/FO",
-        "ralType": "42428440",
-        "description": "CBA/IP/05063",
-        "date": "31/08/2026 11:06",
-        "duration": "N/A",
-        "num": "REC-533943/2026"
-      },
-      {
         "cluster": "RIO DE JANEIRO",
-        "cidade": "DESPACHO (DP)",
-        "code": "DP/RJO /AM /NET/FO",
+        "cidade": "NORTE 2",
+        "code": "RT/RJO /NO2/NET/FO",
         "ralType": "RJO SME",
         "description": "RJO/IP/27289",
         "date": "31/08/2026 13:04",
         "duration": "N/A",
         "num": "REC-534439/2026"
-      },
-      {
-        "cluster": "NORDESTE",
-        "cidade": "DESPACHO (DP)",
-        "code": "DP/RCE /NE /NET/FO",
-        "ralType": "C A MODAS",
-        "description": "CGB/IP/00457",
-        "date": "31/08/2026 13:02",
-        "duration": "N/A",
-        "num": "REC-534427/2026"
       },
       {
         "cluster": "NORTE",
@@ -5137,16 +5148,6 @@
         "date": "31/08/2026 11:17",
         "duration": "N/A",
         "num": "REC-534004/2026"
-      },
-      {
-        "cluster": "NORTE",
-        "cidade": "BELÉM",
-        "code": "RT/BLM /NO /ETG/FO",
-        "ralType": "CREFISA",
-        "description": "BLM/IP/11034",
-        "date": "31/08/2026 12:58",
-        "duration": "N/A",
-        "num": "REC-534410/2026"
       },
       {
         "cluster": "NORDESTE",
@@ -5181,11 +5182,11 @@
     ],
     "cities": {
       "ITABUNA": 1,
-      "RECIFE": 9,
+      "RECIFE": 10,
       "GOIÂNIA": 4,
       "NORTE 3": 4,
-      "NORTE 2": 5,
-      "CUIABA": 19,
+      "NORTE 2": 6,
+      "CUIABA": 20,
       "PALMAS": 2,
       "CENTRO SUL": 7,
       "MANAUS": 4,
@@ -5193,13 +5194,13 @@
       "PORTO VELHO": 5,
       "NORTE 1": 2,
       "SUL FLUMINENSE": 1,
-      "DESPACHO (DP)": 4,
+      "FEIRA DE SANTANA": 9,
+      "DESPACHO (DP)": 2,
       "METROPOLITANA": 1,
-      "JOÃO PESSOA": 2,
       "MACAPA": 1,
+      "JOÃO PESSOA": 1,
       "BELO HORIZONTE": 21,
-      "BELÉM": 5,
-      "FEIRA DE SANTANA": 8,
+      "BELÉM": 4,
       "BAIXADA": 1,
       "UBERLANDIA": 13,
       "BRASILIA": 1,
