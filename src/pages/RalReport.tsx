@@ -219,6 +219,9 @@ const FilterChips = ({
 }) => {
   const isAll = selected.length === 0 || selected.length === tipos.length;
 
+  const ALLOWED_TIPOS = ["ACESSO CLIENTE", "BACKBONE", "COLETOR", "FOTONICA", "QUALIDADE"];
+  const visibleTipos = tipos.filter(t => ALLOWED_TIPOS.includes(t));
+
   return (
     <div
       style={{
@@ -265,7 +268,7 @@ const FilterChips = ({
       </button>
 
       {/* Botões individuais com seleção múltipla */}
-      {tipos.map(t => {
+      {visibleTipos.map(t => {
         const isSelected = selected.includes(t);
         return (
           <button
@@ -311,7 +314,7 @@ const FilterChips = ({
         );
       })}
 
-      {selected.length > 0 && selected.length < tipos.length && (
+      {selected.length > 0 && selected.length < visibleTipos.length && (
         <button
           onClick={onSelectAll}
           style={{
@@ -346,8 +349,6 @@ const ClaroLogo = () => (
 // ═══════════════════════════════════════
 // MAIN PAGE
 // ═══════════════════════════════════════
-// MAIN PAGE
-// ═══════════════════════════════════════
 const DATA_REFRESH_INTERVAL = 5 * 60 * 1000; // 5 minutos
 
 const RalReport: React.FC = () => {
@@ -363,25 +364,33 @@ const RalReport: React.FC = () => {
       const timestamp = Date.now();
       const basePath = import.meta.env.BASE_URL || "/";
 
-      // 1. API do GitHub (sem cache de CDN - atualização instantânea após commit)
-      const apiUrl = `https://api.github.com/repos/cpralonrj-pralon/embratel-sir/contents/public/data/ral_report.json?t=${timestamp}`;
-      // 2. Raw GitHub (Fallback)
-      const rawUrl = `https://raw.githubusercontent.com/cpralonrj-pralon/embratel-sir/main/public/data/ral_report.json?t=${timestamp}`;
-      // 3. Local (Fallback / Dev local)
+      const isLocalhost =
+        typeof window !== "undefined" &&
+        (window.location.hostname === "localhost" ||
+          window.location.hostname === "127.0.0.1" ||
+          window.location.port === "5173");
+
       const localUrl = `${basePath}data/ral_report.json?t=${timestamp}`;
+      const apiUrl = `https://api.github.com/repos/cpralonrj-pralon/embratel-sir/contents/public/data/ral_report.json?t=${timestamp}`;
+      const rawUrl = `https://raw.githubusercontent.com/cpralonrj-pralon/embratel-sir/main/public/data/ral_report.json?t=${timestamp}`;
+
+      // No localhost / dev local, prioriza SEMPRE o arquivo local gerado
+      const urlsToTry = isLocalhost
+        ? [localUrl, apiUrl, rawUrl]
+        : [apiUrl, rawUrl, localUrl];
 
       let response: Response | null = null;
-      try {
-        response = await fetch(apiUrl, {
-          headers: { Accept: "application/vnd.github.v3.raw" },
-        });
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      } catch (err) {
+      for (const url of urlsToTry) {
         try {
-          response = await fetch(rawUrl);
-          if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        } catch (err2) {
-          response = await fetch(localUrl);
+          const res = await fetch(url, {
+            headers: url.includes("api.github.com") ? { Accept: "application/vnd.github.v3.raw" } : undefined,
+          });
+          if (res.ok) {
+            response = res;
+            break;
+          }
+        } catch {
+          // tenta próxima fonte
         }
       }
 

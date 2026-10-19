@@ -208,10 +208,13 @@ def main():
 
     print(f'  Tipos encontrados: {list(by_type.keys())}')
 
+    ALLOWED_TIPOS = {'ACESSO CLIENTE', 'BACKBONE', 'COLETOR', 'FOTONICA', 'QUALIDADE'}
+    filtered_tipos = [t for t in sorted(by_type.keys()) if t in ALLOWED_TIPOS]
+
     # Build report
     report = {
         'updatedAt': datetime.now().strftime('%d/%m/%Y %H:%M:%S'),
-        'tipos':     sorted(by_type.keys()),
+        'tipos':     filtered_tipos,
         'all':       build_stats(all_rows, cluster_by_code),
         'byTipo':    {tipo: build_stats(rows, cluster_by_code) for tipo, rows in by_type.items()},
     }
