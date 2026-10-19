@@ -1,5 +1,5 @@
 {
-  "updatedAt": "19/10/2026 15:45",
+  "updatedAt": "19/10/2026 15:51",
   "RAL": {
     "total": 445,
     "clusters": {
@@ -4505,14 +4505,14 @@
     }
   },
   "REC": {
-    "total": 64,
+    "total": 61,
     "clusters": {
       "MINAS GERAIS": 3,
       "RIO DE JANEIRO": 12,
-      "BAHIA/SERGIPE": 10,
+      "BAHIA/SERGIPE": 9,
       "CENTRO OESTE": 16,
-      "NORTE": 12,
-      "NORDESTE": 7,
+      "NORTE": 11,
+      "NORDESTE": 6,
       "ESPIRITO SANTO": 4
     },
     "items": [
@@ -4697,6 +4697,16 @@
         "num": "REC-653016/2026"
       },
       {
+        "cluster": "CENTRO OESTE",
+        "cidade": "CUIABA",
+        "code": "RT/CBA /CO /NET/FO",
+        "ralType": "BCMB",
+        "description": "BAG/IP/00258",
+        "date": "19/10/2026 06:36",
+        "duration": "N/A",
+        "num": "REC-651945/2026"
+      },
+      {
         "cluster": "BAHIA/SERGIPE",
         "cidade": "ARACAJU",
         "code": "RT/AJU /BA /NET/FO",
@@ -4705,6 +4715,16 @@
         "date": "19/10/2026 09:13",
         "duration": "N/A",
         "num": "REC-652281/2026"
+      },
+      {
+        "cluster": "RIO DE JANEIRO",
+        "cidade": "CENTRO SUL",
+        "code": "RT/RJO /OE1/NET/FO",
+        "ralType": "POUPEX",
+        "description": "RJO/IP/43359",
+        "date": "19/10/2026 07:50",
+        "duration": "N/A",
+        "num": "REC-652026/2026"
       },
       {
         "cluster": "NORTE",
@@ -4727,16 +4747,6 @@
         "num": "REC-652418/2026"
       },
       {
-        "cluster": "CENTRO OESTE",
-        "cidade": "CUIABA",
-        "code": "RT/CBA /CO /NET/FO",
-        "ralType": "BCMB",
-        "description": "BAG/IP/00258",
-        "date": "19/10/2026 06:36",
-        "duration": "N/A",
-        "num": "REC-651945/2026"
-      },
-      {
         "cluster": "NORDESTE",
         "cidade": "RECIFE",
         "code": "RT/RCE /NE /NET/FO",
@@ -4747,16 +4757,6 @@
         "num": "REC-653010/2026"
       },
       {
-        "cluster": "NORDESTE",
-        "cidade": "DESPACHO (DP)",
-        "code": "MU/MCO /NE /MDU/BS",
-        "ralType": "DIOGENESBAYDE",
-        "description": "MCO/IP/11343",
-        "date": "19/10/2026 11:23",
-        "duration": "N/A",
-        "num": "REC-652833/2026"
-      },
-      {
         "cluster": "ESPIRITO SANTO",
         "cidade": "VITORIA",
         "code": "RT/VTA /MTS/FFA/FO",
@@ -4765,16 +4765,6 @@
         "date": "19/10/2026 10:44",
         "duration": "N/A",
         "num": "REC-652679/2026"
-      },
-      {
-        "cluster": "RIO DE JANEIRO",
-        "cidade": "CENTRO SUL",
-        "code": "RT/RJO /OE1/NET/FO",
-        "ralType": "POUPEX",
-        "description": "RJO/IP/43359",
-        "date": "19/10/2026 07:50",
-        "duration": "N/A",
-        "num": "REC-652026/2026"
       },
       {
         "cluster": "RIO DE JANEIRO",
@@ -5037,6 +5027,16 @@
         "num": "REC-653323/2026"
       },
       {
+        "cluster": "RIO DE JANEIRO",
+        "cidade": "NORTE 2",
+        "code": "RC/RJO /NO2/NET/BS",
+        "ralType": "PCRJ",
+        "description": "RJO/IP/44949",
+        "date": "19/10/2026 13:41",
+        "duration": "N/A",
+        "num": "REC-653289/2026"
+      },
+      {
         "cluster": "NORTE",
         "cidade": "MANAUS",
         "code": "RT/MNS /NO /NET/FO",
@@ -5048,53 +5048,13 @@
       },
       {
         "cluster": "NORDESTE",
-        "cidade": "DESPACHO (DP)",
-        "code": "DP/JPA /NE /NET/FO",
+        "cidade": "JOÃO PESSOA",
+        "code": "RT/JPA /NE /NET/FO",
         "ralType": "ITAU",
         "description": "CGE/IP/01240",
         "date": "19/10/2026 14:55",
         "duration": "N/A",
         "num": "REC-653504/2026"
-      },
-      {
-        "cluster": "RIO DE JANEIRO",
-        "cidade": "NORTE 2",
-        "code": "RC/RJO /NO2/NET/BS",
-        "ralType": "PCRJ",
-        "description": "RJO/IP/44949",
-        "date": "19/10/2026 13:41",
-        "duration": "N/A",
-        "num": "REC-653289/2026"
-      },
-      {
-        "cluster": "ESPIRITO SANTO",
-        "cidade": "VITORIA",
-        "code": "RT/VTA /SUL/FFA/FO",
-        "ralType": "DROGARIA SP",
-        "description": "MRZS/IP/00167",
-        "date": "19/10/2026 13:32",
-        "duration": "N/A",
-        "num": "REC-653262/2026"
-      },
-      {
-        "cluster": "BAHIA/SERGIPE",
-        "cidade": "DESPACHO (DP)",
-        "code": "DP/SDR /BA /NET/FO",
-        "ralType": "ECT",
-        "description": "MSN/IP/00111",
-        "date": "19/10/2026 15:01",
-        "duration": "N/A",
-        "num": "REC-653527/2026"
-      },
-      {
-        "cluster": "NORDESTE",
-        "cidade": "FORTALEZA",
-        "code": "RC/FLA /CE /NET/BS",
-        "ralType": "PACAEMBU",
-        "description": "FLA/IP/06273",
-        "date": "19/10/2026 13:53",
-        "duration": "N/A",
-        "num": "REC-653322/2026"
       },
       {
         "cluster": "ESPIRITO SANTO",
@@ -5107,6 +5067,26 @@
         "num": "REC-653307/2026"
       },
       {
+        "cluster": "ESPIRITO SANTO",
+        "cidade": "VITORIA",
+        "code": "RT/VTA /SUL/FFA/FO",
+        "ralType": "DROGARIA SP",
+        "description": "MRZS/IP/00167",
+        "date": "19/10/2026 13:32",
+        "duration": "N/A",
+        "num": "REC-653262/2026"
+      },
+      {
+        "cluster": "NORDESTE",
+        "cidade": "FORTALEZA",
+        "code": "RC/FLA /CE /NET/BS",
+        "ralType": "PACAEMBU",
+        "description": "FLA/IP/06273",
+        "date": "19/10/2026 13:53",
+        "duration": "N/A",
+        "num": "REC-653322/2026"
+      },
+      {
         "cluster": "BAHIA/SERGIPE",
         "cidade": "SALVADOR",
         "code": "RT/SDR /BA /JL /FO",
@@ -5115,16 +5095,6 @@
         "date": "19/10/2026 13:32",
         "duration": "N/A",
         "num": "REC-653264/2026"
-      },
-      {
-        "cluster": "NORTE",
-        "cidade": "DESPACHO (DP)",
-        "code": "DP/MNS /NO /NET/FO",
-        "ralType": "TIGRE MAT E S",
-        "description": "MNS/IP/03976",
-        "date": "19/10/2026 14:32",
-        "duration": "N/A",
-        "num": "REC-653425/2026"
       },
       {
         "cluster": "CENTRO OESTE",
@@ -5166,13 +5136,13 @@
       "CUIABA": 4,
       "MANAUS": 8,
       "GOIÂNIA": 9,
-      "DESPACHO (DP)": 7,
+      "DESPACHO (DP)": 3,
       "POUSO ALEGRE": 1,
       "RECIFE": 4,
       "BELÉM": 2,
       "ARACAJU": 1,
-      "VITORIA": 4,
       "CENTRO SUL": 3,
+      "VITORIA": 4,
       "SERRA": 1,
       "VITORIA DA CONQUISTA": 1,
       "ITABUNA": 1,
@@ -5181,6 +5151,7 @@
       "UBERLANDIA": 1,
       "PALMAS": 1,
       "BRASILIA": 1,
+      "JOÃO PESSOA": 1,
       "FORTALEZA": 1,
       "CAMPO GRANDE": 1
     }
