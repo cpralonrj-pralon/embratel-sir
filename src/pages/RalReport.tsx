@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState, useMemo, useCallback } from "react";
 
 // ═══════════════════════════════════════
 // TYPES
@@ -346,24 +346,66 @@ const ClaroLogo = () => (
 // ═══════════════════════════════════════
 // MAIN PAGE
 // ═══════════════════════════════════════
+// MAIN PAGE
+// ═══════════════════════════════════════
+const DATA_REFRESH_INTERVAL = 5 * 60 * 1000; // 5 minutos
+
 const RalReport: React.FC = () => {
   const [data, setData] = useState<RalReportData | null>(null);
   const [loading, setLoading] = useState(true);
+  const [isRefreshing, setIsRefreshing] = useState(false);
   const [selectedTipos, setSelectedTipos] = useState<string[]>([]);
+  const [lastRefreshedAt, setLastRefreshedAt] = useState<string>("");
+
+  const fetchData = useCallback(async (isManual = false) => {
+    try {
+      if (isManual) setIsRefreshing(true);
+      const timestamp = Date.now();
+      const basePath = import.meta.env.BASE_URL || "/";
+
+      // 1. API do GitHub (sem cache de CDN - atualização instantânea após commit)
+      const apiUrl = `https://api.github.com/repos/cpralonrj-pralon/embratel-sir/contents/public/data/ral_report.json?t=${timestamp}`;
+      // 2. Raw GitHub (Fallback)
+      const rawUrl = `https://raw.githubusercontent.com/cpralonrj-pralon/embratel-sir/main/public/data/ral_report.json?t=${timestamp}`;
+      // 3. Local (Fallback / Dev local)
+      const localUrl = `${basePath}data/ral_report.json?t=${timestamp}`;
+
+      let response: Response | null = null;
+      try {
+        response = await fetch(apiUrl, {
+          headers: { Accept: "application/vnd.github.v3.raw" },
+        });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      } catch (err) {
+        try {
+          response = await fetch(rawUrl);
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        } catch (err2) {
+          response = await fetch(localUrl);
+        }
+      }
+
+      if (!response || !response.ok) throw new Error("Falha ao carregar dados do relatório RAL");
+      const jsonData = await response.json();
+      setData(jsonData as RalReportData);
+      setLastRefreshedAt(
+        new Date().toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit", second: "2-digit" })
+      );
+    } catch (e) {
+      console.error("Erro ao carregar dados do relatório RAL:", e);
+    } finally {
+      setLoading(false);
+      setIsRefreshing(false);
+    }
+  }, []);
 
   useEffect(() => {
-    const load = async () => {
-      try {
-        const base = import.meta.env.BASE_URL || "/";
-        const r = await fetch(`${base}data/ral_report.json?t=${Date.now()}`);
-        setData(await r.json());
-      } catch (e) { console.error(e); }
-      finally { setLoading(false); }
-    };
-    load();
-    const iv = setInterval(load, 5 * 60 * 1000);
-    return () => clearInterval(iv);
-  }, []);
+    fetchData();
+    const interval = setInterval(() => {
+      fetchData(true);
+    }, DATA_REFRESH_INTERVAL);
+    return () => clearInterval(interval);
+  }, [fetchData]);
 
   const handleToggleTipo = (tipo: string) => {
     setSelectedTipos(prev => {
@@ -424,19 +466,70 @@ const RalReport: React.FC = () => {
     <div style={{ background: "#ecf0f5", minHeight: "100vh", fontFamily: "Arial, sans-serif" }}>
 
       {/* HEADER */}
-      <div style={{ background: "#e2001a", padding: "10px 20px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12 }}>
+      <div style={{ background: "#e2001a", padding: "10px 20px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>
         <ClaroLogo />
         <h1 style={{ color: "#fff", fontSize: 26, fontWeight: 900, letterSpacing: 0.5, textAlign: "center", flex: 1, margin: 0, fontFamily: "'Arial Black', Arial, sans-serif" }}>
           RAL &gt;8h e RAL &gt;24h
           {selectedTipos.length > 0 && selectedTipos.length < data.tipos.length && (
-            <span style={{ fontSize: 13, fontWeight: 400, marginLeft: 12, opacity: 0.85 }}>
+            <span style={{ fontSize: 13, fontWeight: 400, marginLeft: 12, opacity: 0.9 }}>
               — {selectedTipos.map(displayTipo).join(", ")}
             </span>
           )}
         </h1>
-        <div style={{ color: "#fff", textAlign: "right", lineHeight: 1.4 }}>
-          <div style={{ fontSize: 9, textTransform: "uppercase", letterSpacing: 0.8, opacity: 0.85 }}>Última Atualização</div>
-          <div style={{ fontSize: 12, fontWeight: 700 }}>{data.updatedAt}</div>
+
+        {/* Status de atualização periódica de 5min */}
+        <div style={{ display: "flex", alignItems: "center", gap: 12, color: "#fff" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 6, background: "rgba(0,0,0,0.2)", padding: "4px 10px", borderRadius: 20 }}>
+            <span
+              style={{
+                width: 8,
+                height: 8,
+                borderRadius: "50%",
+                background: isRefreshing ? "#fbbf24" : "#4ade80",
+                boxShadow: isRefreshing ? "0 0 8px #fbbf24" : "0 0 8px #4ade80",
+                display: "inline-block",
+              }}
+            />
+            <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: 0.5, textTransform: "uppercase" }}>
+              {isRefreshing ? "Atualizando..." : "Ao Vivo • 5 min"}
+            </span>
+          </div>
+
+          <div style={{ textAlign: "right", lineHeight: 1.3 }}>
+            <div style={{ fontSize: 9, textTransform: "uppercase", letterSpacing: 0.8, opacity: 0.85 }}>
+              Dados Base
+            </div>
+            <div style={{ fontSize: 12, fontWeight: 700 }}>{data.updatedAt}</div>
+            {lastRefreshedAt && (
+              <div style={{ fontSize: 9, opacity: 0.8 }}>Sincronizado: {lastRefreshedAt}</div>
+            )}
+          </div>
+
+          {/* Botão de atualização manual instantânea */}
+          <button
+            onClick={() => fetchData(true)}
+            title="Atualizar dados agora"
+            disabled={isRefreshing}
+            style={{
+              background: "rgba(255,255,255,0.2)",
+              border: "1px solid rgba(255,255,255,0.4)",
+              color: "#fff",
+              borderRadius: 6,
+              padding: "6px 10px",
+              cursor: isRefreshing ? "not-allowed" : "pointer",
+              fontSize: 12,
+              fontWeight: 700,
+              display: "flex",
+              alignItems: "center",
+              gap: 4,
+              transition: "background 0.2s",
+            }}
+          >
+            <span style={{ display: "inline-block", transform: isRefreshing ? "rotate(360deg)" : "none", transition: "transform 0.6s linear" }}>
+              ↻
+            </span>
+            <span>Atualizar</span>
+          </button>
         </div>
       </div>
 
