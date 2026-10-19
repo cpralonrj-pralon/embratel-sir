@@ -194,6 +194,13 @@ def main(skip_whatsapp=False):
     
     print(f"Dashboard data saved to {output_file}")
 
+    # --- RAL Report Processing ---
+    try:
+        import process_ral_report
+        process_ral_report.main()
+    except Exception as e:
+        print(f"Erro ao processar relatório RAL: {e}")
+
     # --- WhatsApp Notification ---
     if skip_whatsapp:
         print("WhatsApp: ignorado (--no-whatsapp)")

@@ -7,6 +7,7 @@ import { groupItemsByDesignationAndType } from './utils/grouping';
 
 import { Routes, Route, Link } from 'react-router-dom';
 import Dashboard from './pages/Dashboard';
+import RalReport from './pages/RalReport';
 
 function App() {
   const [isGrouped, setIsGrouped] = useState(false);
@@ -39,11 +40,13 @@ function App() {
       <nav className="bg-gray-800 text-white px-3 py-3 sm:p-4 flex gap-4">
         <Link to="/" className="hover:text-gray-300 font-bold text-sm sm:text-base">Lista</Link>
         <Link to="/dashboard" className="hover:text-gray-300 font-bold text-sm sm:text-base">Dashboard</Link>
+        <Link to="/ral-report" className="hover:text-gray-300 font-bold text-sm sm:text-base">RAL &gt;8h/24h</Link>
       </nav>
       <div className="flex-1 overflow-auto">
         <Routes>
           <Route path="/" element={<ListView />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/ral-report" element={<RalReport />} />
         </Routes>
       </div>
     </div>

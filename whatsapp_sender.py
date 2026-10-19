@@ -160,8 +160,21 @@ def send_whatsapp_summary(stats, target_phone=None):
     }
 
     try:
+        # Pre-check instance connection status to avoid blocking if disconnected
+        try:
+            state_url = f"{API_URL.rstrip('/')}/instance/connectionState/{INSTANCE_NAME}"
+            state_res = requests.get(state_url, headers=headers, timeout=5)
+            if state_res.status_code == 200:
+                state_data = state_res.json()
+                current_state = state_data.get("instance", {}).get("state", "unknown")
+                if current_state != "open":
+                    print(f"[ERRO] Instância WhatsApp '{INSTANCE_NAME}' não está pronta (status: '{current_state}'). Reconecte o WhatsApp no Evolution API.")
+                    return False
+        except Exception as e:
+            print(f"[AVISO] Não foi possível verificar status da instância WhatsApp: {e}")
+
         endpoint = f"{API_URL.rstrip('/')}/message/sendText/{INSTANCE_NAME}"
-        response = requests.post(endpoint, headers=headers, json=payload, timeout=30)
+        response = requests.post(endpoint, headers=headers, json=payload, timeout=15)
         
         if response.status_code in [200, 201]:
             print(f"[OK] WhatsApp enviado com sucesso para {phone}")
@@ -169,8 +182,11 @@ def send_whatsapp_summary(stats, target_phone=None):
         else:
             print(f"[ERRO] Erro ao enviar WhatsApp (HTTP {response.status_code}): {response.text}")
             return False
+    except requests.exceptions.Timeout:
+        print(f"[FALHA] Timeout no envio de WhatsApp (Evolution API não respondeu em 15s)")
+        return False
     except Exception as e:
-        print(f"[FALHA] Falha critica no envio de WhatsApp: {e}")
+        print(f"[FALHA] Falha crítica no envio de WhatsApp: {e}")
         return False
 
 if __name__ == "__main__":

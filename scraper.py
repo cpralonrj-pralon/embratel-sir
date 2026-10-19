@@ -1,5 +1,20 @@
 import time
 import pandas as pd
+import sys
+import os
+from datetime import datetime
+# Log inicial imediato para confirmar que o script começou
+def early_log(msg):
+    timestamp = datetime.now().strftime('%H:%M:%S')
+    print(f"[{timestamp}] [STARTUP] {msg}")
+    sys.stdout.flush()
+
+early_log("Iniciando carregamento de dependências...")
+
+# Configurações do WebDriver Manager para evitar lentidão
+os.environ['WDM_LOG_LEVEL'] = '0' # Silenciar logs do WDM
+os.environ['WDM_LOCAL_PROVIDER'] = '1' # Tentar usar cache local primeiro
+
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.by import By
@@ -9,6 +24,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 from bs4 import BeautifulSoup
 import process_dashboard_data
+early_log("Dependências carregadas.")
 
 # ================= CONFIGURAÇÃO =================
 LOGIN_URL = "http://172.30.130.133/"
@@ -38,49 +54,76 @@ SELECTORS = {
 
 # ================= FUNÇÕES =================
 
+def log(msg):
+    timestamp = datetime.now().strftime('%H:%M:%S')
+    print(f"[{timestamp}] {msg}")
+    sys.stdout.flush()
+
 def setup_driver():
-    print("Configurando navegador...")
+    start_time = time.time()
+    log("Iniciando configuração do WebDriver...")
     options = Options()
-    # options.add_argument("--headless=new") # Retire o comentário para rodar em background
+    options.add_argument("--headless=new") 
     options.add_argument("--ignore-certificate-errors")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
+    options.add_argument("--log-level=3") 
     
-    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
-    driver.maximize_window()
-    return driver
+    driver = None
+    
+    # Tentativa 1: Selenium Manager (Nativo do Selenium 4.6+)
+    try:
+        log("Tentativa 1: Inicializando com Selenium Manager (nativo)...")
+        driver = webdriver.Chrome(options=options)
+        log(f"Sucesso com Selenium Manager em {time.time() - start_time:.2f}s")
+    except Exception as e:
+        log(f"Selenium Manager falhou ou não disponível: {e}")
+        
+        # Tentativa 2: WebDriver Manager (Fallback)
+        try:
+            log("Tentativa 2: Verificando/Baixando driver via webdriver-manager...")
+            service = ChromeService(ChromeDriverManager().install())
+            driver = webdriver.Chrome(service=service, options=options)
+            log(f"Sucesso com WebDriver Manager em {time.time() - start_time:.2f}s")
+        except Exception as e2:
+            log(f"Erro crítico ao configurar driver: {e2}")
+            raise
+
+    if driver:
+        driver.maximize_window()
+        return driver
 
 def fazer_login(driver):
-    print(f"Acessando página de login: {LOGIN_URL}")
+    log(f"Acessando página de login: {LOGIN_URL}")
+    start_time = time.time()
     driver.get(LOGIN_URL)
-    time.sleep(3)
     
     try:
-        print("Preenchendo credenciais...")
-        # Localiza e preenche Usuário
-        WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.NAME, SELECTORS["user_name"])))
+        log("Aguardando carregamento da página de login...")
+        # Espera o campo de usuário aparecer ao invés de sleep fixo
+        WebDriverWait(driver, 15).until(EC.presence_of_element_located((By.NAME, SELECTORS["user_name"])))
+        
+        log("Preenchendo credenciais...")
         driver.find_element(By.NAME, SELECTORS["user_name"]).clear()
         driver.find_element(By.NAME, SELECTORS["user_name"]).send_keys(USUARIO)
 
-        # Localiza e preenche Senha
         driver.find_element(By.NAME, SELECTORS["pass_name"]).clear()
         driver.find_element(By.NAME, SELECTORS["pass_name"]).send_keys(SENHA)
 
-        # Clica no botão Entrar
-        print("Clicando em Entrar...")
+        log("Clicando em Entrar...")
         driver.find_element(By.NAME, SELECTORS["btn_name"]).click()
         
-        # Espera carregar a próxima página
-        time.sleep(5)
-        print("Login efetuado (provavelmente).")
+        # Espera um elemento da página interna ou timeout curto
+        time.sleep(3) 
+        log(f"Login processado (Tempo total de login: {time.time() - start_time:.2f}s)")
         
     except Exception as e:
-        print(f"Erro ao tentar login: {e}")
+        log(f"Erro ao tentar login ou página lenta: {e}")
         # Se der erro no login, pode ser que já esteja logado ou erro de rede
         # Segue o fluxo
 
 def extrair_dados_tabela(html_source, nome_arquivo):
-    print(f"Extraindo dados para {nome_arquivo}...")
+    log(f"Extraindo dados para {nome_arquivo}...")
     soup = BeautifulSoup(html_source, 'html.parser')
     
     tabelas = soup.find_all("table")
@@ -156,17 +199,17 @@ def main(skip_whatsapp=False):
         fazer_login(driver)
         
         # === REC (Mantido método direto pois funciona) ===
-        print("--- INICIANDO EXTRAÇÃO REC ---")
-        print(f"Navegando para REC: {REC_URL}")
+        log("--- INICIANDO EXTRAÇÃO REC ---")
+        log(f"Navegando para REC: {REC_URL}")
         driver.get(REC_URL)
-        time.sleep(5)
+        time.sleep(2) # Reduzido de 5 para 2, pois o extrair_dados já valida se há tabela
         extrair_dados_tabela(driver.page_source, "dados_rec.csv")
         
         # === RAL (Método Interativo) ===
-        print("\n--- INICIANDO EXTRAÇÃO RAL ---")
-        print(f"Navegando para Frameset RAL: {RAL_FRAMESET_URL}")
+        log("\n--- INICIANDO EXTRAÇÃO RAL ---")
+        log(f"Navegando para Frameset RAL: {RAL_FRAMESET_URL}")
         driver.get(RAL_FRAMESET_URL)
-        time.sleep(5)
+        time.sleep(3) # Reduzido de 5 para 3
         
         # 1. Mudar para o Frame de Filtro
         try:
@@ -209,24 +252,24 @@ def main(skip_whatsapp=False):
             # DEBUG: Salvar HTML final para verificação
             with open("debug_ral_final.html", "w", encoding="utf-8") as f:
                 f.write(driver.page_source)
-            print("HTML final RAL salvo em debug_ral_final.html")
+            log("HTML final RAL salvo em debug_ral_final.html")
             
             # 6. Extrair
             extrair_dados_tabela(driver.page_source, "dados_ral.csv")
             
         except Exception as e:
-            print(f"Erro na interação RAL: {e}")
+            log(f"Erro na interação RAL: {e}")
             # Tenta tirar screenshot se der erro
             driver.save_screenshot("erro_ral.png")
 
-        print("\nProcesso concluído!")
+        log("\nProcesso concluído!")
         
         # Executa processamento do Dashboard
-        print("\n--- ATUALIZANDO DASHBOARD ---")
+        log("\n--- ATUALIZANDO DASHBOARD ---")
         process_dashboard_data.main(skip_whatsapp=skip_whatsapp)
         
     except Exception as e:
-        print(f"Erro fatal: {e}")
+        log(f"Erro fatal: {e}")
         import sys
         sys.exit(1)
     finally:

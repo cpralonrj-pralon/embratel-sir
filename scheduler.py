@@ -1,7 +1,15 @@
 import time
 import subprocess
 import os
+import sys
 from datetime import datetime
+
+# Fix encoding para console Windows
+if sys.stdout and hasattr(sys.stdout, 'reconfigure') and sys.stdout.encoding and sys.stdout.encoding.lower() != 'utf-8':
+    try:
+        sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+    except Exception:
+        pass
 
 # Intervalo de atualização dos dados (em segundos)
 DATA_UPDATE_INTERVAL = 5 * 60  # 5 minutos
@@ -16,21 +24,31 @@ def run_scraper():
     timestamp = datetime.now().strftime('%d/%m/%Y %H:%M:%S')
     print(f"\n[{timestamp}] Iniciando coleta de dados (scraper)...")
     try:
-        result = subprocess.run(
-            ["python", "scraper.py", "--no-whatsapp"],
-            capture_output=True, text=True, timeout=120
+        # Usamos sys.executable para garantir que usamos o mesmo Python do scheduler
+        log_cmd = f"{sys.executable} -u scraper.py --no-whatsapp"
+        process = subprocess.Popen(
+            [sys.executable, "-u", "scraper.py", "--no-whatsapp"],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            text=True,
+            bufsize=1,
+            universal_newlines=True
         )
-        if result.returncode == 0:
+
+        print(f"    [SCHEDULER] Processo iniciado (PID: {process.pid}). Aguardando saída...")
+
+        # Lê a saída linha por linha enquanto o processo executa
+        for line in process.stdout:
+            print(f"    {line.strip()}")
+        
+        process.wait(timeout=150) # Aumentado um pouco o timeout
+
+        if process.returncode == 0:
             print(f"[{datetime.now().strftime('%d/%m/%Y %H:%M:%S')}] ✓ Dados atualizados com sucesso.")
-            if result.stdout:
-                lines = result.stdout.strip().split('\n')
-                for line in lines[-5:]:
-                    print(f"    {line}")
+            return True
         else:
-            print(f"[{datetime.now().strftime('%d/%m/%Y %H:%M:%S')}] ✗ Erro na atualização:")
-            if result.stderr:
-                print(f"    {result.stderr[:500]}")
-        return result.returncode == 0
+            print(f"[{datetime.now().strftime('%d/%m/%Y %H:%M:%S')}] ✗ Erro na atualização (Código {process.returncode}).")
+            return False
     except subprocess.TimeoutExpired:
         print(f"[{datetime.now().strftime('%d/%m/%Y %H:%M:%S')}] ✗ Timeout: scraper demorou mais de 120s")
         return False
@@ -104,17 +122,26 @@ def send_whatsapp():
     print(f"[{timestamp}] Enviando WhatsApp...")
     try:
         result = subprocess.run(
-            ["python", "-c", 
+            [sys.executable, "-c", 
              "import json; from whatsapp_sender import send_whatsapp_summary; "
              "stats=json.load(open('public/data/dashboard.json','r',encoding='utf-8')); "
              "send_whatsapp_summary(stats)"],
-            capture_output=True, text=True, timeout=30
+            capture_output=True, text=True, timeout=45
         )
-        if result.returncode == 0:
+        out_msg = (result.stdout or "").strip()
+        err_msg = (result.stderr or "").strip()
+        
+        if result.returncode == 0 and "[OK]" in out_msg:
             last_whatsapp_time = datetime.now()
             print(f"[{datetime.now().strftime('%d/%m/%Y %H:%M:%S')}] ✓ WhatsApp enviado!")
+            if out_msg:
+                print(f"    {out_msg}")
         else:
-            print(f"[{datetime.now().strftime('%d/%m/%Y %H:%M:%S')}] ✗ Erro WhatsApp: {result.stderr[:300]}")
+            print(f"[{datetime.now().strftime('%d/%m/%Y %H:%M:%S')}] ✗ Erro WhatsApp:")
+            if out_msg:
+                print(f"    {out_msg}")
+            if err_msg:
+                print(f"    {err_msg[:300]}")
     except Exception as e:
         print(f"[{datetime.now().strftime('%d/%m/%Y %H:%M:%S')}] ✗ Falha WhatsApp: {e}")
 
