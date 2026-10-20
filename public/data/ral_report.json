@@ -1,5 +1,5 @@
 {
-  "updatedAt": "20/10/2026 03:00:13",
+  "updatedAt": "20/10/2026 03:05:54",
   "tipos": [
     "ACESSO CLIENTE",
     "BACKBONE",
@@ -9,11 +9,11 @@
   ],
   "all": {
     "kpis": {
-      "pendentes": 413,
+      "pendentes": 410,
       "ral_gt8h": 371,
       "pct_gt8h": 90,
       "ral_gt24h": 339,
-      "pct_gt24h": 82,
+      "pct_gt24h": 83,
       "ral_gt7d": 289,
       "pct_gt7d": 70,
       "ral_gt30d": 221,
@@ -22,12 +22,12 @@
     "aging": [
       {
         "label": "<4h",
-        "count": 22,
-        "pct": 5
+        "count": 18,
+        "pct": 4
       },
       {
         "label": "4h-8h",
-        "count": 20,
+        "count": 21,
         "pct": 5
       },
       {
@@ -48,7 +48,7 @@
       {
         "label": "7d-30d",
         "count": 68,
-        "pct": 16
+        "pct": 17
       },
       {
         "label": ">30d",
@@ -59,7 +59,7 @@
     "areas": [
       {
         "area": "DEMAIS AREAS",
-        "count": 347,
+        "count": 344,
         "pct": 84
       },
       {
@@ -78,14 +78,14 @@
         {
           "rank": 1,
           "sigla": "RJ_ES",
-          "total": 167,
+          "total": 165,
           "pct": 40
         },
         {
           "rank": 2,
           "sigla": "NO",
           "total": 97,
-          "pct": 23
+          "pct": 24
         },
         {
           "rank": 3,
@@ -114,7 +114,7 @@
         {
           "rank": 7,
           "sigla": "BA_SE",
-          "total": 16,
+          "total": 15,
           "pct": 4
         }
       ],
@@ -137,11 +137,19 @@
         },
         {
           "sigla": "RJ_ES",
-          "pct": 93,
+          "pct": 94,
           "volume": 155,
-          "total": 167,
-          "fraction": "155/167",
+          "total": 165,
+          "fraction": "155/165",
           "rank": 3
+        },
+        {
+          "sigla": "BA_SE",
+          "pct": 93,
+          "volume": 14,
+          "total": 15,
+          "fraction": "14/15",
+          "rank": 4
         },
         {
           "sigla": "NO",
@@ -149,14 +157,6 @@
           "volume": 87,
           "total": 97,
           "fraction": "87/97",
-          "rank": 4
-        },
-        {
-          "sigla": "BA_SE",
-          "pct": 88,
-          "volume": 14,
-          "total": 16,
-          "fraction": "14/16",
           "rank": 5
         },
         {
@@ -203,11 +203,19 @@
         },
         {
           "sigla": "RJ_ES",
-          "pct": 83,
+          "pct": 84,
           "volume": 138,
-          "total": 167,
-          "fraction": "138/167",
+          "total": 165,
+          "fraction": "138/165",
           "rank": 4
+        },
+        {
+          "sigla": "BA_SE",
+          "pct": 73,
+          "volume": 11,
+          "total": 15,
+          "fraction": "11/15",
+          "rank": 5
         },
         {
           "sigla": "CO",
@@ -215,14 +223,6 @@
           "volume": 33,
           "total": 46,
           "fraction": "33/46",
-          "rank": 5
-        },
-        {
-          "sigla": "BA_SE",
-          "pct": 69,
-          "volume": 11,
-          "total": 16,
-          "fraction": "11/16",
           "rank": 6
         },
         {
@@ -375,31 +375,31 @@
     },
     "BACKBONE": {
       "kpis": {
-        "pendentes": 34,
+        "pendentes": 32,
         "ral_gt8h": 24,
-        "pct_gt8h": 71,
+        "pct_gt8h": 75,
         "ral_gt24h": 18,
-        "pct_gt24h": 53,
+        "pct_gt24h": 56,
         "ral_gt7d": 11,
-        "pct_gt7d": 32,
+        "pct_gt7d": 34,
         "ral_gt30d": 2,
         "pct_gt30d": 6
       },
       "aging": [
         {
           "label": "<4h",
-          "count": 5,
-          "pct": 15
+          "count": 3,
+          "pct": 9
         },
         {
           "label": "4h-8h",
           "count": 5,
-          "pct": 15
+          "pct": 16
         },
         {
           "label": "8h-24h",
           "count": 6,
-          "pct": 18
+          "pct": 19
         },
         {
           "label": "24h-72h",
@@ -409,12 +409,12 @@
         {
           "label": "72h-7d",
           "count": 6,
-          "pct": 18
+          "pct": 19
         },
         {
           "label": "7d-30d",
           "count": 9,
-          "pct": 26
+          "pct": 28
         },
         {
           "label": ">30d",
@@ -425,13 +425,13 @@
       "areas": [
         {
           "area": "DEMAIS AREAS",
-          "count": 23,
-          "pct": 68
+          "count": 21,
+          "pct": 66
         },
         {
           "area": "SWAP",
           "count": 10,
-          "pct": 29
+          "pct": 31
         },
         {
           "area": "REDE EXTERNA",
@@ -444,20 +444,20 @@
           {
             "rank": 1,
             "sigla": "RJ_ES",
-            "total": 18,
+            "total": 17,
             "pct": 53
           },
           {
             "rank": 2,
             "sigla": "MG",
             "total": 6,
-            "pct": 18
+            "pct": 19
           },
           {
             "rank": 3,
             "sigla": "NO",
             "total": 5,
-            "pct": 15
+            "pct": 16
           },
           {
             "rank": 4,
@@ -467,12 +467,6 @@
           },
           {
             "rank": 5,
-            "sigla": "BA_SE",
-            "total": 1,
-            "pct": 3
-          },
-          {
-            "rank": 6,
             "sigla": "CO",
             "total": 1,
             "pct": 3
@@ -497,10 +491,10 @@
           },
           {
             "sigla": "RJ_ES",
-            "pct": 67,
+            "pct": 71,
             "volume": 12,
-            "total": 18,
-            "fraction": "12/18",
+            "total": 17,
+            "fraction": "12/17",
             "rank": 3
           },
           {
@@ -512,20 +506,12 @@
             "rank": 4
           },
           {
-            "sigla": "BA_SE",
-            "pct": 0,
-            "volume": 0,
-            "total": 1,
-            "fraction": "0/1",
-            "rank": 5
-          },
-          {
             "sigla": "CO",
             "pct": 0,
             "volume": 0,
             "total": 1,
             "fraction": "0/1",
-            "rank": 6
+            "rank": 5
           }
         ],
         "byPct24h": [
@@ -547,10 +533,10 @@
           },
           {
             "sigla": "RJ_ES",
-            "pct": 44,
+            "pct": 47,
             "volume": 8,
-            "total": 18,
-            "fraction": "8/18",
+            "total": 17,
+            "fraction": "8/17",
             "rank": 3
           },
           {
@@ -562,20 +548,12 @@
             "rank": 4
           },
           {
-            "sigla": "BA_SE",
-            "pct": 0,
-            "volume": 0,
-            "total": 1,
-            "fraction": "0/1",
-            "rank": 5
-          },
-          {
             "sigla": "CO",
             "pct": 0,
             "volume": 0,
             "total": 1,
             "fraction": "0/1",
-            "rank": 6
+            "rank": 5
           }
         ]
       }
@@ -844,26 +822,26 @@
     },
     "ACESSO CLIENTE": {
       "kpis": {
-        "pendentes": 51,
+        "pendentes": 50,
         "ral_gt8h": 40,
-        "pct_gt8h": 78,
+        "pct_gt8h": 80,
         "ral_gt24h": 30,
-        "pct_gt24h": 59,
+        "pct_gt24h": 60,
         "ral_gt7d": 21,
-        "pct_gt7d": 41,
+        "pct_gt7d": 42,
         "ral_gt30d": 11,
         "pct_gt30d": 22
       },
       "aging": [
         {
           "label": "<4h",
-          "count": 7,
-          "pct": 14
+          "count": 5,
+          "pct": 10
         },
         {
           "label": "4h-8h",
-          "count": 4,
-          "pct": 8
+          "count": 5,
+          "pct": 10
         },
         {
           "label": "8h-24h",
@@ -894,7 +872,7 @@
       "areas": [
         {
           "area": "DEMAIS AREAS",
-          "count": 51,
+          "count": 50,
           "pct": 100
         }
       ],
@@ -904,13 +882,13 @@
             "rank": 1,
             "sigla": "NO",
             "total": 21,
-            "pct": 41
+            "pct": 42
           },
           {
             "rank": 2,
             "sigla": "RJ_ES",
-            "total": 19,
-            "pct": 37
+            "total": 18,
+            "pct": 36
           },
           {
             "rank": 3,
@@ -942,10 +920,10 @@
           },
           {
             "sigla": "RJ_ES",
-            "pct": 89,
+            "pct": 94,
             "volume": 17,
-            "total": 19,
-            "fraction": "17/19",
+            "total": 18,
+            "fraction": "17/18",
             "rank": 2
           },
           {
@@ -992,10 +970,10 @@
           },
           {
             "sigla": "RJ_ES",
-            "pct": 53,
+            "pct": 56,
             "volume": 10,
-            "total": 19,
-            "fraction": "10/19",
+            "total": 18,
+            "fraction": "10/18",
             "rank": 3
           },
           {
