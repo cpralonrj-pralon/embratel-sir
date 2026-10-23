@@ -1,5 +1,5 @@
 {
-  "updatedAt": "23/10/2026 03:10:26",
+  "updatedAt": "23/10/2026 03:16:04",
   "tipos": [
     "ACESSO CLIENTE",
     "BACKBONE",
@@ -9,9 +9,9 @@
   ],
   "all": {
     "kpis": {
-      "pendentes": 429,
+      "pendentes": 430,
       "ral_gt8h": 402,
-      "pct_gt8h": 94,
+      "pct_gt8h": 93,
       "ral_gt24h": 357,
       "pct_gt24h": 83,
       "ral_gt7d": 295,
@@ -22,7 +22,7 @@
     "aging": [
       {
         "label": "<4h",
-        "count": 17,
+        "count": 18,
         "pct": 4
       },
       {
@@ -59,7 +59,7 @@
     "areas": [
       {
         "area": "DEMAIS AREAS",
-        "count": 360,
+        "count": 361,
         "pct": 84
       },
       {
@@ -90,7 +90,7 @@
         {
           "rank": 3,
           "sigla": "MG",
-          "total": 60,
+          "total": 61,
           "pct": 14
         },
         {
@@ -144,7 +144,7 @@
           "rank": 3
         },
         {
-          "sigla": "MG",
+          "sigla": "CO",
           "pct": 92,
           "volume": 55,
           "total": 60,
@@ -152,11 +152,11 @@
           "rank": 4
         },
         {
-          "sigla": "CO",
-          "pct": 92,
+          "sigla": "MG",
+          "pct": 90,
           "volume": 55,
-          "total": 60,
-          "fraction": "55/60",
+          "total": 61,
+          "fraction": "55/61",
           "rank": 5
         },
         {
@@ -203,10 +203,10 @@
         },
         {
           "sigla": "MG",
-          "pct": 80,
+          "pct": 79,
           "volume": 48,
-          "total": 60,
-          "fraction": "48/60",
+          "total": 61,
+          "fraction": "48/61",
           "rank": 4
         },
         {
@@ -511,11 +511,11 @@
     },
     "COLETOR": {
       "kpis": {
-        "pendentes": 32,
+        "pendentes": 33,
         "ral_gt8h": 27,
-        "pct_gt8h": 84,
+        "pct_gt8h": 82,
         "ral_gt24h": 11,
-        "pct_gt24h": 34,
+        "pct_gt24h": 33,
         "ral_gt7d": 1,
         "pct_gt7d": 3,
         "ral_gt30d": 0,
@@ -524,8 +524,8 @@
       "aging": [
         {
           "label": "<4h",
-          "count": 3,
-          "pct": 9
+          "count": 4,
+          "pct": 12
         },
         {
           "label": "4h-8h",
@@ -535,12 +535,12 @@
         {
           "label": "8h-24h",
           "count": 16,
-          "pct": 50
+          "pct": 48
         },
         {
           "label": "24h-72h",
           "count": 6,
-          "pct": 19
+          "pct": 18
         },
         {
           "label": "72h-7d",
@@ -561,7 +561,7 @@
       "areas": [
         {
           "area": "DEMAIS AREAS",
-          "count": 32,
+          "count": 33,
           "pct": 100
         }
       ],
@@ -571,13 +571,13 @@
             "rank": 1,
             "sigla": "NO",
             "total": 15,
-            "pct": 47
+            "pct": 45
           },
           {
             "rank": 2,
             "sigla": "CO",
             "total": 8,
-            "pct": 25
+            "pct": 24
           },
           {
             "rank": 3,
@@ -594,26 +594,18 @@
           {
             "rank": 5,
             "sigla": "MG",
-            "total": 2,
-            "pct": 6
+            "total": 3,
+            "pct": 9
           }
         ],
         "byPct8h": [
-          {
-            "sigla": "MG",
-            "pct": 100,
-            "volume": 2,
-            "total": 2,
-            "fraction": "2/2",
-            "rank": 1
-          },
           {
             "sigla": "NO",
             "pct": 93,
             "volume": 14,
             "total": 15,
             "fraction": "14/15",
-            "rank": 2
+            "rank": 1
           },
           {
             "sigla": "CO",
@@ -621,10 +613,18 @@
             "volume": 7,
             "total": 8,
             "fraction": "7/8",
-            "rank": 3
+            "rank": 2
           },
           {
             "sigla": "NE",
+            "pct": 67,
+            "volume": 2,
+            "total": 3,
+            "fraction": "2/3",
+            "rank": 3
+          },
+          {
+            "sigla": "MG",
             "pct": 67,
             "volume": 2,
             "total": 3,
@@ -677,8 +677,8 @@
             "sigla": "MG",
             "pct": 0,
             "volume": 0,
-            "total": 2,
-            "fraction": "0/2",
+            "total": 3,
+            "fraction": "0/3",
             "rank": 5
           }
         ]
