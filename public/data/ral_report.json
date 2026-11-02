@@ -1,5 +1,5 @@
 {
-  "updatedAt": "02/11/2026 19:57:41",
+  "updatedAt": "02/11/2026 20:03:15",
   "tipos": [
     "ACESSO CLIENTE",
     "BACKBONE",
@@ -10,8 +10,8 @@
   "all": {
     "kpis": {
       "pendentes": 379,
-      "ral_gt8h": 354,
-      "pct_gt8h": 93,
+      "ral_gt8h": 355,
+      "pct_gt8h": 94,
       "ral_gt24h": 343,
       "pct_gt24h": 91,
       "ral_gt7d": 295,
@@ -27,12 +27,12 @@
       },
       {
         "label": "4h-8h",
-        "count": 10,
-        "pct": 3
+        "count": 9,
+        "pct": 2
       },
       {
         "label": "8h-24h",
-        "count": 11,
+        "count": 12,
         "pct": 3
       },
       {
@@ -152,12 +152,20 @@
           "rank": 4
         },
         {
+          "sigla": "CO",
+          "pct": 89,
+          "volume": 31,
+          "total": 35,
+          "fraction": "31/35",
+          "rank": 5
+        },
+        {
           "sigla": "NE",
           "pct": 89,
           "volume": 8,
           "total": 9,
           "fraction": "8/9",
-          "rank": 5
+          "rank": 6
         },
         {
           "sigla": "MG",
@@ -165,14 +173,6 @@
           "volume": 47,
           "total": 54,
           "fraction": "47/54",
-          "rank": 6
-        },
-        {
-          "sigla": "CO",
-          "pct": 86,
-          "volume": 30,
-          "total": 35,
-          "fraction": "30/35",
           "rank": 7
         }
       ],
@@ -714,8 +714,8 @@
     "ACESSO CLIENTE": {
       "kpis": {
         "pendentes": 37,
-        "ral_gt8h": 33,
-        "pct_gt8h": 89,
+        "ral_gt8h": 34,
+        "pct_gt8h": 92,
         "ral_gt24h": 31,
         "pct_gt24h": 84,
         "ral_gt7d": 21,
@@ -731,13 +731,13 @@
         },
         {
           "label": "4h-8h",
-          "count": 3,
-          "pct": 8
+          "count": 2,
+          "pct": 5
         },
         {
           "label": "8h-24h",
-          "count": 2,
-          "pct": 5
+          "count": 3,
+          "pct": 8
         },
         {
           "label": "24h-72h",
@@ -813,10 +813,10 @@
           },
           {
             "sigla": "CO",
-            "pct": 50,
-            "volume": 2,
+            "pct": 75,
+            "volume": 3,
             "total": 4,
-            "fraction": "2/4",
+            "fraction": "3/4",
             "rank": 3
           },
           {
