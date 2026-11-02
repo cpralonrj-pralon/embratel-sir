@@ -1,5 +1,5 @@
 {
-  "updatedAt": "02/11/2026 04:48:59",
+  "updatedAt": "02/11/2026 04:54:59",
   "tipos": [
     "ACESSO CLIENTE",
     "BACKBONE",
@@ -10,7 +10,7 @@
   "all": {
     "kpis": {
       "pendentes": 407,
-      "ral_gt8h": 378,
+      "ral_gt8h": 379,
       "pct_gt8h": 93,
       "ral_gt24h": 352,
       "pct_gt24h": 86,
@@ -22,8 +22,8 @@
     "aging": [
       {
         "label": "<4h",
-        "count": 7,
-        "pct": 2
+        "count": 6,
+        "pct": 1
       },
       {
         "label": "4h-8h",
@@ -32,8 +32,8 @@
       },
       {
         "label": "8h-24h",
-        "count": 26,
-        "pct": 6
+        "count": 27,
+        "pct": 7
       },
       {
         "label": "24h-72h",
@@ -136,19 +136,19 @@
           "rank": 2
         },
         {
+          "sigla": "NO",
+          "pct": 95,
+          "volume": 99,
+          "total": 104,
+          "fraction": "99/104",
+          "rank": 3
+        },
+        {
           "sigla": "RJ_ES",
           "pct": 94,
           "volume": 154,
           "total": 164,
           "fraction": "154/164",
-          "rank": 3
-        },
-        {
-          "sigla": "NO",
-          "pct": 94,
-          "volume": 98,
-          "total": 104,
-          "fraction": "98/104",
           "rank": 4
         },
         {
@@ -366,13 +366,13 @@
       "aging": [
         {
           "label": "<4h",
-          "count": 2,
-          "pct": 6
+          "count": 1,
+          "pct": 3
         },
         {
           "label": "4h-8h",
-          "count": 7,
-          "pct": 21
+          "count": 8,
+          "pct": 24
         },
         {
           "label": "8h-24h",
@@ -1091,8 +1091,8 @@
     "PPC": {
       "kpis": {
         "pendentes": 1,
-        "ral_gt8h": 0,
-        "pct_gt8h": 0,
+        "ral_gt8h": 1,
+        "pct_gt8h": 100,
         "ral_gt24h": 0,
         "pct_gt24h": 0,
         "ral_gt7d": 0,
@@ -1108,13 +1108,13 @@
         },
         {
           "label": "4h-8h",
-          "count": 1,
-          "pct": 100
+          "count": 0,
+          "pct": 0
         },
         {
           "label": "8h-24h",
-          "count": 0,
-          "pct": 0
+          "count": 1,
+          "pct": 100
         },
         {
           "label": "24h-72h",
@@ -1156,10 +1156,10 @@
         "byPct8h": [
           {
             "sigla": "NO",
-            "pct": 0,
-            "volume": 0,
+            "pct": 100,
+            "volume": 1,
             "total": 1,
-            "fraction": "0/1",
+            "fraction": "1/1",
             "rank": 1
           }
         ],
