@@ -1,5 +1,5 @@
 {
-  "updatedAt": "12/11/2026 06:02:30",
+  "updatedAt": "12/11/2026 06:08:20",
   "tipos": [
     "ACESSO CLIENTE",
     "BACKBONE",
@@ -9,21 +9,21 @@
   ],
   "all": {
     "kpis": {
-      "pendentes": 478,
+      "pendentes": 479,
       "ral_gt8h": 450,
       "pct_gt8h": 94,
       "ral_gt24h": 385,
-      "pct_gt24h": 81,
+      "pct_gt24h": 80,
       "ral_gt7d": 318,
-      "pct_gt7d": 67,
+      "pct_gt7d": 66,
       "ral_gt30d": 236,
       "pct_gt30d": 49
     },
     "aging": [
       {
         "label": "<4h",
-        "count": 16,
-        "pct": 3
+        "count": 17,
+        "pct": 4
       },
       {
         "label": "4h-8h",
@@ -59,7 +59,7 @@
     "areas": [
       {
         "area": "DEMAIS AREAS",
-        "count": 416,
+        "count": 417,
         "pct": 87
       },
       {
@@ -90,7 +90,7 @@
         {
           "rank": 3,
           "sigla": "MG",
-          "total": 55,
+          "total": 56,
           "pct": 12
         },
         {
@@ -136,19 +136,19 @@
           "rank": 2
         },
         {
-          "sigla": "MG",
-          "pct": 96,
-          "volume": 53,
-          "total": 55,
-          "fraction": "53/55",
-          "rank": 3
-        },
-        {
           "sigla": "NO",
           "pct": 96,
           "volume": 126,
           "total": 131,
           "fraction": "126/131",
+          "rank": 3
+        },
+        {
+          "sigla": "MG",
+          "pct": 95,
+          "volume": 53,
+          "total": 56,
+          "fraction": "53/56",
           "rank": 4
         },
         {
@@ -187,10 +187,10 @@
         },
         {
           "sigla": "MG",
-          "pct": 89,
+          "pct": 88,
           "volume": 49,
-          "total": 55,
-          "fraction": "49/55",
+          "total": 56,
+          "fraction": "49/56",
           "rank": 2
         },
         {
@@ -795,11 +795,11 @@
     },
     "ACESSO CLIENTE": {
       "kpis": {
-        "pendentes": 75,
+        "pendentes": 76,
         "ral_gt8h": 73,
-        "pct_gt8h": 97,
+        "pct_gt8h": 96,
         "ral_gt24h": 47,
-        "pct_gt24h": 63,
+        "pct_gt24h": 62,
         "ral_gt7d": 27,
         "pct_gt7d": 36,
         "ral_gt30d": 16,
@@ -808,8 +808,8 @@
       "aging": [
         {
           "label": "<4h",
-          "count": 1,
-          "pct": 1
+          "count": 2,
+          "pct": 3
         },
         {
           "label": "4h-8h",
@@ -819,7 +819,7 @@
         {
           "label": "8h-24h",
           "count": 26,
-          "pct": 35
+          "pct": 34
         },
         {
           "label": "24h-72h",
@@ -834,7 +834,7 @@
         {
           "label": "7d-30d",
           "count": 11,
-          "pct": 15
+          "pct": 14
         },
         {
           "label": ">30d",
@@ -845,7 +845,7 @@
       "areas": [
         {
           "area": "DEMAIS AREAS",
-          "count": 75,
+          "count": 76,
           "pct": 100
         }
       ],
@@ -855,7 +855,7 @@
             "rank": 1,
             "sigla": "NO",
             "total": 36,
-            "pct": 48
+            "pct": 47
           },
           {
             "rank": 2,
@@ -872,6 +872,12 @@
           {
             "rank": 4,
             "sigla": "BA_SE",
+            "total": 1,
+            "pct": 1
+          },
+          {
+            "rank": 5,
+            "sigla": "MG",
             "total": 1,
             "pct": 1
           }
@@ -908,6 +914,14 @@
             "total": 1,
             "fraction": "0/1",
             "rank": 4
+          },
+          {
+            "sigla": "MG",
+            "pct": 0,
+            "volume": 0,
+            "total": 1,
+            "fraction": "0/1",
+            "rank": 5
           }
         ],
         "byPct24h": [
@@ -942,6 +956,14 @@
             "total": 1,
             "fraction": "0/1",
             "rank": 4
+          },
+          {
+            "sigla": "MG",
+            "pct": 0,
+            "volume": 0,
+            "total": 1,
+            "fraction": "0/1",
+            "rank": 5
           }
         ]
       }
