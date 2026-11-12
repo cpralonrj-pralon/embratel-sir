@@ -1,5 +1,5 @@
 {
-  "updatedAt": "12/11/2026 16:26",
+  "updatedAt": "12/11/2026 16:32",
   "RAL": {
     "total": 517,
     "clusters": {
@@ -5231,9 +5231,9 @@
   "REC": {
     "total": 106,
     "clusters": {
-      "BAHIA/SERGIPE": 17,
+      "BAHIA/SERGIPE": 16,
       "MINAS GERAIS": 17,
-      "NORDESTE": 14,
+      "NORDESTE": 15,
       "NORTE": 12,
       "RIO DE JANEIRO": 19,
       "CENTRO OESTE": 22,
@@ -5322,6 +5322,16 @@
         "num": "REC-698265/2026"
       },
       {
+        "cluster": "RIO DE JANEIRO",
+        "cidade": "METROPOLITANA",
+        "code": "RT/RJO /MTP/NET/FO",
+        "ralType": "CABERJ",
+        "description": "NRI/IP/06866",
+        "date": "06/11/2026 12:30",
+        "duration": "N/A",
+        "num": "REC-700675/2026"
+      },
+      {
         "cluster": "NORTE",
         "cidade": "MANAUS",
         "code": "RT/MNS /NO /NET/FO",
@@ -5333,16 +5343,6 @@
       },
       {
         "cluster": "RIO DE JANEIRO",
-        "cidade": "METROPOLITANA",
-        "code": "RT/RJO /MTP/NET/FO",
-        "ralType": "CABERJ",
-        "description": "NRI/IP/06866",
-        "date": "06/11/2026 12:30",
-        "duration": "N/A",
-        "num": "REC-700675/2026"
-      },
-      {
-        "cluster": "RIO DE JANEIRO",
         "cidade": "NORTE 2",
         "code": "RT/RJO /NO2/NET/FO",
         "ralType": "LINX TELECOM",
@@ -5350,6 +5350,16 @@
         "date": "06/11/2026 16:39",
         "duration": "N/A",
         "num": "REC-701495/2026"
+      },
+      {
+        "cluster": "NORDESTE",
+        "cidade": "RECIFE",
+        "code": "RC/RCE /NE /NET/FO",
+        "ralType": "BCO BRASIL",
+        "description": "RCE/IP/21527",
+        "date": "10/11/2026 16:18",
+        "duration": "N/A",
+        "num": "REC-711895/2026"
       },
       {
         "cluster": "CENTRO OESTE",
@@ -5683,16 +5693,6 @@
       },
       {
         "cluster": "BAHIA/SERGIPE",
-        "cidade": "VITORIA DA CONQUISTA",
-        "code": "RT/VCA /TN /SUL/FO",
-        "ralType": "BCO BRASIL",
-        "description": "BQA/IP/00108",
-        "date": "12/11/2026 08:47",
-        "duration": "N/A",
-        "num": "REC-716400/2026"
-      },
-      {
-        "cluster": "BAHIA/SERGIPE",
         "cidade": "ITABUNA",
         "code": "RT/ITB /BR /SUL/FO",
         "ralType": "BCO BRASIL",
@@ -5892,6 +5892,36 @@
         "num": "REC-717882/2026"
       },
       {
+        "cluster": "CENTRO OESTE",
+        "cidade": "GOIÂNIA",
+        "code": "RT/GNA /CO /NET/FO",
+        "ralType": "RIO NEGRO SA",
+        "description": "GNA/IP/06156",
+        "date": "12/11/2026 14:52",
+        "duration": "N/A",
+        "num": "REC-717855/2026"
+      },
+      {
+        "cluster": "CENTRO OESTE",
+        "cidade": "PALMAS",
+        "code": "RT/PMJ /CO /NET/FO",
+        "ralType": "44742078",
+        "description": "ARN/IP/00751",
+        "date": "12/11/2026 14:37",
+        "duration": "N/A",
+        "num": "REC-717792/2026"
+      },
+      {
+        "cluster": "Unknown",
+        "cidade": "Unknown",
+        "code": "RC/SPO /ZL2/NET/BS",
+        "ralType": "GRUPO NOS",
+        "description": "SPO/IP/72637",
+        "date": "12/11/2026 13:51",
+        "duration": "N/A",
+        "num": "REC-717588/2026"
+      },
+      {
         "cluster": "NORTE",
         "cidade": "SÃO LUÍS",
         "code": "RT/SLS /NO /MVA/FO",
@@ -5953,33 +5983,13 @@
       },
       {
         "cluster": "NORTE",
-        "cidade": "SÃO LUÍS",
-        "code": "RT/SLS /NO /MVA/FO",
+        "cidade": "MACAPA",
+        "code": "RT/MPA /NO /NET/FO",
         "ralType": "MS",
         "description": "MPA/IP/00636",
         "date": "12/11/2026 15:33",
         "duration": "N/A",
         "num": "REC-718029/2026"
-      },
-      {
-        "cluster": "CENTRO OESTE",
-        "cidade": "GOIÂNIA",
-        "code": "RT/GNA /CO /NET/FO",
-        "ralType": "RIO NEGRO SA",
-        "description": "GNA/IP/06156",
-        "date": "12/11/2026 14:52",
-        "duration": "N/A",
-        "num": "REC-717855/2026"
-      },
-      {
-        "cluster": "CENTRO OESTE",
-        "cidade": "PALMAS",
-        "code": "RT/PMJ /CO /NET/FO",
-        "ralType": "44742078",
-        "description": "ARN/IP/00751",
-        "date": "12/11/2026 14:37",
-        "duration": "N/A",
-        "num": "REC-717792/2026"
       },
       {
         "cluster": "MINAS GERAIS",
@@ -5990,16 +6000,6 @@
         "date": "12/11/2026 14:36",
         "duration": "N/A",
         "num": "REC-717787/2026"
-      },
-      {
-        "cluster": "Unknown",
-        "cidade": "Unknown",
-        "code": "RC/SPO /ZL2/NET/BS",
-        "ralType": "GRUPO NOS",
-        "description": "SPO/IP/72637",
-        "date": "12/11/2026 13:51",
-        "duration": "N/A",
-        "num": "REC-717588/2026"
       },
       {
         "cluster": "MINAS GERAIS",
@@ -6020,6 +6020,26 @@
         "date": "12/11/2026 12:40",
         "duration": "N/A",
         "num": "REC-717360/2026"
+      },
+      {
+        "cluster": "BAHIA/SERGIPE",
+        "cidade": "ITABUNA",
+        "code": "RT/ITB /BR /SUL/FO",
+        "ralType": "LOCALIZA",
+        "description": "ILH/IP/01226",
+        "date": "12/11/2026 14:57",
+        "duration": "N/A",
+        "num": "REC-717873/2026"
+      },
+      {
+        "cluster": "Unknown",
+        "cidade": "Unknown",
+        "code": "RC/SPO /ZL2/NET/BS",
+        "ralType": "GRUPO NOS",
+        "description": "SPO/IP/85773",
+        "date": "12/11/2026 13:53",
+        "duration": "N/A",
+        "num": "REC-717595/2026"
       },
       {
         "cluster": "MINAS GERAIS",
@@ -6062,14 +6082,14 @@
         "num": "REC-717728/2026"
       },
       {
-        "cluster": "Unknown",
-        "cidade": "Unknown",
-        "code": "RC/SPO /ZL2/NET/BS",
-        "ralType": "GRUPO NOS",
-        "description": "SPO/IP/85773",
-        "date": "12/11/2026 13:53",
+        "cluster": "MINAS GERAIS",
+        "cidade": "BELO HORIZONTE",
+        "code": "RT/BHE /ES /FFA/FO",
+        "ralType": "ECT",
+        "description": "BET/IP/03402",
+        "date": "12/11/2026 12:28",
         "duration": "N/A",
-        "num": "REC-717595/2026"
+        "num": "REC-717325/2026"
       },
       {
         "cluster": "BAHIA/SERGIPE",
@@ -6092,16 +6112,6 @@
         "num": "REC-718034/2026"
       },
       {
-        "cluster": "BAHIA/SERGIPE",
-        "cidade": "ITABUNA",
-        "code": "RT/ITB /BR /SUL/FO",
-        "ralType": "LOCALIZA",
-        "description": "ILH/IP/01226",
-        "date": "12/11/2026 14:57",
-        "duration": "N/A",
-        "num": "REC-717873/2026"
-      },
-      {
         "cluster": "MINAS GERAIS",
         "cidade": "VARGINHA",
         "code": "RT/VGA /TG /FFA/FO",
@@ -6110,16 +6120,6 @@
         "date": "12/11/2026 13:45",
         "duration": "N/A",
         "num": "REC-717561/2026"
-      },
-      {
-        "cluster": "MINAS GERAIS",
-        "cidade": "BELO HORIZONTE",
-        "code": "RT/BHE /ES /FFA/FO",
-        "ralType": "ECT",
-        "description": "BET/IP/03402",
-        "date": "12/11/2026 12:28",
-        "duration": "N/A",
-        "num": "REC-717325/2026"
       },
       {
         "cluster": "MINAS GERAIS",
@@ -6162,6 +6162,16 @@
         "num": "REC-717616/2026"
       },
       {
+        "cluster": "NORTE",
+        "cidade": "SÃO LUÍS",
+        "code": "RT/SLS /NO /MVA/FO",
+        "ralType": "ECT",
+        "description": "BAU/IP/00105",
+        "date": "12/11/2026 16:14",
+        "duration": "N/A",
+        "num": "REC-718170/2026"
+      },
+      {
         "cluster": "RIO DE JANEIRO",
         "cidade": "CENTRO SUL",
         "code": "RT/RJO /OE1/NET/FO",
@@ -6192,16 +6202,6 @@
         "num": "REC-718049/2026"
       },
       {
-        "cluster": "CENTRO OESTE",
-        "cidade": "BRASILIA",
-        "code": "RC/BSA /CO /NET/FO",
-        "ralType": "ECT",
-        "description": "PWL/IP/00174",
-        "date": "12/11/2026 15:34",
-        "duration": "N/A",
-        "num": "REC-718035/2026"
-      },
-      {
         "cluster": "RIO DE JANEIRO",
         "cidade": "DESPACHO (DP)",
         "code": "RC/RJO /NRI/NET/BS",
@@ -6216,10 +6216,10 @@
         "cidade": "DESPACHO (DP)",
         "code": "DP/SLS /CE /NET/FO",
         "ralType": "ECT",
-        "description": "BAU/IP/00105",
-        "date": "12/11/2026 16:14",
+        "description": "PTRM/IP/00102",
+        "date": "12/11/2026 16:20",
         "duration": "N/A",
-        "num": "REC-718170/2026"
+        "num": "REC-718189/2026"
       },
       {
         "cluster": "NORDESTE",
@@ -6233,18 +6233,8 @@
       },
       {
         "cluster": "NORTE",
-        "cidade": "DESPACHO (DP)",
-        "code": "DP/SLS /CE /NET/FO",
-        "ralType": "ECT",
-        "description": "PTRM/IP/00102",
-        "date": "12/11/2026 16:20",
-        "duration": "N/A",
-        "num": "REC-718189/2026"
-      },
-      {
-        "cluster": "NORTE",
-        "cidade": "DESPACHO (DP)",
-        "code": "DP/SLS /CE /NET/FO",
+        "cidade": "SÃO LUÍS",
+        "code": "RT/SLS /NO /MVA/FO",
         "ralType": "ECT",
         "description": "SRRN/IP/00102",
         "date": "12/11/2026 16:18",
@@ -6262,24 +6252,14 @@
         "num": "REC-718175/2026"
       },
       {
-        "cluster": "MINAS GERAIS",
-        "cidade": "BELO HORIZONTE",
-        "code": "RT/BHE /ES /FFA/FO",
-        "ralType": "RIOCLARENSE",
-        "description": "BET/IP/03435",
-        "date": "12/11/2026 15:33",
-        "duration": "N/A",
-        "num": "REC-718028/2026"
-      },
-      {
-        "cluster": "RIO DE JANEIRO",
-        "cidade": "BAIXADA",
-        "code": "RC/RJO /BX1/NET/BS",
+        "cluster": "CENTRO OESTE",
+        "cidade": "BRASILIA",
+        "code": "RC/BSA /CO /NET/FO",
         "ralType": "ECT",
-        "description": "NIU/IP/09669",
-        "date": "12/11/2026 15:46",
+        "description": "PWL/IP/00174",
+        "date": "12/11/2026 15:34",
         "duration": "N/A",
-        "num": "REC-718073/2026"
+        "num": "REC-718035/2026"
       },
       {
         "cluster": "NORDESTE",
@@ -6300,6 +6280,26 @@
         "date": "12/11/2026 15:40",
         "duration": "N/A",
         "num": "REC-718056/2026"
+      },
+      {
+        "cluster": "MINAS GERAIS",
+        "cidade": "BELO HORIZONTE",
+        "code": "RT/BHE /ES /FFA/FO",
+        "ralType": "RIOCLARENSE",
+        "description": "BET/IP/03435",
+        "date": "12/11/2026 15:33",
+        "duration": "N/A",
+        "num": "REC-718028/2026"
+      },
+      {
+        "cluster": "RIO DE JANEIRO",
+        "cidade": "BAIXADA",
+        "code": "RC/RJO /BX1/NET/BS",
+        "ralType": "ECT",
+        "description": "NIU/IP/09669",
+        "date": "12/11/2026 15:46",
+        "duration": "N/A",
+        "num": "REC-718073/2026"
       }
     ],
     "cities": {
@@ -6312,11 +6312,11 @@
       "POUSO ALEGRE": 1,
       "METROPOLITANA": 5,
       "NORTE 2": 1,
+      "RECIFE": 7,
       "GOIÂNIA": 7,
       "BAIXADA": 3,
-      "DESPACHO (DP)": 9,
+      "DESPACHO (DP)": 7,
       "CUIABA": 6,
-      "RECIFE": 6,
       "BELO HORIZONTE": 9,
       "CAMPO GRANDE": 3,
       "PALMAS": 4,
@@ -6325,12 +6325,13 @@
       "BRASILIA": 2,
       "TERESINA": 2,
       "BELEM": 1,
-      "VITORIA DA CONQUISTA": 2,
       "ITABUNA": 6,
+      "VITORIA DA CONQUISTA": 1,
       "Unknown": 4,
       "VITORIA": 1,
       "JOÃO PESSOA": 2,
-      "SÃO LUÍS": 2,
+      "SÃO LUÍS": 3,
+      "MACAPA": 1,
       "VARGINHA": 6
     }
   }
