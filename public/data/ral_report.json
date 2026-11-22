@@ -1,5 +1,5 @@
 {
-  "updatedAt": "22/11/2026 02:29:06",
+  "updatedAt": "22/11/2026 02:34:44",
   "tipos": [
     "ACESSO CLIENTE",
     "BACKBONE",
@@ -9,11 +9,11 @@
   ],
   "all": {
     "kpis": {
-      "pendentes": 436,
-      "ral_gt8h": 403,
+      "pendentes": 437,
+      "ral_gt8h": 404,
       "pct_gt8h": 92,
       "ral_gt24h": 382,
-      "pct_gt24h": 88,
+      "pct_gt24h": 87,
       "ral_gt7d": 314,
       "pct_gt7d": 72,
       "ral_gt30d": 246,
@@ -32,7 +32,7 @@
       },
       {
         "label": "8h-24h",
-        "count": 21,
+        "count": 22,
         "pct": 5
       },
       {
@@ -69,7 +69,7 @@
       },
       {
         "area": "REDE EXTERNA",
-        "count": 1,
+        "count": 2,
         "pct": 0
       }
     ],
@@ -78,7 +78,7 @@
         {
           "rank": 1,
           "sigla": "RJ_ES",
-          "total": 178,
+          "total": 179,
           "pct": 41
         },
         {
@@ -137,19 +137,11 @@
         },
         {
           "sigla": "NO",
-          "pct": 93,
-          "volume": 102,
+          "pct": 94,
+          "volume": 103,
           "total": 110,
-          "fraction": "102/110",
+          "fraction": "103/110",
           "rank": 3
-        },
-        {
-          "sigla": "RJ_ES",
-          "pct": 92,
-          "volume": 163,
-          "total": 178,
-          "fraction": "163/178",
-          "rank": 4
         },
         {
           "sigla": "BA_SE",
@@ -157,6 +149,14 @@
           "volume": 12,
           "total": 13,
           "fraction": "12/13",
+          "rank": 4
+        },
+        {
+          "sigla": "RJ_ES",
+          "pct": 91,
+          "volume": 163,
+          "total": 179,
+          "fraction": "163/179",
           "rank": 5
         },
         {
@@ -211,10 +211,10 @@
         },
         {
           "sigla": "RJ_ES",
-          "pct": 88,
+          "pct": 87,
           "volume": 156,
-          "total": 178,
-          "fraction": "156/178",
+          "total": 179,
+          "fraction": "156/179",
           "rank": 5
         },
         {
@@ -239,21 +239,21 @@
   "byTipo": {
     "FOTONICA": {
       "kpis": {
-        "pendentes": 2,
+        "pendentes": 3,
         "ral_gt8h": 2,
-        "pct_gt8h": 100,
+        "pct_gt8h": 67,
         "ral_gt24h": 2,
-        "pct_gt24h": 100,
+        "pct_gt24h": 67,
         "ral_gt7d": 1,
-        "pct_gt7d": 50,
+        "pct_gt7d": 33,
         "ral_gt30d": 0,
         "pct_gt30d": 0
       },
       "aging": [
         {
           "label": "<4h",
-          "count": 0,
-          "pct": 0
+          "count": 1,
+          "pct": 33
         },
         {
           "label": "4h-8h",
@@ -268,7 +268,7 @@
         {
           "label": "24h-72h",
           "count": 1,
-          "pct": 50
+          "pct": 33
         },
         {
           "label": "72h-7d",
@@ -278,7 +278,7 @@
         {
           "label": "7d-30d",
           "count": 1,
-          "pct": 50
+          "pct": 33
         },
         {
           "label": ">30d",
@@ -290,7 +290,12 @@
         {
           "area": "DEMAIS AREAS",
           "count": 2,
-          "pct": 100
+          "pct": 67
+        },
+        {
+          "area": "REDE EXTERNA",
+          "count": 1,
+          "pct": 33
         }
       ],
       "rankings": {
@@ -298,27 +303,27 @@
           {
             "rank": 1,
             "sigla": "RJ_ES",
-            "total": 2,
+            "total": 3,
             "pct": 100
           }
         ],
         "byPct8h": [
           {
             "sigla": "RJ_ES",
-            "pct": 100,
+            "pct": 67,
             "volume": 2,
-            "total": 2,
-            "fraction": "2/2",
+            "total": 3,
+            "fraction": "2/3",
             "rank": 1
           }
         ],
         "byPct24h": [
           {
             "sigla": "RJ_ES",
-            "pct": 100,
+            "pct": 67,
             "volume": 2,
-            "total": 2,
-            "fraction": "2/2",
+            "total": 3,
+            "fraction": "2/3",
             "rank": 1
           }
         ]
@@ -512,8 +517,8 @@
     "COLETOR": {
       "kpis": {
         "pendentes": 39,
-        "ral_gt8h": 28,
-        "pct_gt8h": 72,
+        "ral_gt8h": 29,
+        "pct_gt8h": 74,
         "ral_gt24h": 21,
         "pct_gt24h": 54,
         "ral_gt7d": 2,
@@ -524,8 +529,8 @@
       "aging": [
         {
           "label": "<4h",
-          "count": 6,
-          "pct": 15
+          "count": 5,
+          "pct": 13
         },
         {
           "label": "4h-8h",
@@ -534,8 +539,8 @@
         },
         {
           "label": "8h-24h",
-          "count": 7,
-          "pct": 18
+          "count": 8,
+          "pct": 21
         },
         {
           "label": "24h-72h",
@@ -595,10 +600,10 @@
         "byPct8h": [
           {
             "sigla": "NO",
-            "pct": 84,
-            "volume": 16,
+            "pct": 89,
+            "volume": 17,
             "total": 19,
-            "fraction": "16/19",
+            "fraction": "17/19",
             "rank": 1
           },
           {
