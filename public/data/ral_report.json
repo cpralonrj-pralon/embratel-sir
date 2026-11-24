@@ -1,5 +1,5 @@
 {
-  "updatedAt": "24/11/2026 06:12:11",
+  "updatedAt": "24/11/2026 06:18:08",
   "tipos": [
     "ACESSO CLIENTE",
     "BACKBONE",
@@ -9,20 +9,20 @@
   ],
   "all": {
     "kpis": {
-      "pendentes": 456,
+      "pendentes": 457,
       "ral_gt8h": 423,
       "pct_gt8h": 93,
       "ral_gt24h": 366,
       "pct_gt24h": 80,
       "ral_gt7d": 317,
-      "pct_gt7d": 70,
+      "pct_gt7d": 69,
       "ral_gt30d": 248,
       "pct_gt30d": 54
     },
     "aging": [
       {
         "label": "<4h",
-        "count": 16,
+        "count": 17,
         "pct": 4
       },
       {
@@ -60,7 +60,7 @@
       {
         "area": "DEMAIS AREAS",
         "count": 390,
-        "pct": 86
+        "pct": 85
       },
       {
         "area": "SWAP",
@@ -69,7 +69,7 @@
       },
       {
         "area": "REDE EXTERNA",
-        "count": 4,
+        "count": 5,
         "pct": 1
       }
     ],
@@ -90,7 +90,7 @@
         {
           "rank": 3,
           "sigla": "MG",
-          "total": 69,
+          "total": 70,
           "pct": 15
         },
         {
@@ -161,10 +161,10 @@
         },
         {
           "sigla": "MG",
-          "pct": 88,
+          "pct": 87,
           "volume": 61,
-          "total": 69,
-          "fraction": "61/69",
+          "total": 70,
+          "fraction": "61/70",
           "rank": 6
         },
         {
@@ -203,10 +203,10 @@
         },
         {
           "sigla": "MG",
-          "pct": 83,
+          "pct": 81,
           "volume": 57,
-          "total": 69,
-          "fraction": "57/69",
+          "total": 70,
+          "fraction": "57/70",
           "rank": 4
         },
         {
@@ -239,21 +239,21 @@
   "byTipo": {
     "FOTONICA": {
       "kpis": {
-        "pendentes": 7,
+        "pendentes": 8,
         "ral_gt8h": 5,
-        "pct_gt8h": 71,
+        "pct_gt8h": 62,
         "ral_gt24h": 1,
-        "pct_gt24h": 14,
+        "pct_gt24h": 12,
         "ral_gt7d": 1,
-        "pct_gt7d": 14,
+        "pct_gt7d": 12,
         "ral_gt30d": 0,
         "pct_gt30d": 0
       },
       "aging": [
         {
           "label": "<4h",
-          "count": 2,
-          "pct": 29
+          "count": 3,
+          "pct": 38
         },
         {
           "label": "4h-8h",
@@ -263,7 +263,7 @@
         {
           "label": "8h-24h",
           "count": 4,
-          "pct": 57
+          "pct": 50
         },
         {
           "label": "24h-72h",
@@ -278,7 +278,7 @@
         {
           "label": "7d-30d",
           "count": 1,
-          "pct": 14
+          "pct": 12
         },
         {
           "label": ">30d",
@@ -290,12 +290,12 @@
         {
           "area": "DEMAIS AREAS",
           "count": 4,
-          "pct": 57
+          "pct": 50
         },
         {
           "area": "REDE EXTERNA",
-          "count": 3,
-          "pct": 43
+          "count": 4,
+          "pct": 50
         }
       ],
       "rankings": {
@@ -304,19 +304,25 @@
             "rank": 1,
             "sigla": "RJ_ES",
             "total": 4,
-            "pct": 57
+            "pct": 50
           },
           {
             "rank": 2,
             "sigla": "NO",
             "total": 2,
-            "pct": 29
+            "pct": 25
           },
           {
             "rank": 3,
             "sigla": "N/A",
             "total": 1,
-            "pct": 14
+            "pct": 12
+          },
+          {
+            "rank": 4,
+            "sigla": "MG",
+            "total": 1,
+            "pct": 12
           }
         ],
         "byPct8h": [
@@ -343,6 +349,14 @@
             "total": 2,
             "fraction": "1/2",
             "rank": 3
+          },
+          {
+            "sigla": "MG",
+            "pct": 0,
+            "volume": 0,
+            "total": 1,
+            "fraction": "0/1",
+            "rank": 4
           }
         ],
         "byPct24h": [
@@ -369,6 +383,14 @@
             "total": 1,
             "fraction": "0/1",
             "rank": 3
+          },
+          {
+            "sigla": "MG",
+            "pct": 0,
+            "volume": 0,
+            "total": 1,
+            "fraction": "0/1",
+            "rank": 4
           }
         ]
       }
